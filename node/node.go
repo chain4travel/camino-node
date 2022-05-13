@@ -24,7 +24,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/hashicorp/go-plugin"
+	plugin "github.com/hashicorp/go-plugin"
 
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
@@ -103,7 +103,7 @@ type Node struct {
 	DBManager manager.Manager
 	DB        database.Database
 
-	// Profiles the process. Nil if continuous profiling is disabled.
+	// Profiles the process.
 	profiler profiler.ContinuousProfiler
 
 	// Indexes blocks, transactions and blocks
@@ -1135,36 +1135,28 @@ func (n *Node) Shutdown(exitCode int) {
 func (n *Node) shutdown() {
 	n.Log.Info("shutting down node with exit code %d", n.ExitCode())
 
-	if n.health != nil {
-		// Passes if the node is not shutting down
-		shuttingDownCheck := health.CheckerFunc(func() (interface{}, error) {
-			return map[string]interface{}{
-				"isShuttingDown": true,
-			}, errShuttingDown
-		})
+	// Passes if the node is not shutting down
+	shuttingDownCheck := health.CheckerFunc(func() (interface{}, error) {
+		return map[string]interface{}{
+			"isShuttingDown": true,
+		}, errShuttingDown
+	})
 
-		err := n.health.RegisterHealthCheck("shuttingDown", shuttingDownCheck)
-		if err != nil {
-			n.Log.Debug("couldn't register shuttingDown health check: %s", err)
-		}
-
-		time.Sleep(n.Config.ShutdownWait)
+	err := n.health.RegisterHealthCheck("shuttingDown", shuttingDownCheck)
+	if err != nil {
+		n.Log.Debug("couldn't register shuttingDown health check: %s", err)
 	}
+
+	time.Sleep(n.Config.ShutdownWait)
 
 	if n.IPCs != nil {
 		if err := n.IPCs.Shutdown(); err != nil {
 			n.Log.Debug("error during IPC shutdown: %s", err)
 		}
 	}
-	if n.chainManager != nil {
-		n.chainManager.Shutdown()
-	}
-	if n.profiler != nil {
-		n.profiler.Shutdown()
-	}
-	if n.Net != nil {
-		n.Net.StartClose()
-	}
+	n.chainManager.Shutdown()
+	n.profiler.Shutdown()
+	n.Net.StartClose()
 	if err := n.APIServer.Shutdown(); err != nil {
 		n.Log.Debug("error during API shutdown: %s", err)
 	}

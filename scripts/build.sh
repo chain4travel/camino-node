@@ -16,6 +16,9 @@ go mod download
 # Build caminogo
 "$CAMINO_NODE_PATH"/scripts/build_camino.sh
 
+# Make plugin folder
+mkdir -p $plugin_dir
+
 # Exit build successfully if the binaries are created
 if [[ -f "$camino_node_path" ]]; then
         echo "Build Successful"

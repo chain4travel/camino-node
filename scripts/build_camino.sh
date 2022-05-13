@@ -42,10 +42,11 @@ source "$CAMINO_NODE_PATH"/scripts/constants.sh
 # Build with rocksdb allowed only if the environment variable ROCKSDBALLOWED is set
 if [ -z ${ROCKSDBALLOWED+x} ]; then
     echo "Building CaminoGo..."
+    TAGS=""
 else
     echo "Building CaminoGo with rocksdb enabled..."
     TAGS="-tags rocksdballowed"
 fi
 
-LDFLAGS="-X github.com/chain4travel/caminogo/version.GitCommit=$git_commit $static_ld_flags"
-go build $TAGS -ldflags $LDFLAGS -o "$caminogo_path" "$CAMINO_PATH/main/"*.go
+LDFLAGS="-X github.com/chain4travel/camino-node/version.GitCommit=$git_commit $static_ld_flags"
+go build $TAGS -ldflags "$LDFLAGS" -o "$camino_node_path" "$CAMINO_NODE_PATH/main/"*.go

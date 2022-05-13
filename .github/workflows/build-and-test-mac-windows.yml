@@ -1,0 +1,21 @@
+name: Build + Test Mac-Windows
+
+on:
+  push:
+    tags: ["*"] # Push events to every tag
+
+jobs:
+  run_build_tests:
+    name: build_tests
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v2
+        with:
+          go-version: "1.17.9" # The Go version to download (if necessary) and use.
+      - name: build_test
+        shell: bash
+        run: scripts/build_and_test.sh

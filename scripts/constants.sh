@@ -11,6 +11,7 @@ GOPATH="$(go env GOPATH)"
 # Where CaminoGo binary goes
 build_dir="$CAMINO_NODE_PATH/build"
 camino_node_path="$build_dir/camino-node"
+plugin_dir="$build_dir/plugins"
 
 # Camino docker hub
 # c4tplatform/camino-node - defaults to local as to avoid unintentional pushes

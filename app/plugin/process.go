@@ -18,8 +18,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hashicorp/go-hclog"
-	"github.com/hashicorp/go-plugin"
+	hclog "github.com/hashicorp/go-hclog"
+	plugin "github.com/hashicorp/go-plugin"
 
 	"github.com/chain4travel/camino-node/app"
 	"github.com/chain4travel/caminogo/utils/subprocess"
