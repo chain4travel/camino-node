@@ -53,5 +53,4 @@ LDFLAGS="$LDFLAGS -X github.com/chain4travel/caminoethvm/plugin/evm.GitCommit=$c
 LDFLAGS="$LDFLAGS -X github.com/chain4travel/caminoethvm/plugin/evm.Version=$caminoethvm_tag"
 LDFLAGS="$LDFLAGS $static_ld_flags"
 
-echo $LDFLAGS
 go build $TAGS -ldflags "$LDFLAGS" -o "$camino_node_path" "$CAMINO_NODE_PATH/main/"*.go

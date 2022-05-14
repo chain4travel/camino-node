@@ -17,7 +17,6 @@ plugin_dir="$build_dir/plugins"
 # c4tplatform/camino-node - defaults to local as to avoid unintentional pushes
 # You should probably set it - export DOCKER_REPO='c4tplatform'
 camino_node_dockerhub_repo=${DOCKER_REPO:-"c4tplatform"}"/camino-node"
-echo $camino_node_dockerhub_repo
 
 # Current branch
 current_branch=$(git symbolic-ref -q --short HEAD || git describe --tags --exact-match || true)
