@@ -23,6 +23,16 @@ current_branch=$(git symbolic-ref -q --short HEAD || git describe --tags --exact
 
 git_commit=${CAMINO_NODE_COMMIT:-$( git rev-list -1 HEAD )}
 
+# caminoethvm git tag and sha
+module=$(grep caminoethvm $CAMINO_NODE_PATH/go.mod)
+# trim leading
+module="${module#"${module%%[![:space:]]*}"}"
+t=(${module//\ / })
+caminoethvm_tag=${t[1]}
+
+c=$(git ls-remote https://$module);c=(${c//\ / })
+caminoethvm_commit=${c[0]}
+
 # Static compilation
 static_ld_flags=''
 if [ "${STATIC_COMPILATION:-}" = 1 ]
