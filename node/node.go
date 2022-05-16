@@ -1142,9 +1142,11 @@ func (n *Node) shutdown() {
 		}, errShuttingDown
 	})
 
-	err := n.health.RegisterHealthCheck("shuttingDown", shuttingDownCheck)
-	if err != nil {
-		n.Log.Debug("couldn't register shuttingDown health check: %s", err)
+	if n.health != nil {
+		err := n.health.RegisterHealthCheck("shuttingDown", shuttingDownCheck)
+		if err != nil {
+			n.Log.Debug("couldn't register shuttingDown health check: %s", err)
+		}
 	}
 
 	time.Sleep(n.Config.ShutdownWait)
@@ -1154,9 +1156,19 @@ func (n *Node) shutdown() {
 			n.Log.Debug("error during IPC shutdown: %s", err)
 		}
 	}
-	n.chainManager.Shutdown()
-	n.profiler.Shutdown()
-	n.Net.StartClose()
+
+	if n.chainManager != nil {
+		n.chainManager.Shutdown()
+	}
+
+	if n.profiler != nil {
+		n.profiler.Shutdown()
+	}
+
+	if n.Net != nil {
+		n.Net.StartClose()
+	}
+
 	if err := n.APIServer.Shutdown(); err != nil {
 		n.Log.Debug("error during API shutdown: %s", err)
 	}
