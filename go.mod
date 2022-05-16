@@ -3,7 +3,7 @@ module github.com/chain4travel/camino-node
 go 1.17
 
 require (
-	github.com/chain4travel/camino-network-runner v0.1.1
+	github.com/chain4travel/camino-network-runner v0.1.2
 	github.com/chain4travel/caminoethvm v0.1.2-rc1
 	github.com/chain4travel/caminogo v0.2.0
 	github.com/hashicorp/go-hclog v1.2.0
