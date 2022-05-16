@@ -30,21 +30,21 @@ version_lt() {
 }
 
 if version_lt "$(go_version)" "$go_version_minimum"; then
-    echo "CaminoGo requires Go >= $go_version_minimum, Go $(go_version) found." >&2
+    echo "Camino-Node requires Go >= $go_version_minimum, Go $(go_version) found." >&2
     exit 1
 fi
 
-# Caminogogo root folder
+# Camino-Node root folder
 CAMINO_NODE_PATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )"; cd .. && pwd )
 # Load the constants
 source "$CAMINO_NODE_PATH"/scripts/constants.sh
 
 # Build with rocksdb allowed only if the environment variable ROCKSDBALLOWED is set
 if [ -z ${ROCKSDBALLOWED+x} ]; then
-    echo "Building CaminoGo..."
+    echo "Building Camino-Node..."
     TAGS=""
 else
-    echo "Building CaminoGo with rocksdb enabled..."
+    echo "Building Camino-Node with rocksdb enabled..."
     TAGS="-tags rocksdballowed"
 fi
 
