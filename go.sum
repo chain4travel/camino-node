@@ -163,8 +163,9 @@ github.com/cespare/xxhash/v2 v2.1.2 h1:YRXhKfTDauu4ajMg1TPgFO5jnlC2HCbmLXMcTG5cb
 github.com/cespare/xxhash/v2 v2.1.2/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=
 github.com/chain4travel/camino-network-runner v0.1.2 h1:KqYrja8zzUr08xN9H7ajjDlJCshIRHzcRXOvtsVr6Vc=
 github.com/chain4travel/camino-network-runner v0.1.2/go.mod h1:NyijapXDcYDQ/4nby8O+nU0oDwvhMn1q+IWINxXORN8=
-github.com/chain4travel/caminoethvm v0.1.2-rc1 h1:SooVM2vFmygc7mqCFzMNNT0l6xl+09d7U0uXJsVc1Yk=
 github.com/chain4travel/caminoethvm v0.1.2-rc1/go.mod h1:sJ070HuN5qhEEGzBc8lmX4l0Zx8Wg0bpHLkwTwYJX4I=
+github.com/chain4travel/caminoethvm v0.1.2-rc2 h1:pG3irKXsvOzO/bK7yszcjniyz5/z8qglju+182smeHo=
+github.com/chain4travel/caminoethvm v0.1.2-rc2/go.mod h1:sJ070HuN5qhEEGzBc8lmX4l0Zx8Wg0bpHLkwTwYJX4I=
 github.com/chain4travel/caminogo v0.2.0 h1:77/bR/c6oA9BW8YIVqkCVhIG76X6WRZhGVzjqswWgx4=
 github.com/chain4travel/caminogo v0.2.0/go.mod h1:phXVVpkhyFSS5fl6hCUMaaPJ5P4NZ5AqcFwROhjJiZ4=
 github.com/chain4travel/caminogo-operator v0.1.0 h1:Ifw+lgV78FaK9QWpJxG/WrwAyCko/axugLFNbEpvRMA=
