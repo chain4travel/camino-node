@@ -702,6 +702,9 @@ func (n *Node) initVMs() error {
 			ApricotPhase3Time:      sdkVersion.GetApricotPhase3Time(n.Config.NetworkID),
 			ApricotPhase4Time:      sdkVersion.GetApricotPhase4Time(n.Config.NetworkID),
 			ApricotPhase5Time:      sdkVersion.GetApricotPhase5Time(n.Config.NetworkID),
+			MinLockDuration:        n.Config.LockConfig.MinLockDuration,
+			MaxLockDuration:        n.Config.LockConfig.MaxLockDuration,
+			MinLockAmount:          n.Config.LockConfig.MinLockAmount,
 		}),
 		vmRegisterer.Register(constants.AVMID, &avm.Factory{
 			TxFee:            n.Config.TxFee,
