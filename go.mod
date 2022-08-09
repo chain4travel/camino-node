@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/chain4travel/camino-network-runner v0.1.2
-	github.com/chain4travel/caminoethvm v0.1.2-rc2
+	//github.com/chain4travel/caminoethvm v0.1.2-rc2
 	github.com/chain4travel/caminogo v0.2.0
 	github.com/hashicorp/go-hclog v1.2.0
 	github.com/hashicorp/go-plugin v1.4.4
@@ -53,6 +53,7 @@ require (
 	github.com/holiman/bloomfilter/v2 v2.0.3 // indirect
 	github.com/holiman/uint256 v1.2.0 // indirect
 	github.com/huin/goupnp v1.0.2 // indirect
+	github.com/inconshreveable/log15 v0.0.0-20201112154412-8562bdadbbac // indirect
 	github.com/jackpal/gateway v1.0.6 // indirect
 	github.com/jackpal/go-nat-pmp v1.0.2 // indirect
 	github.com/kardianos/osext v0.0.0-20190222173326-2bc1f35cddc0 // indirect
@@ -108,3 +109,5 @@ require (
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20220512140231-539c8e751b99 // indirect
 )
+
+replace github.com/chain4travel/caminogo => /Users/pnowosie/Proj/camino/trunc-go

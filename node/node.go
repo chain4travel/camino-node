@@ -31,7 +31,7 @@ import (
 
 	"github.com/chain4travel/camino-node/version"
 
-	caminoethvm "github.com/chain4travel/caminoethvm/plugin/evm"
+	//caminoethvm "github.com/chain4travel/caminoethvm/plugin/evm"
 
 	"github.com/chain4travel/caminogo/api/admin"
 	"github.com/chain4travel/caminogo/api/auth"
@@ -72,7 +72,7 @@ import (
 	"github.com/chain4travel/caminogo/utils/timer"
 	"github.com/chain4travel/caminogo/utils/wrappers"
 	sdkVersion "github.com/chain4travel/caminogo/version"
-	"github.com/chain4travel/caminogo/vms/avm"
+	//"github.com/chain4travel/caminogo/vms/avm"
 	"github.com/chain4travel/caminogo/vms/nftfx"
 	"github.com/chain4travel/caminogo/vms/platformvm"
 	"github.com/chain4travel/caminogo/vms/propertyfx"
@@ -562,24 +562,24 @@ func (n *Node) addDefaultVMAliases() error {
 // AVM, Simple Payments DAG, Simple Payments Chain, and Platform VM
 // Assumes n.DBManager, n.vdrs all initialized (non-nil)
 func (n *Node) initChainManager(avaxAssetID ids.ID) error {
-	createAVMTx, err := genesis.VMGenesis(n.Config.GenesisBytes, constants.AVMID)
-	if err != nil {
-		return err
-	}
-	xChainID := createAVMTx.ID()
+	//createAVMTx, err := genesis.VMGenesis(n.Config.GenesisBytes, constants.AVMID)
+	//if err != nil {
+	//	return err
+	//}
+	xChainID := ids.ID{0, 0, 0, 0, 0xde, 0xad, 0xbe, 0xef}
 
-	createEVMTx, err := genesis.VMGenesis(n.Config.GenesisBytes, constants.EVMID)
-	if err != nil {
-		return err
-	}
-	cChainID := createEVMTx.ID()
+	//createEVMTx, err := genesis.VMGenesis(n.Config.GenesisBytes, constants.EVMID)
+	//if err != nil {
+	//	return err
+	//}
+	//cChainID := createEVMTx.ID()
 
 	// If any of these chains die, the node shuts down
 	criticalChains := ids.Set{}
 	criticalChains.Add(
 		constants.PlatformChainID,
-		xChainID,
-		cChainID,
+		//xChainID,
+		//cChainID,
 	)
 
 	// Manages network timeouts
@@ -703,11 +703,15 @@ func (n *Node) initVMs() error {
 			ApricotPhase4Time:      sdkVersion.GetApricotPhase4Time(n.Config.NetworkID),
 			ApricotPhase5Time:      sdkVersion.GetApricotPhase5Time(n.Config.NetworkID),
 		}),
-		vmRegisterer.Register(constants.AVMID, &avm.Factory{
-			TxFee:            n.Config.TxFee,
-			CreateAssetTxFee: n.Config.CreateAssetTxFee,
-		}),
-		vmRegisterer.Register(constants.EVMID, &caminoethvm.Factory{}),
+		//)
+		//	vmRegisterer.Register(constants.AVMID, &avm.Factory{
+		//		TxFee:            n.Config.TxFee,
+		//		CreateAssetTxFee: n.Config.CreateAssetTxFee,
+		//	}),
+		//	vmRegisterer.Register(constants.EVMID, &caminoethvm.Factory{}),
+
+		// ------- Add timestampvm here ----------
+		vmRegisterer.Register(timestampVMID, &timestampvm.Factory{}),
 		n.Config.VMManager.RegisterFactory(secp256k1fx.ID, &secp256k1fx.Factory{}),
 		n.Config.VMManager.RegisterFactory(nftfx.ID, &nftfx.Factory{}),
 		n.Config.VMManager.RegisterFactory(propertyfx.ID, &propertyfx.Factory{}),
