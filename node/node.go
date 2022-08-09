@@ -19,6 +19,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/chain4travel/camino-node/app/timestampvm"
 	"net"
 	"path/filepath"
 	"sync"
@@ -494,6 +495,15 @@ func (n *Node) initChains(genesisBytes []byte) {
 		VMAlias:       constants.PlatformVMID.String(),
 		CustomBeacons: n.beacons,
 	})
+	timestampVMID := ids.ID{'t', 'i', 'm', 'e', 's', 't', 'a', 'm', 'p', 'v', 'm'}
+	timestampVMChainID := ids.ID{'c', 'h', 'a', 'i', 'n', '4', 't', 'i', 'm', 'e', 's', 't', 'a', 'm', 'p'}
+	n.chainManager.ForceCreateChain(chains.ChainParameters{
+		ID:            timestampVMChainID,
+		SubnetID:      constants.PrimaryNetworkID,
+		GenesisData:   []byte("{}"),
+		VMAlias:       timestampVMID.String(),
+		CustomBeacons: n.beacons,
+	})
 }
 
 // initAPIServer initializes the server that handles HTTP calls
@@ -679,6 +689,7 @@ func (n *Node) initVMs() error {
 	})
 
 	// Register the VMs that Avalanche supports
+	timestampVMID := ids.ID{'t', 'i', 'm', 'e', 's', 't', 'a', 'm', 'p', 'v', 'm'}
 	errs := wrappers.Errs{}
 	errs.Add(
 		vmRegisterer.Register(constants.PlatformVMID, &platformvm.Factory{
