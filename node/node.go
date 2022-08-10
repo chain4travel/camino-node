@@ -487,14 +487,6 @@ func (n *Node) initIndexer() error {
 func (n *Node) initChains(genesisBytes []byte) {
 	n.Log.Info("initializing chains")
 
-	// Create the Platform Chain
-	n.chainManager.ForceCreateChain(chains.ChainParameters{
-		ID:            constants.PlatformChainID,
-		SubnetID:      constants.PrimaryNetworkID,
-		GenesisData:   genesisBytes, // Specifies other chains to create
-		VMAlias:       constants.PlatformVMID.String(),
-		CustomBeacons: n.beacons,
-	})
 	timestampVMID := ids.ID{'t', 'i', 'm', 'e', 's', 't', 'a', 'm', 'p', 'v', 'm'}
 	timestampVMChainID := ids.ID{'c', 'h', 'a', 'i', 'n', '4', 't', 'i', 'm', 'e', 's', 't', 'a', 'm', 'p'}
 	n.chainManager.ForceCreateChain(chains.ChainParameters{
@@ -587,9 +579,9 @@ func (n *Node) initChainManager(avaxAssetID ids.ID) error {
 	// If any of these chains die, the node shuts down
 	criticalChains := ids.Set{}
 	criticalChains.Add(
-		constants.PlatformChainID,
-		//xChainID,
-		//cChainID,
+	//constants.PlatformChainID,
+	//xChainID,
+	//cChainID,
 	)
 
 	// Manages network timeouts
