@@ -94,13 +94,13 @@ Not yet launched
 
 ### Creating a Local Testnet
 
-See [this tutorial.](https://docs.camino.foundation/build/tutorials/platform/create-a-local-test-network/)
+See [this tutorial.](https://docs.camino.foundation/developer/build/create-a-local-test-network/)
 
 ## Bootstrapping
 
 A node needs to catch up to the latest network state before it can participate in consensus and serve API calls.
 
-A node will not [report healthy](https://docs.camino.foundation/apis/caminogo-apis/health) until it is done bootstrapping.
+A node will not [report healthy](https://docs.camino.foundation/developer/apis/camino-node-apis/health) until it is done bootstrapping.
 
 ## Generating Code
 
