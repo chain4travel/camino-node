@@ -1028,7 +1028,12 @@ func (n *Node) Initialize(
 	n.Log = logger
 	n.Config = config
 	var err error
-	n.ID = peer.CertToID(n.Config.StakingTLSCert.Leaf)
+	// Get the nodeID from certificate (secp256k1 public key)
+	n.ID, err = peer.CertToID(n.Config.StakingTLSCert.Leaf)
+	if err != nil {
+		return fmt.Errorf("cannot extract nodeID from certificate: %w", err)
+	}
+
 	n.LogFactory = logFactory
 	n.DoneShuttingDown.Add(1)
 	n.Log.Info("node version is: %s", version.CurrentApp)
