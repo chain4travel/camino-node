@@ -22,7 +22,6 @@ import (
 	"github.com/chain4travel/caminogo/utils/units"
 	"github.com/chain4travel/caminogo/vms/avm"
 	"github.com/chain4travel/caminogo/vms/platformvm"
-	"github.com/chain4travel/caminogo/vms/platformvm/reward"
 )
 
 var _ = ginkgo.Describe("[StaticHandlers]", func() {
@@ -162,7 +161,6 @@ var _ = ginkgo.Describe("[StaticHandlers]", func() {
 					Amount:  json.Uint64(10000),
 					Address: addr,
 				}},
-				DelegationFee: reward.PercentDenominator,
 			}
 		}
 

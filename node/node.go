@@ -692,10 +692,6 @@ func (n *Node) initVMs() error {
 			CreateSubnetTxFee:      n.Config.CreateSubnetTxFee,
 			CreateBlockchainTxFee:  n.Config.CreateBlockchainTxFee,
 			UptimePercentage:       n.Config.UptimeRequirement,
-			MinValidatorStake:      n.Config.MinValidatorStake,
-			MaxValidatorStake:      n.Config.MaxValidatorStake,
-			MinDelegatorStake:      n.Config.MinDelegatorStake,
-			MinDelegationFee:       n.Config.MinDelegationFee,
 			MinStakeDuration:       n.Config.MinStakeDuration,
 			MaxStakeDuration:       n.Config.MaxStakeDuration,
 			RewardConfig:           n.Config.RewardConfig,
@@ -1028,7 +1024,10 @@ func (n *Node) Initialize(
 	n.Log = logger
 	n.Config = config
 	var err error
-	n.ID = peer.CertToID(n.Config.StakingTLSCert.Leaf)
+	n.ID, err = peer.CertToID(n.Config.StakingTLSCert.Leaf)
+	if err != nil {
+		return err
+	}
 	n.LogFactory = logFactory
 	n.DoneShuttingDown.Add(1)
 	n.Log.Info("node version is: %s", version.CurrentApp)

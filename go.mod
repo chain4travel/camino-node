@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/chain4travel/camino-network-runner v0.1.2
 	github.com/chain4travel/caminoethvm v0.1.2-rc2
-	github.com/chain4travel/caminogo v0.2.0
+	github.com/chain4travel/caminogo v0.2.1-0.20221018174918-ef295ac7e612
 	github.com/hashicorp/go-hclog v1.2.0
 	github.com/hashicorp/go-plugin v1.4.4
 	github.com/onsi/ginkgo/v2 v2.1.3

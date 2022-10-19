@@ -166,8 +166,9 @@ github.com/chain4travel/camino-network-runner v0.1.2/go.mod h1:NyijapXDcYDQ/4nby
 github.com/chain4travel/caminoethvm v0.1.2-rc1/go.mod h1:sJ070HuN5qhEEGzBc8lmX4l0Zx8Wg0bpHLkwTwYJX4I=
 github.com/chain4travel/caminoethvm v0.1.2-rc2 h1:pG3irKXsvOzO/bK7yszcjniyz5/z8qglju+182smeHo=
 github.com/chain4travel/caminoethvm v0.1.2-rc2/go.mod h1:sJ070HuN5qhEEGzBc8lmX4l0Zx8Wg0bpHLkwTwYJX4I=
-github.com/chain4travel/caminogo v0.2.0 h1:77/bR/c6oA9BW8YIVqkCVhIG76X6WRZhGVzjqswWgx4=
 github.com/chain4travel/caminogo v0.2.0/go.mod h1:phXVVpkhyFSS5fl6hCUMaaPJ5P4NZ5AqcFwROhjJiZ4=
+github.com/chain4travel/caminogo v0.2.1-0.20221018174918-ef295ac7e612 h1:yHLB2PWN999eirGLegQyxOY12V1TemDmMQFbeqslpg0=
+github.com/chain4travel/caminogo v0.2.1-0.20221018174918-ef295ac7e612/go.mod h1:phXVVpkhyFSS5fl6hCUMaaPJ5P4NZ5AqcFwROhjJiZ4=
 github.com/chain4travel/caminogo-operator v0.1.0 h1:Ifw+lgV78FaK9QWpJxG/WrwAyCko/axugLFNbEpvRMA=
 github.com/chain4travel/caminogo-operator v0.1.0/go.mod h1:FcWFZUXgPi89vY9ieXrIdJoMMILFFp3ClFpQJ6IBr38=
 github.com/chzyer/logex v1.1.10/go.mod h1:+Ywpsq7O8HXn0nuIou7OrIPyXbp3wmkHB+jjWRnGsAI=
