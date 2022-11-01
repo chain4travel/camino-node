@@ -8,34 +8,27 @@
 //
 // Much love to the original authors for their work.
 // **********************************************************
-
 // Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package e2e_test
 
 import (
-	"context"
 	"flag"
-	"os"
-	"strings"
 	"testing"
-	"time"
 
 	ginkgo "github.com/onsi/ginkgo/v2"
 
 	"github.com/onsi/gomega"
 
-	runner_client "github.com/chain4travel/camino-network-runner/client"
-
-	"github.com/chain4travel/camino-node/tests"
-	"github.com/chain4travel/camino-node/tests/e2e"
-
 	// ensure test packages are scanned by ginkgo
+	"github.com/chain4travel/camino-node/tests/e2e"
+	_ "github.com/chain4travel/camino-node/tests/e2e/banff"
+	_ "github.com/chain4travel/camino-node/tests/e2e/p"
 	_ "github.com/chain4travel/camino-node/tests/e2e/ping"
 	_ "github.com/chain4travel/camino-node/tests/e2e/static-handlers"
-	_ "github.com/chain4travel/camino-node/tests/e2e/whitelist-vtx"
 	_ "github.com/chain4travel/camino-node/tests/e2e/x/transfer"
+	_ "github.com/chain4travel/camino-node/tests/e2e/x/whitelist-vtx"
 )
 
 func TestE2E(t *testing.T) {
@@ -44,17 +37,17 @@ func TestE2E(t *testing.T) {
 }
 
 var (
-	logLevel         string
-	caminogoLogLevel string
+	// helpers to parse test flags
+	logLevel string
 
-	networkRunnerGRPCEp string
-	execPath            string
+	networkRunnerGRPCEp              string
+	networkRunnerAvalancheGoExecPath string
+	networkRunnerAvalancheGoLogLevel string
 
-	enableWhitelistTxTests bool
-	uris                   string
+	uris string
+
+	testKeysFile string
 )
-
-// TODO: support existing keys
 
 func init() {
 	flag.StringVar(
@@ -62,12 +55,6 @@ func init() {
 		"log-level",
 		"info",
 		"log level",
-	)
-	flag.StringVar(
-		&caminogoLogLevel,
-		"caminogo-log-level",
-		"INFO",
-		"caminogoLogLevel log level (optional, only required for local network-runner)",
 	)
 
 	flag.StringVar(
@@ -77,97 +64,64 @@ func init() {
 		"[optional] gRPC server endpoint for network-runner (only required for local network-runner tests)",
 	)
 	flag.StringVar(
-		&execPath,
-		"caminogo-path",
+		&networkRunnerAvalancheGoExecPath,
+		"network-runner-avalanchego-path",
 		"",
-		"[optional] caminogo executable path (only required for local network-runner tests)",
+		"[optional] avalanchego executable path (only required for local network-runner tests)",
+	)
+	flag.StringVar(
+		&networkRunnerAvalancheGoLogLevel,
+		"network-runner-avalanchego-log-level",
+		"INFO",
+		"[optional] avalanchego log-level (only required for local network-runner tests)",
 	)
 
-	// TODO: set timestamp on the test network machines to be more realistic
-	flag.BoolVar(
-		&enableWhitelistTxTests,
-		"enable-whitelist-vtx-tests",
-		false,
-		"true to enable whitelist vtx tests",
-	)
+	// e.g., custom network HTTP RPC endpoints
 	flag.StringVar(
 		&uris,
 		"uris",
 		"",
-		"URIs for avalanche node (comma-separated, required to run against existing cluster)",
+		"HTTP RPC endpoint URIs for avalanche node (comma-separated, required to run against existing cluster)",
+	)
+
+	// file that contains a list of new-line separated secp256k1 private keys
+	flag.StringVar(
+		&testKeysFile,
+		"test-keys-file",
+		"",
+		"file that contains a list of new-line separated hex-encoded secp256k1 private keys (assume test keys are pre-funded, for test networks)",
 	)
 }
 
 var _ = ginkgo.BeforeSuite(func() {
-	e2e.SetEnableWhitelistTxTests(enableWhitelistTxTests)
+	err := e2e.Env.ConfigCluster(
+		logLevel,
+		networkRunnerGRPCEp,
+		networkRunnerAvalancheGoExecPath,
+		networkRunnerAvalancheGoLogLevel,
+		uris,
+		testKeysFile,
+	)
+	gomega.Expect(err).Should(gomega.BeNil())
 
-	if execPath != "" {
-		_, err := os.Stat(execPath)
-		gomega.Expect(err).Should(gomega.BeNil())
-		e2e.SetExecPath(execPath)
-	}
+	// check cluster can be started
+	err = e2e.Env.StartCluster()
+	gomega.Expect(err).Should(gomega.BeNil())
 
-	// run with local network-runner
-	if networkRunnerGRPCEp != "" {
-		gomega.Expect(uris).Should(gomega.BeEmpty())
+	// load keys
+	err = e2e.Env.LoadKeys()
+	gomega.Expect(err).Should(gomega.BeNil())
 
-		runnerCli, err := e2e.SetRunnerClient(logLevel, networkRunnerGRPCEp)
-		gomega.Expect(err).Should(gomega.BeNil())
+	// take initial snapshot. cluster will be switched off
+	err = e2e.Env.SnapInitialState()
+	gomega.Expect(err).Should(gomega.BeNil())
 
-		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
-		presp, err := runnerCli.Ping(ctx)
-		cancel()
-		gomega.Expect(err).Should(gomega.BeNil())
-		tests.Outf("{{green}}network-runner running in PID %d{{/}}\n", presp.Pid)
-
-		tests.Outf("{{magenta}}starting network-runner with %q{{/}}\n", execPath)
-		ctx, cancel = context.WithTimeout(context.Background(), 15*time.Second)
-		resp, err := runnerCli.Start(ctx, execPath, runner_client.WithLogLevel(caminogoLogLevel))
-		cancel()
-		gomega.Expect(err).Should(gomega.BeNil())
-		tests.Outf("{{green}}successfully started network-runner :{{/}} %+v\n", resp.ClusterInfo.NodeNames)
-
-		// start is async, so wait some time for cluster health
-		time.Sleep(time.Minute)
-
-		ctx, cancel = context.WithTimeout(context.Background(), 2*time.Minute)
-		_, err = runnerCli.Health(ctx)
-		cancel()
-		gomega.Expect(err).Should(gomega.BeNil())
-
-		var uriSlice []string
-		ctx, cancel = context.WithTimeout(context.Background(), 2*time.Minute)
-		uriSlice, err = runnerCli.URIs(ctx)
-		cancel()
-		gomega.Expect(err).Should(gomega.BeNil())
-		e2e.SetURIs(uriSlice)
-	}
-
-	// connect directly to existing cluster
-	if uris != "" {
-		gomega.Expect(networkRunnerGRPCEp).Should(gomega.BeEmpty())
-
-		uriSlice := strings.Split(uris, ",")
-		e2e.SetURIs(uriSlice)
-	}
-
-	uriSlice := e2e.GetURIs()
-	tests.Outf("{{green}}URIs:{{/}} %q\n", uriSlice)
+	// restart cluster
+	err = e2e.Env.RestoreInitialState(false /*switchOffNetworkFirst*/)
+	gomega.Expect(err).Should(gomega.BeNil())
 })
 
 var _ = ginkgo.AfterSuite(func() {
-	if networkRunnerGRPCEp != "" {
-		runnerCli := e2e.GetRunnerClient()
-		gomega.Expect(runnerCli).ShouldNot(gomega.BeNil())
-
-		tests.Outf("{{red}}shutting down network-runner cluster{{/}}\n")
-		ctx, cancel := context.WithTimeout(context.Background(), 2*time.Minute)
-		_, err := runnerCli.Stop(ctx)
-		cancel()
-		gomega.Expect(err).Should(gomega.BeNil())
-
-		tests.Outf("{{red}}shutting down network-runner client{{/}}\n")
-		err = e2e.CloseRunnerClient()
-		gomega.Expect(err).Should(gomega.BeNil())
-	}
+	err := e2e.Env.ShutdownCluster()
+	gomega.Expect(err).Should(gomega.BeNil())
 })

@@ -6,7 +6,7 @@ package version
 import (
 	"fmt"
 
-	sdkVersion "github.com/chain4travel/caminogo/version"
+	sdkVersion "github.com/ava-labs/avalanchego/version"
 )
 
 var (
@@ -18,9 +18,9 @@ var (
 )
 
 func init() {
-	format := "%s [database=%s"
+	format := "core: %s [database: %s"
 	args := []interface{}{
-		CurrentApp,
+		sdkVersion.Current,
 		sdkVersion.CurrentDatabase,
 	}
 	if GitCommit != "" {

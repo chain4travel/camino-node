@@ -24,14 +24,27 @@ current_branch=$(git symbolic-ref -q --short HEAD || git describe --tags --exact
 git_commit=${CAMINO_NODE_COMMIT:-$( git rev-list -1 HEAD )}
 
 # caminoethvm git tag and sha
-module=$(grep caminoethvm $CAMINO_NODE_PATH/go.mod)
+module=$(grep -m1 caminoethvm $CAMINO_NODE_PATH/go.mod)
+replace=$(echo $module | cut -d' ' -f4)
+if [ ${replace} ]
+then
+    module=$replace
+fi
+
 # trim leading
 module="${module#"${module%%[![:space:]]*}"}"
 t=(${module//\ / })
-caminoethvm_tag=${t[1]}
+echo ${#t[*]}
+if [ ${#t[*]} -gt 1 ]
+then
+    caminoethvm_tag=${t[1]}
 
-c=$(git ls-remote https://$module);c=(${c//\ / })
-caminoethvm_commit=${c[0]}
+    c=$(git ls-remote https://$module);c=(${c//\ / })
+    caminoethvm_commit=${c[0]}
+else
+    caminoethvm_tag="v0.0.0"
+    caminoethvm_commit="undefined"
+fi
 
 # Static compilation
 static_ld_flags=''

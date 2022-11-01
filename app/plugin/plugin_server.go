@@ -8,8 +8,7 @@
 //
 // Much love to the original authors for their work.
 // **********************************************************
-
-// Copyright (C) 2019-2021, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package plugin
@@ -21,12 +20,12 @@ import (
 
 	"github.com/chain4travel/camino-node/app"
 
-	pluginpb "github.com/chain4travel/caminogo/proto/pb/plugin"
+	pluginpb "github.com/ava-labs/avalanchego/proto/pb/plugin"
 )
 
 // Server wraps a node so it can be served with the hashicorp plugin harness
 type Server struct {
-	pluginpb.UnimplementedNodeServer
+	pluginpb.UnsafeNodeServer
 	app app.App
 }
 

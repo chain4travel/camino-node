@@ -8,8 +8,7 @@
 //
 // Much love to the original authors for their work.
 // **********************************************************
-
-// Copyright (C) 2019-2021, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package plugin
@@ -19,7 +18,7 @@ import (
 
 	"google.golang.org/protobuf/types/known/emptypb"
 
-	pluginpb "github.com/chain4travel/caminogo/proto/pb/plugin"
+	pluginpb "github.com/ava-labs/avalanchego/proto/pb/plugin"
 )
 
 type Client struct {

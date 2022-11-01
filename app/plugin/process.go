@@ -8,8 +8,7 @@
 //
 // Much love to the original authors for their work.
 // **********************************************************
-
-// Copyright (C) 2019-2021, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package plugin
@@ -18,11 +17,12 @@ import (
 	"fmt"
 	"os"
 
-	hclog "github.com/hashicorp/go-hclog"
-	plugin "github.com/hashicorp/go-plugin"
+	"github.com/hashicorp/go-hclog"
+	"github.com/hashicorp/go-plugin"
+
+	"github.com/ava-labs/avalanchego/utils/subprocess"
 
 	"github.com/chain4travel/camino-node/app"
-	"github.com/chain4travel/caminogo/utils/subprocess"
 )
 
 func Exec(path string, args []string, forwardIO bool) (app.App, *plugin.Client, error) {

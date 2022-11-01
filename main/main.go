@@ -22,7 +22,7 @@ import (
 	"github.com/chain4travel/camino-node/app/runner"
 	"github.com/chain4travel/camino-node/version"
 
-	"github.com/chain4travel/caminogo/config"
+	"github.com/ava-labs/avalanchego/config"
 
 	"github.com/spf13/pflag"
 )

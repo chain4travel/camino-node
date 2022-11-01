@@ -8,8 +8,7 @@
 //
 // Much love to the original authors for their work.
 // **********************************************************
-
-// Copyright (C) 2019-2021, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package runner
@@ -18,22 +17,25 @@ import (
 	"fmt"
 	"os"
 
-	hclog "github.com/hashicorp/go-hclog"
-	plugin "github.com/hashicorp/go-plugin"
+	"github.com/hashicorp/go-hclog"
+	"github.com/hashicorp/go-plugin"
+
+	"golang.org/x/term"
+
+	"github.com/ava-labs/avalanchego/app/runner"
+	"github.com/ava-labs/avalanchego/node"
+	"github.com/ava-labs/avalanchego/vms/rpcchainvm/grpcutils"
 
 	"github.com/chain4travel/camino-node/app"
-	appplugin "github.com/chain4travel/camino-node/app/plugin"
 	"github.com/chain4travel/camino-node/app/process"
 
-	sdkRunner "github.com/chain4travel/caminogo/app/runner"
-	sdkNode "github.com/chain4travel/caminogo/node"
-	"github.com/chain4travel/caminogo/vms/rpcchainvm/grpcutils"
+	appplugin "github.com/chain4travel/camino-node/app/plugin"
 )
 
 // Run an AvalancheGo node.
 // If specified in the config, serves a hashicorp plugin that can be consumed by
-// the daemon (see caminogo/main).
-func Run(config sdkRunner.Config, nodeConfig sdkNode.Config) {
+// the daemon (see avalanchego/main).
+func Run(config runner.Config, nodeConfig node.Config) {
 	nodeApp := process.NewApp(nodeConfig) // Create node wrapper
 	if config.PluginMode {                // Serve as a plugin
 		plugin.Serve(&plugin.ServeConfig{
@@ -49,7 +51,9 @@ func Run(config sdkRunner.Config, nodeConfig sdkNode.Config) {
 		return
 	}
 
-	fmt.Println(process.Header)
+	if term.IsTerminal(int(os.Stdout.Fd())) {
+		fmt.Println(process.Header)
+	}
 
 	exitCode := app.Run(nodeApp)
 	os.Exit(exitCode)

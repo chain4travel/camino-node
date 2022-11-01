@@ -8,8 +8,7 @@
 //
 // Much love to the original authors for their work.
 // **********************************************************
-
-// Copyright (C) 2019-2021, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package plugin
@@ -19,11 +18,11 @@ import (
 
 	"google.golang.org/grpc"
 
-	plugin "github.com/hashicorp/go-plugin"
+	"github.com/hashicorp/go-plugin"
+
+	pluginpb "github.com/ava-labs/avalanchego/proto/pb/plugin"
 
 	"github.com/chain4travel/camino-node/app"
-
-	pluginpb "github.com/chain4travel/caminogo/proto/pb/plugin"
 )
 
 const Name = "nodeProcess"
@@ -40,8 +39,8 @@ var (
 		Name: &appPlugin{},
 	}
 
-	_ plugin.Plugin     = &appPlugin{}
-	_ plugin.GRPCPlugin = &appPlugin{}
+	_ plugin.Plugin     = (*appPlugin)(nil)
+	_ plugin.GRPCPlugin = (*appPlugin)(nil)
 )
 
 type appPlugin struct {

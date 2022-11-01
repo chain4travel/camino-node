@@ -1,39 +1,23 @@
-// Copyright (C) 2022, Chain4Travel AG. All rights reserved.
-//
-// This file is a derived work, based on ava-labs code whose
-// original notices appear below.
-//
-// It is distributed under the same license conditions as the
-// original code from which it is derived.
-//
-// Much love to the original authors for their work.
-// **********************************************************
-
-// Copyright (C) 2019-2021, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package process
 
 import (
 	"fmt"
-	"path/filepath"
 	"sync"
+
+	"go.uber.org/zap"
+
+	"github.com/ava-labs/avalanchego/nat"
+	sdknode "github.com/ava-labs/avalanchego/node"
+	"github.com/ava-labs/avalanchego/utils/constants"
+	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/ava-labs/avalanchego/utils/perms"
+	"github.com/ava-labs/avalanchego/utils/ulimit"
 
 	"github.com/chain4travel/camino-node/app"
 	"github.com/chain4travel/camino-node/node"
-
-	"github.com/chain4travel/caminogo/database/leveldb"
-	"github.com/chain4travel/caminogo/database/manager"
-	"github.com/chain4travel/caminogo/database/memdb"
-	"github.com/chain4travel/caminogo/database/rocksdb"
-	"github.com/chain4travel/caminogo/nat"
-	sdkNode "github.com/chain4travel/caminogo/node"
-	"github.com/chain4travel/caminogo/utils/constants"
-	"github.com/chain4travel/caminogo/utils/dynamicip"
-	"github.com/chain4travel/caminogo/utils/logging"
-	"github.com/chain4travel/caminogo/utils/perms"
-	"github.com/chain4travel/caminogo/utils/ulimit"
-	"github.com/chain4travel/caminogo/version"
 )
 
 const (
@@ -51,17 +35,17 @@ var (
 	stakingPortName = fmt.Sprintf("%s-staking", constants.AppName)
 	httpPortName    = fmt.Sprintf("%s-http", constants.AppName)
 
-	_ app.App = &process{}
+	_ app.App = (*process)(nil)
 )
 
 // process is a wrapper around a node that runs in this process
 type process struct {
-	config sdkNode.Config
+	config sdknode.Config
 	node   *node.Node
 	exitWG sync.WaitGroup
 }
 
-func NewApp(config sdkNode.Config) app.App {
+func NewApp(config sdknode.Config) app.App {
 	return &process{
 		config: config,
 		node:   &node.Node{},
@@ -91,50 +75,18 @@ func (p *process) Start() error {
 	// update fd limit
 	fdLimit := p.config.FdLimit
 	if err := ulimit.Set(fdLimit, log); err != nil {
-		log.Fatal("failed to set fd-limit: %s", err)
-		logFactory.Close()
-		return err
-	}
-
-	// start the db manager
-	var dbManager manager.Manager
-	switch p.config.DatabaseConfig.Name {
-	case rocksdb.Name:
-		path := filepath.Join(p.config.DatabaseConfig.Path, rocksdb.Name)
-		dbManager, err = manager.NewRocksDB(path, p.config.DatabaseConfig.Config, log, version.CurrentDatabase)
-	case leveldb.Name:
-		dbManager, err = manager.NewLevelDB(p.config.DatabaseConfig.Path, p.config.DatabaseConfig.Config, log, version.CurrentDatabase)
-	case memdb.Name:
-		dbManager = manager.NewMemDB(version.CurrentDatabase)
-	default:
-		err = fmt.Errorf(
-			"db-type was %q but should have been one of {%s, %s, %s}",
-			p.config.DatabaseConfig.Name,
-			leveldb.Name,
-			rocksdb.Name,
-			memdb.Name,
+		log.Fatal("failed to set fd-limit",
+			zap.Error(err),
 		)
-	}
-	if err != nil {
-		log.Fatal("couldn't create %q db manager at %s: %s", p.config.DatabaseConfig.Name, p.config.DatabaseConfig.Path, err)
 		logFactory.Close()
 		return err
 	}
 
 	// Track if sybil control is enforced
 	if !p.config.EnableStaking {
-		log.Warn("Staking is disabled. Sybil control is not enforced.")
-	}
-
-	// Check if transaction signatures should be checked
-	if !p.config.EnableCrypto {
-		// TODO: actually disable crypto verification
-		log.Warn("transaction signatures are not being checked")
-	}
-
-	// Track if assertions should be executed
-	if p.config.LoggingConfig.Assertions {
-		log.Debug("assertions are enabled. This may slow down execution")
+		log.Warn("sybil control is not enforced",
+			zap.String("reason", "staking is disabled"),
+		)
 	}
 
 	// TODO move this to config
@@ -147,23 +99,23 @@ func (p *process) Start() error {
 
 	mapper := nat.NewPortMapper(log, p.config.Nat)
 
-	// Open staking port we want for NAT Traversal to have the external port
+	// Open staking port we want for NAT traversal to have the external port
 	// (config.IP.Port) to connect to our internal listening port
 	// (config.InternalStakingPort) which should be the same in most cases.
-	if p.config.IP.IP().Port != 0 {
+	if p.config.IPPort.IPPort().Port != 0 {
 		mapper.Map(
 			"TCP",
-			p.config.IP.IP().Port,
-			p.config.IP.IP().Port,
+			p.config.IPPort.IPPort().Port,
+			p.config.IPPort.IPPort().Port,
 			stakingPortName,
-			&p.config.IP,
-			p.config.DynamicUpdateDuration,
+			p.config.IPPort,
+			p.config.IPResolutionFreq,
 		)
 	}
 
 	// Open the HTTP port iff the HTTP server is not listening on localhost
 	if p.config.HTTPHost != "127.0.0.1" && p.config.HTTPHost != "localhost" && p.config.HTTPPort != 0 {
-		// For NAT Traversal we want to route from the external port
+		// For NAT traversal we want to route from the external port
 		// (config.ExternalHTTPPort) to our internal port (config.HTTPPort)
 		mapper.Map(
 			"TCP",
@@ -171,25 +123,21 @@ func (p *process) Start() error {
 			p.config.HTTPPort,
 			httpPortName,
 			nil,
-			p.config.DynamicUpdateDuration,
+			p.config.IPResolutionFreq,
 		)
 	}
 
-	// Regularly updates our public IP (or does nothing, if configured that way)
-	externalIPUpdater := dynamicip.NewDynamicIPManager(
-		p.config.DynamicPublicIPResolver,
-		p.config.DynamicUpdateDuration,
-		log,
-		&p.config.IP,
-	)
+	// Regularly update our public IP.
+	// Note that if the node config said to not dynamically resolve and
+	// update our public IP, [p.config.IPUdater] is a no-op implementation.
+	go p.config.IPUpdater.Dispatch(log)
 
-	if err := p.node.Initialize(&p.config, dbManager, log, logFactory); err != nil {
-		log.Fatal("error initializing node: %s", err)
+	if err := p.node.Initialize(&p.config, log, logFactory); err != nil {
+		log.Fatal("error initializing node",
+			zap.Error(err),
+		)
 		mapper.UnmapAllPorts()
-		externalIPUpdater.Stop()
-		if err := dbManager.Close(); err != nil {
-			log.Warn("failed to close the node's DB: %s", err)
-		}
+		p.config.IPUpdater.Stop()
 		log.Stop()
 		logFactory.Close()
 		return err
@@ -208,10 +156,7 @@ func (p *process) Start() error {
 		}()
 		defer func() {
 			mapper.UnmapAllPorts()
-			externalIPUpdater.Stop()
-			if err := dbManager.Close(); err != nil {
-				log.Warn("failed to close the node's DB: %s", err)
-			}
+			p.config.IPUpdater.Stop()
 
 			// If [p.node.Dispatch()] panics, then we should log the panic and
 			// then re-raise the panic. This is why the above defer is broken
@@ -220,7 +165,9 @@ func (p *process) Start() error {
 		}()
 
 		err := p.node.Dispatch()
-		log.Debug("dispatch returned with: %s", err)
+		log.Debug("dispatch returned",
+			zap.Error(err),
+		)
 	}()
 	return nil
 }
