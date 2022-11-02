@@ -19,9 +19,8 @@ import (
 
 	"google.golang.org/grpc"
 
-	plugin "github.com/hashicorp/go-plugin"
-
 	"github.com/chain4travel/camino-node/app"
+	"github.com/hashicorp/go-plugin"
 
 	pluginpb "github.com/chain4travel/caminogo/proto/pb/plugin"
 )

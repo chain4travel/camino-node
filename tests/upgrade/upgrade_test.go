@@ -22,13 +22,11 @@ import (
 	"testing"
 	"time"
 
-	ginkgo "github.com/onsi/ginkgo/v2"
-
+	"github.com/chain4travel/camino-node/tests"
+	"github.com/onsi/ginkgo/v2"
 	"github.com/onsi/gomega"
 
 	runner_client "github.com/chain4travel/camino-network-runner/client"
-
-	"github.com/chain4travel/camino-node/tests"
 )
 
 func TestUpgrade(t *testing.T) {

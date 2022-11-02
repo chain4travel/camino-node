@@ -18,11 +18,10 @@ import (
 	"fmt"
 	"os"
 
-	hclog "github.com/hashicorp/go-hclog"
-	plugin "github.com/hashicorp/go-plugin"
-
 	"github.com/chain4travel/camino-node/app"
 	"github.com/chain4travel/caminogo/utils/subprocess"
+	"github.com/hashicorp/go-hclog"
+	"github.com/hashicorp/go-plugin"
 )
 
 func Exec(path string, args []string, forwardIO bool) (app.App, *plugin.Client, error) {

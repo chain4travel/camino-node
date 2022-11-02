@@ -18,16 +18,15 @@ import (
 	"fmt"
 	"os"
 
-	hclog "github.com/hashicorp/go-hclog"
-	plugin "github.com/hashicorp/go-plugin"
-
 	"github.com/chain4travel/camino-node/app"
-	appplugin "github.com/chain4travel/camino-node/app/plugin"
 	"github.com/chain4travel/camino-node/app/process"
+	"github.com/chain4travel/caminogo/vms/rpcchainvm/grpcutils"
+	"github.com/hashicorp/go-hclog"
+	"github.com/hashicorp/go-plugin"
 
+	appplugin "github.com/chain4travel/camino-node/app/plugin"
 	sdkRunner "github.com/chain4travel/caminogo/app/runner"
 	sdkNode "github.com/chain4travel/caminogo/node"
-	"github.com/chain4travel/caminogo/vms/rpcchainvm/grpcutils"
 )
 
 // Run an AvalancheGo node.
