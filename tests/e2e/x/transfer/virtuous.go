@@ -36,9 +36,9 @@ import (
 )
 
 const (
-	metricVtxProcessing = "avalanche_X_vtx_processing"
-	metricVtxAccepted   = "avalanche_X_vtx_accepted_count"
-	metricVtxRejected   = "avalanche_X_vtx_rejected_count"
+	metricVtxProcessing = "camino_X_vtx_processing"
+	metricVtxAccepted   = "camino_X_vtx_accepted_count"
+	metricVtxRejected   = "camino_X_vtx_rejected_count"
 )
 
 const totalRounds = 50

@@ -18,7 +18,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
-          go-version: 1.17.9
+          go-version: 1.18
       - name: Build the camino-node binaries
         shell: bash
         run: ./scripts/build.sh
@@ -27,4 +27,4 @@ jobs:
         run: scripts/tests.e2e.sh ./build/camino-node
       - name: Run e2e tests for whitelist vtx
         shell: bash
-        run: ENABLE_WHITELIST_VTX_TESTS=true ./scripts/tests.e2e.sh ./build/camino-node
+        run: ENABLE_WHITELIST_VTX_TESTS=false ./scripts/tests.e2e.sh ./build/camino-node
