@@ -1,7 +1,8 @@
 name: Ansible Lint
 on:
   push:
-    tags: ["*"] # Push events to every tag
+    branches-ignore: ["**"]
+    tags: ["v*"] # Push events to every tag
 
 jobs:
   build-ansible:

@@ -1,8 +1,8 @@
 name: Build and publish on supported platforms
 
 on:
-  push:
-    tags: ["*"]
+  release:
+    types: [created]
 
 permissions:
   contents: write
