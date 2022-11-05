@@ -80,6 +80,20 @@ server \
 PID=${!}
 
 #################################
+# By default, it runs all e2e test cases!
+# Use "--ginkgo.skip" to skip tests.
+# Use "--ginkgo.focus" to select tests.
+#
+# to run only ping tests:
+# --ginkgo.focus "\[Local\] \[Ping\]"
+#
+# to run only X-Chain whitelist vtx tests:
+# --ginkgo.focus "\[X-Chain\] \[WhitelistVtx\]"
+#
+# to skip all "Local" tests
+# --ginkgo.skip "\[Local\]"
+#
+# set "--enable-whitelist-vtx-tests" to explicitly enable/disable whitelist vtx tests
 echo "running e2e tests against the local cluster with ${CAMINO_NODE_PATH}"
 ./tests/e2e/e2e.test \
 --ginkgo.v \
