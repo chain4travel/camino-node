@@ -2,9 +2,8 @@ name: Build + Publish Docker Image
 
 on:
   push:
+    branches-ignore: ["**"]
     tags:
-      - "*" # Push events to every tag
-    branches-ignore: ["*"]
 
 jobs:
   build_publish_image:
