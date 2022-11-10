@@ -27,4 +27,4 @@ jobs:
         run: scripts/tests.e2e.sh ./build/camino-node
       - name: Run e2e tests for whitelist vtx
         shell: bash
-        run: ENABLE_WHITELIST_VTX_TESTS=false ./scripts/tests.e2e.sh ./build/camino-node
+        run: ENABLE_WHITELIST_VTX_TESTS=true ./scripts/tests.e2e.sh ./build/camino-node
