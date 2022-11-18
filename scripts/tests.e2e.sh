@@ -41,12 +41,9 @@ then
   # https://github.com/chain4travel/camino-network-runner
   GOARCH=$(go env GOARCH)
   GOOS=$(go env GOOS)
-  NETWORK_RUNNER_VERSION=0.2.0-alpha2
+  NETWORK_RUNNER_VERSION=0.2.1-alpha1
   DOWNLOAD_PATH=/tmp/camino-network-runner.tar.gz
-  DOWNLOAD_URL=https://github.com/chain4travel/camino-network-runner/releases/download/v${NETWORK_RUNNER_VERSION}/camino-network-runner_${NETWORK_RUNNER_VERSION}_linux_amd64.tar.gz
-  if [[ ${GOOS} == "darwin" ]]; then
-    DOWNLOAD_URL=https://github.com/chain4travel/camino-network-runner/releases/download/v${NETWORK_RUNNER_VERSION}/camino-network-runner_${NETWORK_RUNNER_VERSION}_darwin_amd64.tar.gz
-  fi
+  DOWNLOAD_URL=https://github.com/chain4travel/camino-network-runner/releases/download/v${NETWORK_RUNNER_VERSION}/camino-network-runner_${NETWORK_RUNNER_VERSION}_${GOOS}_amd64.tar.gz
 
   rm -f ${DOWNLOAD_PATH}
   rm -f /tmp/camino-network-runner
