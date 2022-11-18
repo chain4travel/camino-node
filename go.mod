@@ -139,6 +139,6 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/ava-labs/avalanchego => github.com/chain4travel/caminogo v0.3.0-alpha1
+replace github.com/ava-labs/avalanchego => github.com/chain4travel/caminogo v0.3.1-alpha1
 
-replace github.com/ava-labs/coreth => github.com/chain4travel/caminoethvm v0.2.0-alpha1
+replace github.com/ava-labs/coreth => github.com/chain4travel/caminoethvm v0.2.1-alpha1
