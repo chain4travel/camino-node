@@ -10,6 +10,9 @@ CAMINO_NODE_PATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )"; cd .. && pwd )
 source "$CAMINO_NODE_PATH"/scripts/constants.sh
 
 # Download dependencies
+echo "Initializing git submodules..."
+git submodule update --init
+
 echo "Downloading dependencies..."
 go mod download
 

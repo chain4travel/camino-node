@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/ava-labs/avalanche-network-runner-sdk v0.2.0
 	github.com/ava-labs/avalanchego v1.9.1
-	github.com/ava-labs/coreth v0.11.0
+	github.com/ava-labs/coreth v0.11.1-rc.7
 	github.com/hashicorp/go-hclog v1.2.2
 	github.com/hashicorp/go-plugin v1.4.4
 	github.com/onsi/ginkgo/v2 v2.1.4
@@ -139,6 +139,6 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/ava-labs/avalanchego => github.com/chain4travel/caminogo v0.3.1-alpha1
+replace github.com/ava-labs/avalanchego => ./dependencies/caminogo
 
-replace github.com/ava-labs/coreth => github.com/chain4travel/caminoethvm v0.2.1-alpha1
+replace github.com/ava-labs/coreth => ./dependencies/caminoethvm
