@@ -3,7 +3,8 @@ name: Build + Publish Docker Image
 on:
   push:
     branches-ignore: ["**"]
-    tags:
+    tags: ["v*"]
+  workflow_dispatch:
 
 jobs:
   build_publish_image:
