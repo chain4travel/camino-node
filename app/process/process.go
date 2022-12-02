@@ -10,6 +10,7 @@ import (
 	"go.uber.org/zap"
 
 	"github.com/ava-labs/avalanchego/nat"
+	"github.com/ava-labs/avalanchego/network/peer"
 	sdknode "github.com/ava-labs/avalanchego/node"
 	"github.com/ava-labs/avalanchego/utils/constants"
 	"github.com/ava-labs/avalanchego/utils/logging"
@@ -70,6 +71,15 @@ func (p *process) Start() error {
 	if err != nil {
 		logFactory.Close()
 		return err
+	}
+
+	if p.config.CaminoRuntimeConfig.OnlyShowNodeID {
+		id, err := peer.CertToID(p.config.StakingTLSCert.Leaf)
+		if err != nil {
+			return fmt.Errorf("cannot extract nodeID from certificate: %w", err)
+		}
+		fmt.Println(id)
+		return nil
 	}
 
 	// update fd limit
