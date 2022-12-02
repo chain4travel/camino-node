@@ -15,4 +15,4 @@ if [[ -z $(git status -s) ]]; then
     # TODO: Revise this check once we can reliably build without changes
     # exit 1
 fi
-"$CAMINO_PATH"/scripts/build_test.sh
+"$CAMINO_PATH"/scripts/build_test.sh ${1-}

@@ -4,6 +4,9 @@ run:
   # skip auto-generated files.
   skip-files:
     - ".*\\.pb\\.go$"
+  # skip submodule dependencies.
+  skip-dirs:
+    - "dependencies"
 
 issues:
   # Maximum count of issues with the same text. Set to 0 to disable. Default is 3.
