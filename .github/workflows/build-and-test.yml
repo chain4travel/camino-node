@@ -4,6 +4,8 @@ on:
   pull_request:
     tags-ignore: ["*"]
     branches: [chain4travel, dev]
+  push:
+    branches: [chain4travel, dev]
 
 jobs:
   run_build_unit_tests:
