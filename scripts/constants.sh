@@ -25,32 +25,19 @@ plugin_dir="$build_dir/plugins"
 camino_node_dockerhub_repo=${DOCKER_REPO:-"c4tplatform"}"/camino-node"
 
 # Current branch
-current_branch=$(git symbolic-ref -q --short HEAD || git describe --tags --exact-match || true)
+current_branch=$(git symbolic-ref -q --short HEAD || git describe --tags || echo unknown)
 
-git_commit=${CAMINO_NODE_COMMIT:-$( git rev-list -1 HEAD )}
+git_commit=${CAMINO_NODE_COMMIT:-$(git rev-parse --short HEAD)}
+git_tag=${CAMINO_NODE_TAG:-$(git describe --tags --abbrev=0 || echo unknown)}
 
-# caminoethvm git tag and sha
-module=$(grep -m1 caminoethvm $CAMINO_NODE_PATH/go.mod)
-replace=$(echo $module | cut -d' ' -f4)
-if [ ${replace} ]
-then
-    module=$replace
-fi
-
-# trim leading
-module="${module#"${module%%[![:space:]]*}"}"
-t=(${module//\ / })
-echo ${#t[*]}
-if [ ${#t[*]} -gt 1 ]
-then
-    caminoethvm_tag=${t[1]}
-
-    c=$(git ls-remote https://$module);c=(${c//\ / })
-    caminoethvm_commit=${c[0]}
-else
-    caminoethvm_tag="v0.0.0"
-    caminoethvm_commit="undefined"
-fi
+# caminogo and caminoethvm git tag and sha
+oldDir=$(pwd) && cd $CAMINO_NODE_PATH/dependencies/caminoethvm
+caminoethvm_commit=${CAMINOETHVM_COMMIT:-$( git rev-parse --short HEAD )}
+caminoethvm_tag=$(git describe --tags --abbrev=0 || echo unknown)
+cd $CAMINO_NODE_PATH/dependencies/caminogo
+caminogo_commit=${CAMINOGO_COMMIT:-$( git rev-parse --short HEAD )}
+caminogo_tag=$(git describe --tags --abbrev=0 || echo unknown)
+cd $oldDir
 
 # Static compilation
 static_ld_flags=''

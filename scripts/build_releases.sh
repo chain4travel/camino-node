@@ -80,6 +80,8 @@ rm -rf $DEST_PATH && mkdir -p $DEST_PATH
 
 # build executables into build dir
 GOOS=linux GOARCH=amd64 GOAMD64=v2 $CAMINO_NODE_PATH/scripts/build.sh
+# build tools into build dir
+GOOS=linux GOARCH=amd64 GOAMD64=v2 $CAMINO_NODE_PATH/scripts/build_tools.sh
 # copy the license file
 cp $CAMINO_NODE_PATH/LICENSE $CAMINO_NODE_PATH/build
 
