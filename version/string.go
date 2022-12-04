@@ -13,20 +13,22 @@ var (
 	// String is displayed when CLI arg --version is used
 	String string
 
-	// GitCommit is set in the build script at compile time
-	GitCommit string
+	// Following vars are set in the build script at compile time
+	GitCommit          = "unknown"
+	GitVersion         = "unknown"
+	CaminoGoGitCommit  = "unknown"
+	CaminoGoGitVersion = "unknown"
 )
 
 func init() {
-	format := "core: %s [database: %s"
+	format := "camino-node: %s, commit: %s\ncaminogo: %s, commit: %s\n  compat: %s [database: %s]\n"
 	args := []interface{}{
+		GitVersion,
+		GitCommit,
+		CaminoGoGitVersion,
+		CaminoGoGitCommit,
 		sdkVersion.Current,
 		sdkVersion.CurrentDatabase,
 	}
-	if GitCommit != "" {
-		format += ", commit=%s"
-		args = append(args, GitCommit)
-	}
-	format += "]\n"
 	String = fmt.Sprintf(format, args...)
 }

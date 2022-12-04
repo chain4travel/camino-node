@@ -20,12 +20,12 @@ var (
 )
 
 func main() {
-	var count = 1
+	count := 1
 	flag.StringVar(&destPath, "destPath", destPath, "Destination path")
 	flag.IntVar(&count, "count", 1, "Number of certificates")
 	flag.Parse()
 
-	var num = ""
+	num := ""
 	for i := 1; i <= count; i++ {
 		if count > 1 {
 			num = fmt.Sprintf("%d", i)

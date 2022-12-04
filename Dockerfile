@@ -20,6 +20,8 @@ COPY . .
 
 # Build camino-node and plugins
 RUN ./scripts/build.sh
+# Build tools
+RUN ./scripts/build_tools.sh
 
 # ============= Cleanup Stage ================
 FROM debian:11-slim AS execution
