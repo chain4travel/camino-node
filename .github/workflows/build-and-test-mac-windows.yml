@@ -1,8 +1,11 @@
 name: Build + Test Mac-Windows
 
 on:
+  pull_request:
+    tags-ignore: ["*"]
+    branches: [chain4travel, dev]
   push:
-    tags: ["*"] # Push events to every tag
+    branches: [chain4travel, dev]
 
 jobs:
   run_build_tests:

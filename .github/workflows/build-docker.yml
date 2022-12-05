@@ -1,9 +1,8 @@
 name: Build + Publish Docker Image
 
 on:
-  push:
-    branches-ignore: ["**"]
-    tags: ["v*"]
+  release:
+    types: [created]
   workflow_dispatch:
 
 jobs:
