@@ -11,10 +11,10 @@ source "$CAMINO_NODE_PATH"/scripts/constants.sh
 
 # Download dependencies
 echo "Initializing git submodules..."
-git submodule update --init
+git --git-dir $CAMINO_NODE_PATH/.git submodule update --init
 
 echo "Downloading dependencies..."
-go mod download
+(cd $CAMINO_NODE_PATH && go mod download)
 
 # Build caminogo
 "$CAMINO_NODE_PATH"/scripts/build_camino.sh
