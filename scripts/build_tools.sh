@@ -12,8 +12,16 @@ CAMINO_NODE_PATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )"; cd .. && pwd )
 # Load the constants
 source "$CAMINO_NODE_PATH"/scripts/constants.sh
 
+# Download dependencies
+echo "Initializing git submodules..."
+git --git-dir $CAMINO_NODE_PATH/.git submodule update --init
+
+echo "Downloading dependencies..."
+(cd $CAMINO_NODE_PATH && go mod download)
+
 # Create tools directory
 tools_dir=$build_dir/tools/
 mkdir -p $tools_dir
 
+echo "Building cert tool..."
 go build -ldflags="-s -w" -o "$tools_dir/cert" "$CAMINO_NODE_PATH/tools/cert/"*.go
