@@ -8,7 +8,10 @@ set -o pipefail
 CAMINO_NODE_PATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )"; cd .. && pwd )
 
 # Prepare dependencies
-git --git-dir $CAMINO_NODE_PATH/.git submodule update --init --recursive
+if [ ! -f $CAMINO_NODE_PATH/dependencies/caminoethvm/.git ]; then
+    echo "Initializing git submodules..."
+    git --git-dir $CAMINO_NODE_PATH/.git submodule update --init --recursive
+fi
 
 # Load the constants
 source "$CAMINO_NODE_PATH"/scripts/constants.sh
