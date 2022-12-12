@@ -1,6 +1,3 @@
-[submodule "dependencies/caminogo"]
-	path = dependencies/caminogo
-	url = https://github.com/chain4travel/caminogo.git
 [submodule "dependencies/caminoethvm"]
 	path = dependencies/caminoethvm
 	url = https://github.com/chain4travel/caminoethvm.git

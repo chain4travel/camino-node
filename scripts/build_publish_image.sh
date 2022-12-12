@@ -7,9 +7,6 @@ set -o pipefail
 # Camino root directory
 CAMINO_NODE_PATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )"; cd .. && pwd )
 
-# Load the constants
-source "$CAMINO_NODE_PATH"/scripts/constants.sh
-
 # Build the container
 "$CAMINO_NODE_PATH"/scripts/build_local_image.sh
 
@@ -17,6 +14,9 @@ source "$CAMINO_NODE_PATH"/scripts/constants.sh
 if [[ -z "$DOCKER_USERNAME"  ]]; then
   exit 0;
 fi
+
+# Load the constants
+source "$CAMINO_NODE_PATH"/scripts/constants.sh
 
 echo "Pushing: $camino_node_dockerhub_repo:$current_branch"
 
