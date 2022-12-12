@@ -34,7 +34,7 @@ git_tag=${CAMINO_NODE_TAG:-$(git describe --tags --abbrev=0 || echo unknown)}
 oldDir=$(pwd) && cd $CAMINO_NODE_PATH/dependencies/caminoethvm
 caminoethvm_commit=${CAMINOETHVM_COMMIT:-$( git rev-parse --short HEAD )}
 caminoethvm_tag=$(git describe --tags --abbrev=0 || echo unknown)
-cd $CAMINO_NODE_PATH/dependencies/caminogo
+cd $CAMINO_NODE_PATH/dependencies/caminoethvm/caminogo
 caminogo_commit=${CAMINOGO_COMMIT:-$( git rev-parse --short HEAD )}
 caminogo_tag=$(git describe --tags --abbrev=0 || echo unknown)
 cd $oldDir
