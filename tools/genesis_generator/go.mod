@@ -94,4 +94,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/ava-labs/avalanchego => /Users/pnowosie/Proj/camino/caminogo
+replace github.com/ava-labs/avalanchego => github.com/chain4travel/caminogo dev
