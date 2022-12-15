@@ -41,13 +41,17 @@ func main() {
 	}
 	defer xls.Close()
 	allocationRows := loadRows(xls, workbook.WB_ALLOCATIONS_NAME)
-	//multisigRows := loadRows(xls, workbook.WB_MSIG_NAME)
+	multisigRows := loadRows(xls, workbook.WB_MSIG_NAME)
 
 	allocations, err := parseAllocations(allocationRows)
-	fmt.Println("Loaded allocations", len(allocations))
+	fmt.Println("Loaded allocations", len(allocations), "err", err)
+	multisigs, err := parseMultiSigGroups(multisigRows, allocations)
+	fmt.Println("Loaded multisigs", len(multisigs), "err", err)
 
+	msigGroups, _ := generateMSigDefinitions(genesisConfig.NetworkID, multisigs)
+	genesisConfig.Camino.InitialMultisigAddresses = msigGroups.MultisigAliaseas
 	// create Genesis allocation records
-	genAlloc := generateAllocations(allocations, offerValuesToID)
+	genAlloc := generateAllocations(allocations, offerValuesToID, msigGroups.ControlGroupToAlias)
 	// Uparse for Kopernikus and fill the allocation to config
 	confAlloc := unparseAllocations(genAlloc)
 	genesisConfig.Camino.Allocations = confAlloc

@@ -3,7 +3,10 @@ package main
 import (
 	"fmt"
 	"genesis_generator/workbook"
+	"github.com/ava-labs/avalanchego/utils"
+	"github.com/ava-labs/avalanchego/utils/set"
 	platform "github.com/ava-labs/avalanchego/vms/platformvm/genesis"
+	"golang.org/x/exp/maps"
 	"strconv"
 
 	"github.com/ava-labs/avalanchego/genesis"
@@ -11,10 +14,62 @@ import (
 	"github.com/ava-labs/avalanchego/utils/constants"
 )
 
-func generateAllocations(allocations []*workbook.Allocation, offerValueToID map[string]ids.ID) []*genesis.CaminoAllocation {
+func generateMSigDefinitions(networkID uint32, msigs []*workbook.MultiSig) (MultisigDefs, error) {
+	var (
+		GenesisTxId ids.ID = ids.Empty
+		msDefs             = map[ids.ShortID]platform.MultisigAlias{}
+		cgToMSig           = map[string]ids.ShortID{}
+	)
+
+	for _, ms := range msigs {
+		ma, err := platform.NewMultisigAlias(GenesisTxId, ms.Addrs, ms.Threshold)
+		if err != nil {
+			fmt.Println("Could not create multisig definition for ", ms.ControlGroup, err)
+		}
+		msDefs[ma.Alias] = ma
+		cgToMSig[ms.ControlGroup] = ma.Alias
+	}
+
+	aliases := set.NewSet[ids.ShortID](len(msDefs))
+	aliases.Add(maps.Keys(msDefs)...)
+
+	uniqAliases := aliases.List()
+	utils.Sort(uniqAliases)
+
+	defs := MultisigDefs{
+		ControlGroupToAlias: cgToMSig,
+		MultisigAliaseas:    make([]genesis.UnparsedMultisigAlias, 0, len(uniqAliases)),
+	}
+
+	strAliases := map[ids.ShortID]genesis.UnparsedMultisigAlias{}
+	for _, ali := range uniqAliases {
+		ma, _ := msDefs[ali]
+		uma := genesis.UnparsedMultisigAlias{}
+		err := uma.Unparse(ma, networkID)
+		if err != nil {
+			fmt.Println("Could not unparse multisig definition for ", ali.String(), err)
+		}
+		strAliases[ali] = uma
+		defs.MultisigAliaseas = append(defs.MultisigAliaseas, uma)
+	}
+
+	return defs, nil
+}
+
+func generateAllocations(
+	allocations []*workbook.Allocation,
+	offerValueToID map[string]ids.ID,
+	msigCtrlGrpToAlias map[string]ids.ShortID,
+) []*genesis.CaminoAllocation {
 	var parsedAlloc []*genesis.CaminoAllocation
 	skippedRows := 0
 	for _, al := range allocations {
+
+		msigAlias, ok := msigCtrlGrpToAlias[al.ControlGroup]
+		if ok {
+			al.Address = msigAlias
+			fmt.Println("replaced address with its control group alias for row", al.RowNo)
+		}
 
 		// early exits
 		if al.Address == ids.ShortEmpty {
@@ -93,42 +148,7 @@ func unparseAllocations(genAlloc []*genesis.CaminoAllocation) []genesis.Unparsed
 	return confAlloc
 }
 
-//type ExtMultisig struct {
-//	ControlGroup                  string `serialize:"true" json:"controlGroup"`
-//	genesis.UnparsedMultisigAlias `serialize:"true"`
-//}
-//
-//var GENESIS_TX_ID ids.ID = ids.Empty
-//
-//func newFrom(ms *workbook.MultiSig) (*ExtMultisig, error) {
-//	ma, err := pchain.NewMultisigAlias(GENESIS_TX_ID, ms.Addrs, ms.Threshold)
-//	uma := genesis.UnparsedMultisigAlias{}
-//	err = uma.Unparse(ma, constants.CaminoID)
-//	if err != nil {
-//		return nil, err
-//	}
-//	return &ExtMultisig{
-//		ControlGroup:          ms.ControlGroup,
-//		UnparsedMultisigAlias: uma,
-//	}, err
-//}
-//
-//func printMultiSig(ms []*workbook.MultiSig) error {
-//	mas := make([]*ExtMultisig, len(ms))
-//	for i, m := range ms {
-//		ma, err := newFrom(m)
-//		if err != nil {
-//			fmt.Println("could not create multisig", m.ControlGroup, err)
-//			continue
-//		}
-//		mas[i] = ma
-//	}
-//
-//	msDef, err := json.MarshalIndent(mas, "", "  ")
-//	if err != nil {
-//		return err
-//	}
-//
-//	fmt.Println(string(msDef))
-//	return nil
-//}
+type MultisigDefs struct {
+	ControlGroupToAlias map[string]ids.ShortID
+	MultisigAliaseas    []genesis.UnparsedMultisigAlias
+}
