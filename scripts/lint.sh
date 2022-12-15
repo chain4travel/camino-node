@@ -28,7 +28,7 @@ function test_golangci_lint {
     go install -v github.com/golangci/golangci-lint/cmd/golangci-lint@v1.47.0
   fi
   if [ ! -f dependencies/caminoethvm/.git ]; then
-    git submodule update --init --recursive
+    git submodule update --init --recursive --remote
   fi
   golangci-lint run --config .golangci.yml
 }
