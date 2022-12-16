@@ -27,6 +27,7 @@ type Allocation struct {
 	UnbondingPeriod     float64
 	Additional1Percent  string
 	RewardPercent       int
+	FirstName           string
 }
 
 func (a *Allocation) FromRow(row []string) error {
@@ -61,6 +62,7 @@ func (a *Allocation) FromRow(row []string) error {
 	var err error
 	a.Bucket = row[BUCKET]
 	a.Kyc = row[KYC]
+	a.FirstName = row[FIRST_NAME]
 	a.ConsortiumMember = row[CONSORTIUM_MEMBER]
 	a.ControlGroup = row[CONTROL_GROUP]
 	a.Additional1Percent = row[ADDITIONAL_1PERCENT]

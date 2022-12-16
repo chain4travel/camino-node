@@ -3,15 +3,16 @@ package main
 import (
 	"fmt"
 	"genesis_generator/workbook"
+	"strconv"
+
 	"github.com/ava-labs/avalanchego/utils"
 	"github.com/ava-labs/avalanchego/utils/set"
 	platform "github.com/ava-labs/avalanchego/vms/platformvm/genesis"
+	"github.com/ava-labs/avalanchego/vms/platformvm/txs"
 	"golang.org/x/exp/maps"
-	"strconv"
 
 	"github.com/ava-labs/avalanchego/genesis"
 	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/constants"
 )
 
 func generateMSigDefinitions(networkID uint32, msigs []*workbook.MultiSig) (MultisigDefs, error) {
@@ -60,9 +61,10 @@ func generateAllocations(
 	allocations []*workbook.Allocation,
 	offerValueToID map[string]ids.ID,
 	msigCtrlGrpToAlias map[string]ids.ShortID,
-) []*genesis.CaminoAllocation {
+) ([]*genesis.CaminoAllocation, ids.ShortID) {
 	var parsedAlloc []*genesis.CaminoAllocation
 	skippedRows := 0
+	adminAddr := ids.ShortEmpty
 	for _, al := range allocations {
 
 		msigAlias, ok := msigCtrlGrpToAlias[al.ControlGroup]
@@ -76,6 +78,10 @@ func generateAllocations(
 			fmt.Println("Skipping Row # ", al.RowNo, " Reason: Address Empty")
 			skippedRows++
 			continue
+		}
+
+		if al.FirstName == "ADMIN" {
+			adminAddr = al.Address
 		}
 
 		if al.Amount == 0 {
@@ -99,9 +105,22 @@ func generateAllocations(
 		if al.Additional1Percent == "y" {
 			onePercent = al.Amount / 100
 		}
+
+		isConsortiumMember := al.ConsortiumMember != ""
+		isKycVerified := al.Kyc == "y"
+
+		addressState := uint64(0)
+		if isConsortiumMember {
+			addressState |= (1 << txs.AddressStateConsortium)
+		}
+		if isKycVerified {
+			addressState |= (1 << txs.AddressStateKycVerified)
+		}
+
 		a := &genesis.CaminoAllocation{
-			XAmount:  directXAmount + onePercent,
-			AVAXAddr: al.Address,
+			XAmount:      directXAmount + onePercent,
+			AVAXAddr:     al.Address,
+			AddressState: addressState,
 		}
 
 		if offerValueMinDuration != 0 && offerValueUnlockPeriodDuration != 0 {
@@ -125,7 +144,7 @@ func generateAllocations(
 	}
 	fmt.Println("Skipped ", skippedRows, "allocation rows")
 
-	return parsedAlloc
+	return parsedAlloc, adminAddr
 }
 
 func valueIndex(offer platform.DepositOffer) string {
@@ -136,10 +155,10 @@ func valueIndex(offer platform.DepositOffer) string {
 	return index
 }
 
-func unparseAllocations(genAlloc []*genesis.CaminoAllocation) []genesis.UnparsedCaminoAllocation {
+func unparseAllocations(genAlloc []*genesis.CaminoAllocation, networkID uint32) []genesis.UnparsedCaminoAllocation {
 	var confAlloc []genesis.UnparsedCaminoAllocation
 	for i, ga := range genAlloc {
-		uga, err := ga.Unparse(constants.KopernikusID)
+		uga, err := ga.Unparse(networkID)
 		if err != nil {
 			fmt.Println("Could not unparse allocation for ", i, err)
 		}
