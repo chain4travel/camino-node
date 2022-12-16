@@ -778,6 +778,7 @@ func (n *Node) initVMs() error {
 				BanffTime:                       version.GetBanffTime(n.Config.NetworkID),
 				MinPercentConnectedStakeHealthy: n.Config.MinPercentConnectedStakeHealthy,
 				UseCurrentHeight:                n.Config.UseCurrentHeight,
+				CaminoConfig:                    n.Config.CaminoConfig,
 			},
 		}),
 		vmRegisterer.Register(context.TODO(), constants.AVMID, &avm.Factory{
