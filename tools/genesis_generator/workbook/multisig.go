@@ -2,6 +2,7 @@ package workbook
 
 import (
 	"fmt"
+
 	"github.com/ava-labs/avalanchego/ids"
 	"github.com/ava-labs/avalanchego/utils/formatting/address"
 )
@@ -36,7 +37,7 @@ func (msig *MultiSig) FromRow(threshold uint32, row_group [][]string) error {
 		}
 		_, _, addrBytes, err := address.Parse(row[P_CHAIN_ADDRESS])
 		if err != nil {
-			return fmt.Errorf("could not parse address %s for ctrl group %s", row[P_CHAIN_ADDRESS], msig.ControlGroup)
+			return fmt.Errorf("could not parse address %s for ctrl group %s - err: %s", row[P_CHAIN_ADDRESS], msig.ControlGroup, err)
 		}
 		addr, _ := ids.ToShortID(addrBytes)
 		msig.Addrs = append(msig.Addrs, addr)
