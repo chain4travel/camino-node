@@ -94,11 +94,11 @@ func main() {
 		return
 	}
 
-	outputFN := fmt.Sprintf("genesis_%s.json", constants.NetworkIDToHRP[networkID])
+	outputFileName := fmt.Sprintf("genesis_%s.json", constants.NetworkIDToHRP[networkID])
 
-	err = os.WriteFile(outputFN, bytes, 0644)
+	err = os.WriteFile(outputFileName, bytes, 0644)
 	if err != nil {
-		log.Panic("Could not write the output file: ", outputFN, err)
+		log.Panic("Could not write the output file: ", outputFileName, err)
 	}
 
 	fmt.Println("DONE")
