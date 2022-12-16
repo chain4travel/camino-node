@@ -14,10 +14,8 @@ var (
 	String string
 
 	// Following vars are set in the build script at compile time
-	GitCommit          = "unknown"
-	GitVersion         = "unknown"
-	CaminoGoGitCommit  = "unknown"
-	CaminoGoGitVersion = "unknown"
+	GitCommit  = "unknown"
+	GitVersion = "unknown"
 )
 
 func init() {
@@ -25,8 +23,8 @@ func init() {
 	args := []interface{}{
 		GitVersion,
 		GitCommit,
-		CaminoGoGitVersion,
-		CaminoGoGitCommit,
+		sdkVersion.GitVersion,
+		sdkVersion.GitCommit,
 		sdkVersion.Current,
 		sdkVersion.CurrentDatabase,
 	}
