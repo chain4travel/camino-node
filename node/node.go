@@ -83,6 +83,7 @@ import (
 	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
 
 	ipcsapi "github.com/ava-labs/avalanchego/api/ipcs"
+	nodeversion "github.com/chain4travel/camino-node/version"
 )
 
 var (
@@ -950,6 +951,8 @@ func (n *Node) initInfoAPI() error {
 	service, err := info.NewService(
 		info.Parameters{
 			Version:                       version.CurrentApp,
+			GitCommit:                     nodeversion.GitCommit,
+			GitVersion:                    nodeversion.GitVersion,
 			NodeID:                        n.ID,
 			NodePOP:                       signer.NewProofOfPossession(n.Config.StakingSigningKey),
 			NetworkID:                     n.Config.NetworkID,

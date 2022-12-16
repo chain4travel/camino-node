@@ -44,8 +44,8 @@ source "$CAMINO_NODE_PATH"/scripts/constants.sh
 
 LDFLAGS="-X github.com/chain4travel/camino-node/version.GitCommit=$git_commit"
 LDFLAGS="$LDFLAGS -X github.com/chain4travel/camino-node/version.GitVersion=$git_tag"
-LDFLAGS="$LDFLAGS -X github.com/chain4travel/camino-node/version.CaminoGoGitCommit=$caminogo_commit"
-LDFLAGS="$LDFLAGS -X github.com/chain4travel/camino-node/version.CaminoGoGitVersion=$caminogo_tag"
+LDFLAGS="$LDFLAGS -X github.com/ava-labs/avalanchego/version.GitCommit=$caminogo_commit"
+LDFLAGS="$LDFLAGS -X github.com/ava-labs/avalanchego/version.GitVersion=$caminogo_tag"
 LDFLAGS="$LDFLAGS -X github.com/ava-labs/coreth/plugin/evm.GitCommit=$caminoethvm_commit"
 LDFLAGS="$LDFLAGS -X github.com/ava-labs/coreth/plugin/evm.Version=$caminoethvm_tag"
 LDFLAGS="$LDFLAGS $static_ld_flags"
