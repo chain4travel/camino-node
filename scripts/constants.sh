@@ -8,12 +8,6 @@
 # Set the PATHS
 GOPATH="$(go env GOPATH)"
 
-# Set the CGO flags to use the portable version of BLST
-#
-# We use "export" here instead of just setting a bash variable because we need
-# to pass this flag to all child processes spawned by the shell.
-export CGO_CFLAGS="-O -D__BLST_PORTABLE__"
-
 # Where CaminoGo binary goes
 build_dir="$CAMINO_NODE_PATH/build"
 camino_node_path="$build_dir/camino-node"
