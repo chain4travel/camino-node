@@ -1,0 +1,549 @@
+{
+  "networkID": 1002,
+  "allocations": null,
+  "startTime": 1670956381,
+  "initialStakeDuration": 0,
+  "initialStakeDurationOffset": 3600,
+  "initialStakedFunds": null,
+  "initialStakers": null,
+  "camino": {
+    "verifyNodeSignature": true,
+    "lockModeBondDeposit": true,
+    "initialAdmin": "X-kopernikus14nkahpl55zl3h049skrgw8dk70nv5l5nqxgwhh",
+    "depositOffers": [
+      {
+        "interestRateNominator": 80000,
+        "start": 0,
+        "end": 1671042808,
+        "minAmount": 1,
+        "minDuration": 110376000,
+        "maxDuration": 110376000,
+        "unlockPeriodDuration": 31536000,
+        "noRewardsPeriodDuration": 15768000,
+        "flags": 0
+      },
+      {
+        "interestRateNominator": 0,
+        "start": 0,
+        "end": 1671042808,
+        "minAmount": 1,
+        "minDuration": 157680000,
+        "maxDuration": 157680000,
+        "unlockPeriodDuration": 63072000,
+        "noRewardsPeriodDuration": 31536000,
+        "flags": 0
+      },
+      {
+        "interestRateNominator": 90000,
+        "start": 0,
+        "end": 1671042808,
+        "minAmount": 1,
+        "minDuration": 141912000,
+        "maxDuration": 141912000,
+        "unlockPeriodDuration": 31536000,
+        "noRewardsPeriodDuration": 15768000,
+        "flags": 0
+      },
+      {
+        "interestRateNominator": 100000,
+        "start": 0,
+        "end": 1671042808,
+        "minAmount": 1,
+        "minDuration": 173448000,
+        "maxDuration": 173448000,
+        "unlockPeriodDuration": 31536000,
+        "noRewardsPeriodDuration": 15768000,
+        "flags": 0
+      },
+      {
+        "interestRateNominator": 90000,
+        "start": 0,
+        "end": 1671042808,
+        "minAmount": 1,
+        "minDuration": 31536000,
+        "maxDuration": 31536000,
+        "unlockPeriodDuration": 31536000,
+        "noRewardsPeriodDuration": 15768000,
+        "flags": 0
+      },
+      {
+        "interestRateNominator": 110000,
+        "start": 0,
+        "end": 1701385200,
+        "minAmount": 1,
+        "minDuration": 60,
+        "maxDuration": 31536000,
+        "unlockPeriodDuration": 0,
+        "noRewardsPeriodDuration": 0,
+        "flags": 0
+      },
+      {
+        "interestRateNominator": 210000,
+        "start": 0,
+        "end": 1701385200,
+        "minAmount": 1,
+        "minDuration": 86400,
+        "maxDuration": 31536000,
+        "unlockPeriodDuration": 43200,
+        "noRewardsPeriodDuration": 43200,
+        "flags": 0
+      }
+    ],
+    "allocations": [
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus14nkahpl55zl3h049skrgw8dk70nv5l5nqxgwhh",
+        "xAmount": 10000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": []
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1q670ss0jzj5ys2cjqdmpyjvejn0w2uqwlke6nd",
+        "xAmount": 1000000000000,
+        "addressStates": {
+          "consortiumMember": true,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 100000000000000,
+            "nodeID": "NodeID-6XD16eZ22fadTKq3qsxro9TPFZyxTiFv3",
+            "validatorDuration": 31104000,
+            "depositOfferID": "Xk19REezdF5c27wc7CEJWyVDbPPt6gqAGUzj9XzLoaDX7zBcm"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1qytfcm2amett26svvjvmjvqptg0evtl0gju29k",
+        "xAmount": 1000000000000,
+        "addressStates": {
+          "consortiumMember": true,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 100000000000000,
+            "nodeID": "NodeID-6rsqgkg4F1i3SBjzj4tS5ucQWH7JMEouj",
+            "validatorDuration": 62208000,
+            "depositOfferID": "aAE6ULfpMYgqNPEzR85zrmDHcRxwtXySm2qBwEdH1eDMj7voH"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8vd3eew3",
+        "xAmount": 100000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 10000000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1568qsn55nxsuwzhwreuk4a309uesc628y60rry",
+        "xAmount": 838046700000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": []
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1x5kxsvvr753da0vrgcgvvgm20qtpkxzvj0wz7j",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 100000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2VH2QdvbttCjnfy2NRZcZYnA8oUHr3KEUz66WSyHj4sW8iVGeX"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1jguqx4hzpyd9l60ketlnhs3x5p7564rdlywwhc",
+        "xAmount": 100000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 10000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "Xk19REezdF5c27wc7CEJWyVDbPPt6gqAGUzj9XzLoaDX7zBcm"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1xsydxj3lr093hy6cpwuxqq5s9htlsmag9lqwj5",
+        "xAmount": 100000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 10000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "aAE6ULfpMYgqNPEzR85zrmDHcRxwtXySm2qBwEdH1eDMj7voH"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1zt8xtay9acsvedths3cur6aj6q4jcdrnaprcyc",
+        "xAmount": 100000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 10000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "Vf84KcRZNiPwUSqz3UaVFLe3S5WtjEE6QSrEFDUaVSR4GVZAm"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1lanx4jtlah0nxcm9grc9d7lnpfw9lhwpsq0h5g",
+        "xAmount": 100000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 10000000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1vxmf8899y6x7dsam0xnr0hp6syzwz333dkvn2r",
+        "xAmount": 100000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 10000000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus19rezarpltcxy399xtqsxlrhpyp0usx253hklva",
+        "xAmount": 1000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 100000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1zawetvfggky6yvx5wdcn0tjsalw9ql9dgnluur",
+        "xAmount": 10000000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": []
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1cf4j4ejk2e87twr92c7g5zag9vzryu68vhasyr",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 100000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1rf43hs576l0jj72haq0h4yq06lmv2pk8ljjxjd",
+        "xAmount": 100000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 10000000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1q670ss0jzj5ys2cjqdmpyjvejn0w2uqwlke6nd",
+        "xAmount": 1000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 100000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "Xk19REezdF5c27wc7CEJWyVDbPPt6gqAGUzj9XzLoaDX7zBcm"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1kle7nccwsdqcu44zmgphn49mrwseju8ag7zc5d",
+        "xAmount": 1000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 100000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus18kuuh3zhckna8u3xxqqjeh4e45930xufd2mmps",
+        "xAmount": 1000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 100000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1pnr2a58pkmlkznxfqxaqn4xs3cjflcljpzj7xq",
+        "xAmount": 1000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 100000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1ftrh6sly2fh4k8rz4wwp60jj4dfdtg2xv3unrj",
+        "xAmount": 1000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 100000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1xt7k9t6jnndntvjhrly6wvdwru0fp7fyqndyv4",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 10000000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1a9nvy2lw42n6u8u23gqz945wmw9ma90ty9r5rj",
+        "xAmount": 1000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 100000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1zurrkypnersx9v5fdnlk6m8xz46ackgw96mgry",
+        "xAmount": 1000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 100000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1yurtgh9tdjfjlkdxhr7w8f4035g4eqaz23xp8j",
+        "xAmount": 1000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 100000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1uuudvyuqef9wacp8shquts36tj0z2hskdj2ydl",
+        "xAmount": 1000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 100000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1lff8ns8ra2drccej8s6gx5sqadjupj9c5vgrvd",
+        "xAmount": 1000000000000,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 100000000000000,
+            "nodeID": "",
+            "validatorDuration": 0,
+            "depositOfferID": "2oy5MagL5qJyjHeaZTLtQs9Tvtq752TCuoHkEyfjmkWtKguRgJ"
+          }
+        ]
+      }
+    ],
+    "initialMultisigAddresses": [
+      {
+        "alias": "X-kopernikus1qytfcm2amett26svvjvmjvqptg0evtl0gju29k",
+        "addresses": [
+          "X-kopernikus1vxmf8899y6x7dsam0xnr0hp6syzwz333dkvn2r",
+          "X-kopernikus1w3szy4e5excad4j8xp2ua0ukqcfq2uh4qn4sgc",
+          "X-kopernikus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sfr6yjs",
+          "X-kopernikus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8vd3eew3"
+        ],
+        "threshold": 2
+      },
+      {
+        "alias": "X-kopernikus1q670ss0jzj5ys2cjqdmpyjvejn0w2uqwlke6nd",
+        "addresses": [
+          "X-kopernikus1vxmf8899y6x7dsam0xnr0hp6syzwz333dkvn2r",
+          "X-kopernikus1w3szy4e5excad4j8xp2ua0ukqcfq2uh4qn4sgc",
+          "X-kopernikus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sfr6yjs",
+          "X-kopernikus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8vd3eew3"
+        ],
+        "threshold": 3
+      },
+      {
+        "alias": "X-kopernikus1568qsn55nxsuwzhwreuk4a309uesc628y60rry",
+        "addresses": [
+          "X-kopernikus1vxmf8899y6x7dsam0xnr0hp6syzwz333dkvn2r",
+          "X-kopernikus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sfr6yjs",
+          "X-kopernikus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8vd3eew3"
+        ],
+        "threshold": 2
+      }
+    ]
+  },
+  "cChainGenesis": "{\"config\":{\"chainId\":502},\"initialAdmin\":\"0x9d6203fed4f1e2b6b71950515403c2b79b436186\", \"nonce\":\"0x0\",\"timestamp\":\"0x0\",\"extraData\":\"0x00\",\"gasLimit\":\"0x5f5e100\",\"difficulty\":\"0x0\",\"mixHash\":\"0x0000000000000000000000000000000000000000000000000000000000000000\",\"coinbase\":\"0x0000000000000000000000000000000000000000\",\"alloc\":{\"0100000000000000000000000000000000000000\":{\"code\":\"0x7300000000000000000000000000000000000000003014608060405260043610603d5760003560e01c80631e010439146042578063b6510bb314606e575b600080fd5b605c60048036036020811015605657600080fd5b503560b1565b60408051918252519081900360200190f35b818015607957600080fd5b5060af60048036036080811015608e57600080fd5b506001600160a01b03813516906020810135906040810135906060013560b6565b005b30cd90565b836001600160a01b031681836108fc8690811502906040516000604051808303818888878c8acf9550505050505015801560f4573d6000803e3d6000fd5b505050505056fea26469706673582212201eebce970fe3f5cb96bf8ac6ba5f5c133fc2908ae3dcd51082cfee8f583429d064736f6c634300060a0033\",\"balance\":\"0x0\"}},\"number\":\"0x0\",\"gasUsed\":\"0x0\",\"parentHash\":\"0x0000000000000000000000000000000000000000000000000000000000000000\"}",
+  "message": "Have a nice trip!"
+}
