@@ -26,6 +26,9 @@ RUN ./scripts/build_tools.sh
 # ============= Cleanup Stage ================
 FROM debian:11-slim AS execution
 
+# installing wget to get static ip with wget -O - -q icanhazip.com
+RUN apt-get update && apt-get install -y wget
+
 # Maintain compatibility with previous images
 RUN mkdir -p /camino-node/build
 WORKDIR /camino-node/build
