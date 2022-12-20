@@ -5,7 +5,7 @@ This tool is used to generate genesis JSON file for the network.
 **USAGE:**
 
 ```bash
-genesie_generator \
+genesis_generator \
   PATH_TO_XLSX_FILE \
   PATH_TO_JSON_TEMPLATE \
   NETWORK_NAME \
