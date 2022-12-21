@@ -9,7 +9,7 @@ import (
 	"github.com/ava-labs/avalanchego/utils"
 	"github.com/ava-labs/avalanchego/utils/set"
 	platform "github.com/ava-labs/avalanchego/vms/platformvm/genesis"
-	"github.com/chain4travel/camino-node/tools/genesis_generator/workbook"
+	"github.com/chain4travel/camino-node/tools/genesis/workbook"
 	"golang.org/x/exp/maps"
 )
 
@@ -87,7 +87,7 @@ func generateAllocations(
 		}
 
 		// Computation of the offer value as a key to the map of DepositOffers
-		YearToSeconds := float64(365 * 24 * 60 * 60)
+		YearToSeconds := float64(31_556_926)
 		offerValueMinDuration := uint64((al.UnbondingStart + al.UnbondingPeriod) * YearToSeconds)
 		offerValueUnlockPeriodDuration := uint64(al.UnbondingPeriod * YearToSeconds)
 		offerValueIndex := strconv.FormatUint(offerValueMinDuration, 10) + "_" + strconv.FormatUint(offerValueUnlockPeriodDuration, 10) + "_" + strconv.FormatInt(int64(al.RewardPercent), 10)

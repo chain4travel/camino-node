@@ -12,7 +12,7 @@ import (
 	"github.com/ava-labs/avalanchego/ids"
 	"github.com/ava-labs/avalanchego/utils/constants"
 	"github.com/ava-labs/avalanchego/utils/formatting/address"
-	"github.com/chain4travel/camino-node/tools/genesis_generator/workbook"
+	"github.com/chain4travel/camino-node/tools/genesis/workbook"
 	"github.com/xuri/excelize/v2"
 )
 
@@ -30,7 +30,6 @@ func main() {
 	if len(os.Args) == 5 {
 		outputPath = os.Args[4]
 	} else {
-		// /Users/pnowosie/Proj/camino/camino-node/tools/genesis_generator
 		outputPath, _ = os.Getwd()
 		for outputPath != "/" && path.Base(outputPath) != "camino-node" {
 			outputPath = path.Dir(outputPath)
@@ -59,16 +58,14 @@ func main() {
 	genesisConfig.NetworkID = networkID
 
 	// Set ID on DepositOffers
-	startTime := genesisConfig.StartTime
 	offerValuesToID := make(map[string]ids.ID)
-	for i := range genesisConfig.Camino.DepositOffers {
-		// we need to set the DepositOffer.End offset to absolute timestamp: genesis start time + offset
-		offer := &genesisConfig.Camino.DepositOffers[i]
-		offer.End += startTime
-
-		parsedOffer := offer.Parse()
+	for i, offer := range genesisConfig.Camino.DepositOffers {
+		parsedOffer, err := offer.Parse(genesisConfig.StartTime)
+		if err != nil {
+			log.Panic("Error parsing offer at", i, err)
+		}
 		id, _ := parsedOffer.ID()
-		index := valueIndex(*offer)
+		index := valueIndex(offer)
 
 		offerValuesToID[index] = id
 		fmt.Println("DepositOffer index ", index, " ID:", id)

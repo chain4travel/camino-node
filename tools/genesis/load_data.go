@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/chain4travel/camino-node/tools/genesis_generator/workbook"
+	"github.com/chain4travel/camino-node/tools/genesis/workbook"
 	"github.com/xuri/excelize/v2"
 )
 
