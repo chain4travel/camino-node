@@ -9,7 +9,7 @@ import (
 	"github.com/ava-labs/avalanchego/utils"
 	"github.com/ava-labs/avalanchego/utils/set"
 	platform "github.com/ava-labs/avalanchego/vms/platformvm/genesis"
-	"github.com/chain4travel/camino-node/tools/genesis_generator/workbook"
+	"github.com/chain4travel/camino-node/tools/genesis/workbook"
 	"golang.org/x/exp/maps"
 )
 

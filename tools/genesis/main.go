@@ -12,7 +12,7 @@ import (
 	"github.com/ava-labs/avalanchego/ids"
 	"github.com/ava-labs/avalanchego/utils/constants"
 	"github.com/ava-labs/avalanchego/utils/formatting/address"
-	"github.com/chain4travel/camino-node/tools/genesis_generator/workbook"
+	"github.com/chain4travel/camino-node/tools/genesis/workbook"
 	"github.com/xuri/excelize/v2"
 )
 
@@ -30,7 +30,6 @@ func main() {
 	if len(os.Args) == 5 {
 		outputPath = os.Args[4]
 	} else {
-		// /Users/pnowosie/Proj/camino/camino-node/tools/genesis_generator
 		outputPath, _ = os.Getwd()
 		for outputPath != "/" && path.Base(outputPath) != "camino-node" {
 			outputPath = path.Dir(outputPath)
