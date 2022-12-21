@@ -13,7 +13,7 @@
     "depositOffers": [
       {
         "interestRateNominator": 80000,
-        "start": 0,
+        "start": 1670956381,
         "end": 1781332381,
         "minAmount": 1,
         "minDuration": 110376000,
@@ -26,7 +26,7 @@
       },
       {
         "interestRateNominator": 0,
-        "start": 0,
+        "start": 1670956381,
         "end": 1828636381,
         "minAmount": 1,
         "minDuration": 157680000,
@@ -39,7 +39,7 @@
       },
       {
         "interestRateNominator": 90000,
-        "start": 0,
+        "start": 1670956381,
         "end": 1812868381,
         "minAmount": 1,
         "minDuration": 141912000,
@@ -52,7 +52,7 @@
       },
       {
         "interestRateNominator": 100000,
-        "start": 0,
+        "start": 1670956381,
         "end": 1844404381,
         "minAmount": 1,
         "minDuration": 173448000,
@@ -65,7 +65,7 @@
       },
       {
         "interestRateNominator": 90000,
-        "start": 0,
+        "start": 1670956381,
         "end": 1702492381,
         "minAmount": 1,
         "minDuration": 31536000,
@@ -78,7 +78,7 @@
       },
       {
         "interestRateNominator": 110000,
-        "start": 0,
+        "start": 1670956381,
         "end": 1734028381,
         "minAmount": 1,
         "minDuration": 60,
@@ -91,7 +91,7 @@
       },
       {
         "interestRateNominator": 210000,
-        "start": 0,
+        "start": 1670956381,
         "end": 1734028381,
         "minAmount": 1,
         "minDuration": 86400,
@@ -127,7 +127,7 @@
             "amount": 100000000000000,
             "nodeID": "NodeID-6XD16eZ22fadTKq3qsxro9TPFZyxTiFv3",
             "validatorDuration": 31104000,
-            "depositOfferID": "2sTVaHLvjtgiXCpTmS47Rrn6Cepx8irAJxBbER1mvDtHLDtCyF"
+            "depositOfferID": "FQCMiS71pT8UFTePghH2RsLYAHiAAcUTWgxLE6GpYjVZVPikg"
           }
         ]
       },
@@ -144,7 +144,7 @@
             "amount": 100000000000000,
             "nodeID": "NodeID-6rsqgkg4F1i3SBjzj4tS5ucQWH7JMEouj",
             "validatorDuration": 62208000,
-            "depositOfferID": "2XVXpdtQAfWVEKMjYjEGpQnoNmwtYHR8uCw4DEN1RQerKvkk3r"
+            "depositOfferID": "2tPTm4ZhkFxEuA14nWpB8Yz7B3Z3sGs1y6PvdfuCBzJzfQ19ye"
           }
         ]
       },
@@ -161,7 +161,7 @@
             "amount": 10000000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
+            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
           }
         ]
       },
@@ -188,7 +188,7 @@
             "amount": 100000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2vCUA4MFJskd7jhQ9GYCdouyLJNKSWFHuTKZvtrQQ511izAx4F"
+            "depositOfferID": "22KdnQXFMjo9iPqZifA9Vo87pU6hrCPfS9m94xfaatTAPnzNun"
           }
         ]
       },
@@ -205,7 +205,7 @@
             "amount": 10000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2sTVaHLvjtgiXCpTmS47Rrn6Cepx8irAJxBbER1mvDtHLDtCyF"
+            "depositOfferID": "FQCMiS71pT8UFTePghH2RsLYAHiAAcUTWgxLE6GpYjVZVPikg"
           }
         ]
       },
@@ -222,7 +222,7 @@
             "amount": 10000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2XVXpdtQAfWVEKMjYjEGpQnoNmwtYHR8uCw4DEN1RQerKvkk3r"
+            "depositOfferID": "2tPTm4ZhkFxEuA14nWpB8Yz7B3Z3sGs1y6PvdfuCBzJzfQ19ye"
           }
         ]
       },
@@ -239,58 +239,7 @@
             "amount": 10000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2n2AX8iGSKZA7ZWrKtQ6rvXLoaFtZWGdrBvuiX8q6aqRd9qWHe"
-          }
-        ]
-      },
-      {
-        "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus1lanx4jtlah0nxcm9grc9d7lnpfw9lhwpsq0h5g",
-        "xAmount": 100000000000000,
-        "addressStates": {
-          "consortiumMember": false,
-          "kycVerified": true
-        },
-        "platformAllocations": [
-          {
-            "amount": 10000000000000000,
-            "nodeID": "",
-            "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
-          }
-        ]
-      },
-      {
-        "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus1vxmf8899y6x7dsam0xnr0hp6syzwz333dkvn2r",
-        "xAmount": 100000000000000,
-        "addressStates": {
-          "consortiumMember": false,
-          "kycVerified": true
-        },
-        "platformAllocations": [
-          {
-            "amount": 10000000000000000,
-            "nodeID": "",
-            "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
-          }
-        ]
-      },
-      {
-        "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus19rezarpltcxy399xtqsxlrhpyp0usx253hklva",
-        "xAmount": 1000000000000,
-        "addressStates": {
-          "consortiumMember": false,
-          "kycVerified": true
-        },
-        "platformAllocations": [
-          {
-            "amount": 100000000000000,
-            "nodeID": "",
-            "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
+            "depositOfferID": "2RoH3vXRsXuHEda8ADSUxYErse33i7hXBQxTA9YApyt9Mw6Rbd"
           }
         ]
       },
@@ -317,7 +266,7 @@
             "amount": 100000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
+            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
           }
         ]
       },
@@ -334,7 +283,7 @@
             "amount": 10000000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
+            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
           }
         ]
       },
@@ -351,7 +300,7 @@
             "amount": 100000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2sTVaHLvjtgiXCpTmS47Rrn6Cepx8irAJxBbER1mvDtHLDtCyF"
+            "depositOfferID": "FQCMiS71pT8UFTePghH2RsLYAHiAAcUTWgxLE6GpYjVZVPikg"
           }
         ]
       },
@@ -368,7 +317,7 @@
             "amount": 100000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
+            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
           }
         ]
       },
@@ -385,7 +334,7 @@
             "amount": 100000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
+            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
           }
         ]
       },
@@ -402,7 +351,7 @@
             "amount": 100000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
+            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
           }
         ]
       },
@@ -419,7 +368,7 @@
             "amount": 100000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
+            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
           }
         ]
       },
@@ -436,7 +385,7 @@
             "amount": 10000000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
+            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
           }
         ]
       },
@@ -453,7 +402,7 @@
             "amount": 100000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
+            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
           }
         ]
       },
@@ -470,7 +419,7 @@
             "amount": 100000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
+            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
           }
         ]
       },
@@ -487,7 +436,7 @@
             "amount": 100000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
+            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
           }
         ]
       },
@@ -504,7 +453,7 @@
             "amount": 100000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
+            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
           }
         ]
       },
@@ -521,7 +470,7 @@
             "amount": 100000000000000,
             "nodeID": "",
             "validatorDuration": 0,
-            "depositOfferID": "2K55cyriLiWhR2izHvtAVMJra1QZm53fSuYhRE6zntmAjKPy41"
+            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
           }
         ]
       }
