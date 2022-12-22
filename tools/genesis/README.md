@@ -9,11 +9,11 @@ genesis_generator \
   PATH_TO_XLSX_FILE \
   PATH_TO_JSON_TEMPLATE \
   NETWORK_NAME \
-  OPTIONAL_OUTPUT_PATH
+  OUTPUT_PATH
 ```
 where 
 - `NETWORK_NAME` has to be one of: `kopernikus`, `columbus` or `camino`.
-- `OUTPUT_PATH` should be a path to the directory where the genesis file will be saved. If ommited, `../genesis/generated` will be used. 
+- `OUTPUT_PATH` should be a path to the directory where the genesis file will be saved.
 
 Tool produces a file `genesis_<NETWORK_NAME>.json` in the `OUTPUT_PATH` directory.
 <br/>**:warning: Tool was not tested with Windows paths.**

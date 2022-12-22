@@ -6,7 +6,6 @@ import (
 	"io"
 	"log"
 	"os"
-	"path"
 
 	"github.com/ava-labs/avalanchego/genesis"
 	"github.com/ava-labs/avalanchego/ids"
@@ -17,26 +16,15 @@ import (
 )
 
 func main() {
-	if len(os.Args) < 3 {
-		usage := fmt.Sprintf("Usage: %s <workbook> <genesis_json> <network>", os.Args[0])
+	if len(os.Args) < 5 {
+		usage := fmt.Sprintf("Usage: %s <workbook> <genesis_json> <network> <output_dir>", os.Args[0])
 		log.Panic(usage)
 	}
 
 	spreadsheetFile := os.Args[1]
 	genesisFile := os.Args[2]
 	networkName := os.Args[3]
-
-	outputPath := ""
-	if len(os.Args) == 5 {
-		outputPath = os.Args[4]
-	} else {
-		outputPath, _ = os.Getwd()
-		for outputPath != "/" && path.Base(outputPath) != "camino-node" {
-			outputPath = path.Dir(outputPath)
-		}
-
-		outputPath = path.Join(outputPath, "tools/genesis/generated")
-	}
+	outputPath := os.Args[4]
 
 	networkID := uint32(0)
 	switch networkName {

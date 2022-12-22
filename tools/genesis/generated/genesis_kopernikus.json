@@ -116,7 +116,7 @@
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus1q670ss0jzj5ys2cjqdmpyjvejn0w2uqwlke6nd",
+        "avaxAddr": "X-kopernikus1qytfcm2amett26svvjvmjvqptg0evtl0gju29k",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -133,7 +133,7 @@
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus1qytfcm2amett26svvjvmjvqptg0evtl0gju29k",
+        "avaxAddr": "X-kopernikus13hq70rrgaycz66qsn3ek6m4q3j8ve2syktxmd9",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -165,7 +165,7 @@
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus1568qsn55nxsuwzhwreuk4a309uesc628y60rry",
+        "avaxAddr": "X-kopernikus1nyuw6rys0qm0hhc6yrp3sy4gd5e6g6lsr3gpdn",
         "xAmount": 838046700000000000,
         "addressStates": {
           "consortiumMember": false,
@@ -310,7 +310,7 @@
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus1q670ss0jzj5ys2cjqdmpyjvejn0w2uqwlke6nd",
+        "avaxAddr": "X-kopernikus1c5548fwqekln6vc7vak8t54e9e5q0v5hu4tyff",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": false,
@@ -486,7 +486,26 @@
         "threshold": 2
       },
       {
-        "alias": "X-kopernikus1q670ss0jzj5ys2cjqdmpyjvejn0w2uqwlke6nd",
+        "alias": "X-kopernikus13hq70rrgaycz66qsn3ek6m4q3j8ve2syktxmd9",
+        "addresses": [
+          "X-kopernikus1vxmf8899y6x7dsam0xnr0hp6syzwz333dkvn2r",
+          "X-kopernikus1w3szy4e5excad4j8xp2ua0ukqcfq2uh4qn4sgc",
+          "X-kopernikus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sfr6yjs",
+          "X-kopernikus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8vd3eew3"
+        ],
+        "threshold": 2
+      },
+      {
+        "alias": "X-kopernikus1nyuw6rys0qm0hhc6yrp3sy4gd5e6g6lsr3gpdn",
+        "addresses": [
+          "X-kopernikus1vxmf8899y6x7dsam0xnr0hp6syzwz333dkvn2r",
+          "X-kopernikus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sfr6yjs",
+          "X-kopernikus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8vd3eew3"
+        ],
+        "threshold": 2
+      },
+      {
+        "alias": "X-kopernikus1c5548fwqekln6vc7vak8t54e9e5q0v5hu4tyff",
         "addresses": [
           "X-kopernikus1vxmf8899y6x7dsam0xnr0hp6syzwz333dkvn2r",
           "X-kopernikus1w3szy4e5excad4j8xp2ua0ukqcfq2uh4qn4sgc",
@@ -494,15 +513,6 @@
           "X-kopernikus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8vd3eew3"
         ],
         "threshold": 3
-      },
-      {
-        "alias": "X-kopernikus1568qsn55nxsuwzhwreuk4a309uesc628y60rry",
-        "addresses": [
-          "X-kopernikus1vxmf8899y6x7dsam0xnr0hp6syzwz333dkvn2r",
-          "X-kopernikus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sfr6yjs",
-          "X-kopernikus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8vd3eew3"
-        ],
-        "threshold": 2
       }
     ]
   },
