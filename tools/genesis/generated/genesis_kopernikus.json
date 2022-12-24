@@ -1,7 +1,7 @@
 {
   "networkID": 1002,
   "allocations": null,
-  "startTime": 1670956381,
+  "startTime": 1671058800,
   "initialStakeDuration": 0,
   "initialStakeDurationOffset": 3600,
   "initialStakedFunds": null,
@@ -127,7 +127,8 @@
             "amount": 100000000000000,
             "nodeID": "NodeID-6XD16eZ22fadTKq3qsxro9TPFZyxTiFv3",
             "validatorDuration": 31104000,
-            "depositOfferID": "DDTaFCwYbhEiJ35ZSA25qFGbfrRnqoi4a9czFJ5WCbNYxf8NY"
+            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "memo": "2"
           }
         ]
       },
@@ -144,7 +145,8 @@
             "amount": 100000000000000,
             "nodeID": "NodeID-6rsqgkg4F1i3SBjzj4tS5ucQWH7JMEouj",
             "validatorDuration": 62208000,
-            "depositOfferID": "2qQCBBxw2wMZXNdqQKtDojeVpNN5z9WpRVuHsR4UBZr5wrXy9n"
+            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "memo": "3"
           }
         ]
       },
@@ -159,7 +161,8 @@
         "platformAllocations": [
           {
             "amount": 10000000000000000,
-            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
+            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "memo": "4"
           }
         ]
       },
@@ -184,7 +187,8 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "Mc2xe3kHRdAnCbMYhK1p4GhnpJSYbyR47d6upA8Xg98DMpByf"
+            "depositOfferID": "o8JnmzXWxufz2LFRn22kXHzJ6kq5pK8q8j7USwALajJmaQekV",
+            "memo": "6"
           }
         ]
       },
@@ -199,7 +203,8 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "DDTaFCwYbhEiJ35ZSA25qFGbfrRnqoi4a9czFJ5WCbNYxf8NY"
+            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "memo": "7"
           }
         ]
       },
@@ -214,7 +219,8 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "2qQCBBxw2wMZXNdqQKtDojeVpNN5z9WpRVuHsR4UBZr5wrXy9n"
+            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "memo": "8"
           }
         ]
       },
@@ -229,7 +235,8 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "2mdhxmmNUgxmc8W17LpyegMVqHLofYGgDFVMEYuua9R4V4aSuj"
+            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "memo": "9"
           }
         ]
       },
@@ -264,7 +271,8 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
+            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "memo": "12"
           }
         ]
       },
@@ -289,7 +297,8 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
+            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "memo": "14"
           }
         ]
       },
@@ -304,7 +313,8 @@
         "platformAllocations": [
           {
             "amount": 10000000000000000,
-            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
+            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "memo": "15"
           }
         ]
       },
@@ -319,7 +329,8 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "DDTaFCwYbhEiJ35ZSA25qFGbfrRnqoi4a9czFJ5WCbNYxf8NY"
+            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "memo": "16"
           }
         ]
       },
@@ -334,7 +345,8 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
+            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "memo": "17"
           }
         ]
       },
@@ -349,7 +361,8 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
+            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "memo": "18"
           }
         ]
       },
@@ -364,7 +377,8 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
+            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "memo": "19"
           }
         ]
       },
@@ -379,7 +393,8 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
+            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "memo": "20"
           }
         ]
       },
@@ -394,7 +409,8 @@
         "platformAllocations": [
           {
             "amount": 10000000000000000,
-            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
+            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "memo": "21"
           }
         ]
       },
@@ -409,7 +425,8 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
+            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "memo": "22"
           }
         ]
       },
@@ -424,7 +441,8 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
+            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "memo": "23"
           }
         ]
       },
@@ -439,7 +457,8 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
+            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "memo": "24"
           }
         ]
       },
@@ -454,7 +473,8 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
+            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "memo": "25"
           }
         ]
       },
@@ -469,7 +489,8 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "hV5265pC16vAxfaBgqWJY2dFrHy6URJJL9VEVN9GqAYsTMAyd"
+            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "memo": "26"
           }
         ]
       }
