@@ -125,6 +125,7 @@ func generateAllocations(
 				DepositOfferID:    depositOfferID,
 				NodeID:            al.NodeID,
 				ValidatorDuration: uint64(al.ValidatorPeriodDays * 24 * 60 * 60),
+				Memo:              strconv.Itoa(al.RowNo),
 			}
 			a.PlatformAllocations = append(a.PlatformAllocations, pa)
 		}
