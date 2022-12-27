@@ -966,6 +966,7 @@ func (n *Node) initInfoAPI() error {
 			AddSubnetValidatorFee:         n.Config.AddSubnetValidatorFee,
 			AddSubnetDelegatorFee:         n.Config.AddSubnetDelegatorFee,
 			VMManager:                     n.Config.VMManager,
+			GenesisBytes:                  n.Config.GenesisBytes,
 		},
 		n.Log,
 		n.chainManager,
