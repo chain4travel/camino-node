@@ -2,13 +2,13 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"strconv"
-
-	"github.com/ava-labs/avalanchego/utils/constants"
-	"github.com/ava-labs/avalanchego/utils/formatting/address"
 
 	"github.com/ava-labs/avalanchego/genesis"
 	"github.com/ava-labs/avalanchego/ids"
+	"github.com/ava-labs/avalanchego/utils/constants"
+	"github.com/ava-labs/avalanchego/utils/formatting/address"
 	platform "github.com/ava-labs/avalanchego/vms/platformvm/genesis"
 	"github.com/chain4travel/camino-node/tools/genesis/workbook"
 )
@@ -19,20 +19,24 @@ func generateMSigDefinitions(networkID uint32, msigs []*workbook.MultiSig) (Mult
 		cgToMSig = map[string]ids.ShortID{}
 	)
 
+	txID := ids.Empty
 	for idx, ms := range msigs {
-		rowTxID := ids.FromInt(uint64(idx))
-		ma, err := platform.NewMultisigAlias(rowTxID, ms.Addrs, ms.Threshold)
+		// Note: only control_group makes an alias, I'm ignoring unlikely possible hashing collisions
+		memo := ms.ControlGroup
+		ma, err := platform.NewMultisigAlias(txID, ms.Addrs, ms.Threshold, memo)
 		if err != nil {
 			fmt.Println("Could not create multisig definition for ", ms.ControlGroup, err)
 		}
 
-		// control_group & threshold makes an alias, I'm ignoring unlikely possible hashing collisions
-		cgAlias := ms.ControlGroup + "_" + strconv.FormatUint(uint64(ms.Threshold), 10)
+		if err = memoSanityCheck(&ma, idx); err != nil {
+			log.Panic(err)
+		}
+
 		msDefs = append(msDefs, ma)
-		cgToMSig[cgAlias] = ma.Alias
+		cgToMSig[memo] = ma.Alias
 
 		addr, _ := address.Format("X", constants.NetworkIDToHRP[networkID], ma.Alias.Bytes())
-		fmt.Println("MSig alias generated", idx, addr, "control group & threshold", cgAlias, "rowTxID", rowTxID.Hex())
+		fmt.Println("MSig alias generated ", memo, "  Addr:", addr)
 	}
 
 	defs := MultisigDefs{
@@ -63,11 +67,10 @@ func generateAllocations(
 	skippedRows := 0
 	adminAddr := ids.ShortEmpty
 	for _, al := range allocations {
-		cgAlias := al.ControlGroup + "_" + strconv.FormatUint(uint64(al.MsigThreshold), 10)
-		msigAlias, ok := msigCtrlGrpToAlias[cgAlias]
+		msigAlias, ok := msigCtrlGrpToAlias[al.ControlGroup]
 		if ok {
 			al.Address = msigAlias
-			fmt.Println("replaced address with its control group alias for row", al.RowNo)
+			fmt.Println("replaced row ", al.RowNo, "address with its control group alias  ", al.ControlGroup)
 		}
 
 		// early exits
@@ -123,8 +126,10 @@ func generateAllocations(
 			pa := genesis.PlatformAllocation{
 				Amount:            al.Amount,
 				DepositOfferID:    depositOfferID,
+				DepositDuration:   offerValueMinDuration,
 				NodeID:            al.NodeID,
 				ValidatorDuration: uint64(al.ValidatorPeriodDays * 24 * 60 * 60),
+				TimestampOffset:   al.TokenDeliveryOffset,
 				Memo:              strconv.Itoa(al.RowNo),
 			}
 			a.PlatformAllocations = append(a.PlatformAllocations, pa)
@@ -155,6 +160,22 @@ func unparseAllocations(genAlloc []*genesis.CaminoAllocation, networkID uint32) 
 		confAlloc = append(confAlloc, uga)
 	}
 	return confAlloc
+}
+
+func memoSanityCheck(ma *platform.MultisigAlias, index int) error {
+	// Sanity check: Unparse & Parse & Verify
+	uma := genesis.UnparsedMultisigAlias{}
+	err := uma.Unparse(*ma, 1)
+	if err != nil {
+		return err
+	}
+	mm, err := uma.Parse()
+	if err != nil {
+		return err
+	}
+
+	// reverse computation check
+	return mm.Verify(ids.Empty)
 }
 
 type MultisigDefs struct {

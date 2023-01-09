@@ -1,16 +1,21 @@
 package workbook
 
 import (
+	"encoding/hex"
 	"fmt"
 	"strconv"
 	"strings"
 
 	"github.com/ava-labs/avalanchego/ids"
+	"github.com/ava-labs/avalanchego/utils/crypto"
 	"github.com/ava-labs/avalanchego/utils/formatting/address"
 	"github.com/ava-labs/avalanchego/utils/units"
 )
 
-const Allocations = "Camino Allocation"
+const (
+	Allocations              = "Camino Allocation"
+	TwoWeeksInSeconds uint64 = 2 * 7 * 24 * 60 * 60
+)
 
 type Allocation struct {
 	RowNo               int
@@ -28,6 +33,7 @@ type Allocation struct {
 	Additional1Percent  string
 	RewardPercent       int
 	FirstName           string
+	TokenDeliveryOffset uint64
 }
 
 type AllocationRow int
@@ -50,6 +56,7 @@ func (a *Allocation) FromRow(row []string) error {
 		CamPurchasePrice
 		CamAmount
 		PChainAddress
+		PublicKey
 		ConsortiumMember
 		ControlGroup
 		MultisigThreshold
@@ -59,6 +66,8 @@ func (a *Allocation) FromRow(row []string) error {
 		UnbondingPeriodYears
 		Additional1Percent
 		RewardPercent
+		OfferID
+		Pioneer
 	)
 
 	var err error
@@ -104,12 +113,33 @@ func (a *Allocation) FromRow(row []string) error {
 		}
 	}
 
-	if len(row[PChainAddress]) >= 47 {
+	keyRead := false
+	if row[PublicKey] != "" {
+		row[PublicKey] = strings.TrimPrefix(row[PublicKey], "0x")
+		pkBytes, err := hex.DecodeString(row[PublicKey])
+		if err != nil {
+			return fmt.Errorf("could not parse public key bytes %s", row[PublicKey])
+		}
+
+		fx := crypto.FactorySECP256K1R{}
+		pk, err := fx.ToPublicKey(pkBytes)
+		if err != nil {
+			return fmt.Errorf("could not parse public key %s, %w", row[PublicKey], err)
+		}
+
+		a.Address, keyRead = pk.Address(), true
+	}
+	if !keyRead && len(row[PChainAddress]) >= 47 {
 		_, _, addrBytes, err := address.Parse(row[PChainAddress])
 		if err != nil {
 			return fmt.Errorf("could not parse address %s", row[PChainAddress])
 		}
 		a.Address, _ = ids.ToShortID(addrBytes)
+	}
+
+	a.TokenDeliveryOffset = 0
+	if row[Pioneer] == "FALSE" {
+		a.TokenDeliveryOffset = TwoWeeksInSeconds
 	}
 
 	a.UnbondingStart, err = strconv.ParseFloat(row[UnbondingStartYears], 64)

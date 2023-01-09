@@ -12,9 +12,10 @@
     "initialAdmin": "X-columbus1qd92krjvxgkxnuku4mwj2gevzpslzcayeuv0d9",
     "depositOffers": [
       {
+        "offerID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
         "interestRateNominator": 80000,
         "startOffset": 0,
-        "endOffset": 111585600,
+        "endOffset": 112795200,
         "minAmount": 1,
         "minDuration": 110376000,
         "maxDuration": 110376000,
@@ -25,9 +26,10 @@
         }
       },
       {
+        "offerID": "2AySgbKZp8PP95KCsttY68uKJyFbsATHnE73jk1P9fSppmqV45",
         "interestRateNominator": 0,
         "startOffset": 0,
-        "endOffset": 158889600,
+        "endOffset": 160099200,
         "minAmount": 1,
         "minDuration": 157680000,
         "maxDuration": 157680000,
@@ -38,9 +40,10 @@
         }
       },
       {
+        "offerID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
         "interestRateNominator": 90000,
         "startOffset": 0,
-        "endOffset": 143121600,
+        "endOffset": 144331200,
         "minAmount": 1,
         "minDuration": 141912000,
         "maxDuration": 141912000,
@@ -51,9 +54,10 @@
         }
       },
       {
+        "offerID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
         "interestRateNominator": 100000,
         "startOffset": 0,
-        "endOffset": 174657600,
+        "endOffset": 175867200,
         "minAmount": 1,
         "minDuration": 173448000,
         "maxDuration": 173448000,
@@ -64,9 +68,10 @@
         }
       },
       {
+        "offerID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
         "interestRateNominator": 90000,
         "startOffset": 0,
-        "endOffset": 31536000,
+        "endOffset": 32745600,
         "minAmount": 1,
         "minDuration": 31536000,
         "maxDuration": 31536000,
@@ -77,9 +82,10 @@
         }
       },
       {
+        "offerID": "2vGw1ZaUWWGxhAm69Dt13zw5sUvmtCbzVTvvzPp34Ch5qEznBg",
         "interestRateNominator": 110000,
         "startOffset": 0,
-        "endOffset": 63072000,
+        "endOffset": 64281600,
         "minAmount": 1,
         "minDuration": 60,
         "maxDuration": 31536000,
@@ -90,9 +96,10 @@
         }
       },
       {
+        "offerID": "24zEuyv4zBvF2pGPbzwVYhCxPQUfuqD4pWDRfJrJapXBhFfxDh",
         "interestRateNominator": 210000,
         "startOffset": 0,
-        "endOffset": 63072000,
+        "endOffset": 64281600,
         "minAmount": 1,
         "minDuration": 86400,
         "maxDuration": 31536000,
@@ -116,7 +123,7 @@
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1qytfcm2amett26svvjvmjvqptg0evtl0z4jglt",
+        "avaxAddr": "X-columbus1v7kdfuh0u2sg26cu7nf6drptz7lzayfm7vqrnk",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -127,14 +134,16 @@
             "amount": 100000000000000,
             "nodeID": "NodeID-6XD16eZ22fadTKq3qsxro9TPFZyxTiFv3",
             "validatorDuration": 31104000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "2"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus13hq70rrgaycz66qsn3ek6m4q3j8ve2syuvgehc",
+        "avaxAddr": "X-columbus1ce27vm0mwdkf03ct6vh8gtldur0rm4rdv0uazk",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -145,7 +154,9 @@
             "amount": 100000000000000,
             "nodeID": "NodeID-6rsqgkg4F1i3SBjzj4tS5ucQWH7JMEouj",
             "validatorDuration": 62208000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "3"
           }
         ]
@@ -161,14 +172,16 @@
         "platformAllocations": [
           {
             "amount": 10000000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "4"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1nyuw6rys0qm0hhc6yrp3sy4gd5e6g6lsfkxrhw",
+        "avaxAddr": "X-columbus1vscyf7czawylztn6ghhg0z27swwewxgzzxkyke",
         "xAmount": 779955800000000000,
         "addressStates": {
           "consortiumMember": false,
@@ -187,7 +200,8 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "o8JnmzXWxufz2LFRn22kXHzJ6kq5pK8q8j7USwALajJmaQekV",
+            "depositDuration": 157680000,
+            "depositOfferID": "2AySgbKZp8PP95KCsttY68uKJyFbsATHnE73jk1P9fSppmqV45",
             "memo": "6"
           }
         ]
@@ -203,7 +217,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "7"
           }
         ]
@@ -219,7 +235,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "8"
           }
         ]
@@ -235,7 +253,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "9"
           }
         ]
@@ -251,7 +271,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "10"
           }
         ]
@@ -267,7 +289,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "11"
           }
         ]
@@ -283,7 +307,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "12"
           }
         ]
@@ -309,7 +335,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "14"
           }
         ]
@@ -325,14 +353,16 @@
         "platformAllocations": [
           {
             "amount": 10000000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "15"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1c5548fwqekln6vc7vak8t54e9e5q0v5hkj9xn5",
+        "avaxAddr": "X-columbus1v7kdfuh0u2sg26cu7nf6drptz7lzayfm7vqrnk",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": false,
@@ -341,7 +371,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "16"
           }
         ]
@@ -357,7 +389,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "17"
           }
         ]
@@ -373,7 +407,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "18"
           }
         ]
@@ -389,7 +425,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "19"
           }
         ]
@@ -405,7 +443,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "20"
           }
         ]
@@ -421,7 +461,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "21"
           }
         ]
@@ -437,7 +479,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "22"
           }
         ]
@@ -453,7 +497,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "23"
           }
         ]
@@ -469,7 +515,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "24"
           }
         ]
@@ -485,7 +533,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "25"
           }
         ]
@@ -501,7 +551,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "tdxfeS6QkMrqoJTrFaBdizAng1edgMxJw5oXVi2ePtTKTgrs7",
+            "depositDuration": 31536000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
             "memo": "26"
           }
         ]
@@ -517,7 +569,8 @@
         "platformAllocations": [
           {
             "amount": 2800000000000000,
-            "depositOfferID": "o8JnmzXWxufz2LFRn22kXHzJ6kq5pK8q8j7USwALajJmaQekV",
+            "depositDuration": 157680000,
+            "depositOfferID": "2AySgbKZp8PP95KCsttY68uKJyFbsATHnE73jk1P9fSppmqV45",
             "memo": "27"
           }
         ]
@@ -533,7 +586,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "28"
           }
         ]
@@ -549,7 +604,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "29"
           }
         ]
@@ -565,7 +622,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "30"
           }
         ]
@@ -581,7 +640,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "31"
           }
         ]
@@ -597,7 +658,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "32"
           }
         ]
@@ -613,7 +676,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "33"
           }
         ]
@@ -629,7 +694,9 @@
         "platformAllocations": [
           {
             "amount": 15000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "34"
           }
         ]
@@ -645,7 +712,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "35"
           }
         ]
@@ -661,7 +730,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "36"
           }
         ]
@@ -677,7 +748,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "37"
           }
         ]
@@ -693,7 +766,9 @@
         "platformAllocations": [
           {
             "amount": 40000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "38"
           }
         ]
@@ -709,7 +784,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "39"
           }
         ]
@@ -725,7 +802,9 @@
         "platformAllocations": [
           {
             "amount": 200000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "40"
           }
         ]
@@ -741,7 +820,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "41"
           }
         ]
@@ -757,7 +838,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "42"
           }
         ]
@@ -773,7 +856,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "43"
           }
         ]
@@ -789,7 +874,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "44"
           }
         ]
@@ -805,7 +892,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "45"
           }
         ]
@@ -821,7 +910,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "46"
           }
         ]
@@ -837,7 +928,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "47"
           }
         ]
@@ -853,7 +946,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "48"
           }
         ]
@@ -869,14 +964,16 @@
         "platformAllocations": [
           {
             "amount": 500000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "49"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus12k7j2hnjkj9nqy0rllwnfqd80v78kqwcmcsw0m",
+        "avaxAddr": "X-columbus1k9d6k4keaje95mwfw6qtz5whkhar3spekmmtvv",
         "xAmount": 5000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -887,7 +984,9 @@
             "amount": 500000000000000,
             "nodeID": "NodeID-ADyRxZndN569FitkbBzpr8oSe6FnYCMUr",
             "validatorDuration": 32400000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "50"
           }
         ]
@@ -903,7 +1002,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "51"
           }
         ]
@@ -919,7 +1020,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "52"
           }
         ]
@@ -935,7 +1038,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "53"
           }
         ]
@@ -951,7 +1056,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "54"
           }
         ]
@@ -967,7 +1074,9 @@
         "platformAllocations": [
           {
             "amount": 600000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "55"
           }
         ]
@@ -983,7 +1092,9 @@
         "platformAllocations": [
           {
             "amount": 500000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "56"
           }
         ]
@@ -999,7 +1110,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "57"
           }
         ]
@@ -1015,7 +1128,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "58"
           }
         ]
@@ -1031,7 +1146,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "59"
           }
         ]
@@ -1047,7 +1164,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "60"
           }
         ]
@@ -1063,7 +1182,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "61"
           }
         ]
@@ -1079,7 +1200,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "62"
           }
         ]
@@ -1095,7 +1218,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "63"
           }
         ]
@@ -1111,7 +1236,9 @@
         "platformAllocations": [
           {
             "amount": 15000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "64"
           }
         ]
@@ -1127,7 +1254,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "65"
           }
         ]
@@ -1143,7 +1272,9 @@
         "platformAllocations": [
           {
             "amount": 60000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "66"
           }
         ]
@@ -1159,7 +1290,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "67"
           }
         ]
@@ -1175,7 +1308,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "68"
           }
         ]
@@ -1191,7 +1326,9 @@
         "platformAllocations": [
           {
             "amount": 200000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "69"
           }
         ]
@@ -1207,7 +1344,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "70"
           }
         ]
@@ -1223,7 +1362,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "71"
           }
         ]
@@ -1239,7 +1380,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "72"
           }
         ]
@@ -1255,7 +1398,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "73"
           }
         ]
@@ -1271,7 +1416,9 @@
         "platformAllocations": [
           {
             "amount": 15000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "74"
           }
         ]
@@ -1287,7 +1434,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "75"
           }
         ]
@@ -1303,7 +1452,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "76"
           }
         ]
@@ -1319,7 +1470,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "77"
           }
         ]
@@ -1335,7 +1488,9 @@
         "platformAllocations": [
           {
             "amount": 15000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "78"
           }
         ]
@@ -1351,7 +1506,9 @@
         "platformAllocations": [
           {
             "amount": 25000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "79"
           }
         ]
@@ -1367,7 +1524,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "80"
           }
         ]
@@ -1383,7 +1542,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "81"
           }
         ]
@@ -1399,7 +1560,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "82"
           }
         ]
@@ -1415,7 +1578,9 @@
         "platformAllocations": [
           {
             "amount": 500000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "83"
           }
         ]
@@ -1431,7 +1596,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "84"
           }
         ]
@@ -1447,7 +1614,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "85"
           }
         ]
@@ -1463,7 +1632,9 @@
         "platformAllocations": [
           {
             "amount": 200000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "86"
           }
         ]
@@ -1479,7 +1650,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "87"
           }
         ]
@@ -1495,14 +1668,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "88"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1mspvckgspqvwkpdkaszkv5jf75dcs0mv486740",
+        "avaxAddr": "X-columbus1npxkkgtaq8p00uwc8nwrfm25rzf2pdyf2ywpe9",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -1511,7 +1686,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "89"
           }
         ]
@@ -1527,7 +1704,9 @@
         "platformAllocations": [
           {
             "amount": 15000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "90"
           }
         ]
@@ -1543,7 +1722,9 @@
         "platformAllocations": [
           {
             "amount": 1000000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "91"
           }
         ]
@@ -1559,7 +1740,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "92"
           }
         ]
@@ -1575,7 +1758,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "93"
           }
         ]
@@ -1591,7 +1776,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "94"
           }
         ]
@@ -1607,7 +1794,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "95"
           }
         ]
@@ -1623,7 +1812,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "96"
           }
         ]
@@ -1639,7 +1830,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "97"
           }
         ]
@@ -1655,7 +1848,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "98"
           }
         ]
@@ -1671,7 +1866,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "99"
           }
         ]
@@ -1687,7 +1884,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "100"
           }
         ]
@@ -1703,7 +1902,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "101"
           }
         ]
@@ -1719,7 +1920,9 @@
         "platformAllocations": [
           {
             "amount": 25000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "102"
           }
         ]
@@ -1735,7 +1938,9 @@
         "platformAllocations": [
           {
             "amount": 200000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "103"
           }
         ]
@@ -1751,7 +1956,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "104"
           }
         ]
@@ -1767,7 +1974,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "105"
           }
         ]
@@ -1783,7 +1992,9 @@
         "platformAllocations": [
           {
             "amount": 1000000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "106"
           }
         ]
@@ -1799,7 +2010,9 @@
         "platformAllocations": [
           {
             "amount": 30000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "107"
           }
         ]
@@ -1815,7 +2028,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "108"
           }
         ]
@@ -1831,7 +2046,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "109"
           }
         ]
@@ -1847,7 +2064,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "110"
           }
         ]
@@ -1863,7 +2082,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "111"
           }
         ]
@@ -1879,7 +2100,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "112"
           }
         ]
@@ -1895,7 +2118,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "113"
           }
         ]
@@ -1911,7 +2136,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "114"
           }
         ]
@@ -1927,7 +2154,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "115"
           }
         ]
@@ -1943,7 +2172,9 @@
         "platformAllocations": [
           {
             "amount": 200000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "116"
           }
         ]
@@ -1959,7 +2190,9 @@
         "platformAllocations": [
           {
             "amount": 400000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "117"
           }
         ]
@@ -1975,7 +2208,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "118"
           }
         ]
@@ -1991,7 +2226,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "119"
           }
         ]
@@ -2007,7 +2244,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "120"
           }
         ]
@@ -2023,7 +2262,9 @@
         "platformAllocations": [
           {
             "amount": 150000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "121"
           }
         ]
@@ -2039,7 +2280,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "122"
           }
         ]
@@ -2055,7 +2298,9 @@
         "platformAllocations": [
           {
             "amount": 200000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "123"
           }
         ]
@@ -2071,7 +2316,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "124"
           }
         ]
@@ -2087,7 +2334,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "125"
           }
         ]
@@ -2103,7 +2352,9 @@
         "platformAllocations": [
           {
             "amount": 15000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "126"
           }
         ]
@@ -2119,7 +2370,8 @@
         "platformAllocations": [
           {
             "amount": 300000000000000,
-            "depositOfferID": "o8JnmzXWxufz2LFRn22kXHzJ6kq5pK8q8j7USwALajJmaQekV",
+            "depositDuration": 157680000,
+            "depositOfferID": "2AySgbKZp8PP95KCsttY68uKJyFbsATHnE73jk1P9fSppmqV45",
             "memo": "127"
           }
         ]
@@ -2135,7 +2387,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "128"
           }
         ]
@@ -2151,7 +2405,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "129"
           }
         ]
@@ -2167,7 +2423,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "130"
           }
         ]
@@ -2183,7 +2441,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "131"
           }
         ]
@@ -2199,7 +2459,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "132"
           }
         ]
@@ -2215,7 +2477,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "133"
           }
         ]
@@ -2231,7 +2495,9 @@
         "platformAllocations": [
           {
             "amount": 30000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "134"
           }
         ]
@@ -2247,7 +2513,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "135"
           }
         ]
@@ -2263,7 +2531,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "136"
           }
         ]
@@ -2279,7 +2549,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "137"
           }
         ]
@@ -2295,7 +2567,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "138"
           }
         ]
@@ -2311,7 +2585,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "139"
           }
         ]
@@ -2327,7 +2603,9 @@
         "platformAllocations": [
           {
             "amount": 250000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "140"
           }
         ]
@@ -2343,7 +2621,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "141"
           }
         ]
@@ -2359,7 +2639,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "142"
           }
         ]
@@ -2375,7 +2657,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "143"
           }
         ]
@@ -2391,7 +2675,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "144"
           }
         ]
@@ -2407,7 +2693,9 @@
         "platformAllocations": [
           {
             "amount": 3000000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "145"
           }
         ]
@@ -2423,7 +2711,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "146"
           }
         ]
@@ -2439,7 +2729,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "147"
           }
         ]
@@ -2455,7 +2747,9 @@
         "platformAllocations": [
           {
             "amount": 30000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "148"
           }
         ]
@@ -2471,7 +2765,9 @@
         "platformAllocations": [
           {
             "amount": 150000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "149"
           }
         ]
@@ -2487,7 +2783,9 @@
         "platformAllocations": [
           {
             "amount": 25000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "150"
           }
         ]
@@ -2503,7 +2801,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "151"
           }
         ]
@@ -2519,7 +2819,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "152"
           }
         ]
@@ -2535,7 +2837,9 @@
         "platformAllocations": [
           {
             "amount": 200000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "153"
           }
         ]
@@ -2551,7 +2855,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "154"
           }
         ]
@@ -2567,7 +2873,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "155"
           }
         ]
@@ -2583,7 +2891,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "156"
           }
         ]
@@ -2599,7 +2909,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "157"
           }
         ]
@@ -2615,7 +2927,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "158"
           }
         ]
@@ -2631,7 +2945,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "159"
           }
         ]
@@ -2647,7 +2963,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "160"
           }
         ]
@@ -2663,7 +2981,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "161"
           }
         ]
@@ -2679,7 +2999,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "162"
           }
         ]
@@ -2695,7 +3017,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "163"
           }
         ]
@@ -2711,7 +3035,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "164"
           }
         ]
@@ -2727,7 +3053,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "165"
           }
         ]
@@ -2743,7 +3071,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "166"
           }
         ]
@@ -2759,7 +3089,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "167"
           }
         ]
@@ -2775,7 +3107,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "168"
           }
         ]
@@ -2791,7 +3125,9 @@
         "platformAllocations": [
           {
             "amount": 400000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "169"
           }
         ]
@@ -2807,7 +3143,9 @@
         "platformAllocations": [
           {
             "amount": 250000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "170"
           }
         ]
@@ -2823,7 +3161,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "171"
           }
         ]
@@ -2839,7 +3179,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "172"
           }
         ]
@@ -2855,7 +3197,9 @@
         "platformAllocations": [
           {
             "amount": 200000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "173"
           }
         ]
@@ -2871,7 +3215,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "174"
           }
         ]
@@ -2887,7 +3233,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "175"
           }
         ]
@@ -2903,7 +3251,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "176"
           }
         ]
@@ -2919,7 +3269,9 @@
         "platformAllocations": [
           {
             "amount": 75000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "177"
           }
         ]
@@ -2935,7 +3287,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "178"
           }
         ]
@@ -2951,7 +3305,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "179"
           }
         ]
@@ -2967,7 +3323,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "180"
           }
         ]
@@ -2983,7 +3341,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "181"
           }
         ]
@@ -2999,7 +3359,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "182"
           }
         ]
@@ -3015,7 +3377,9 @@
         "platformAllocations": [
           {
             "amount": 200000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "183"
           }
         ]
@@ -3031,7 +3395,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "184"
           }
         ]
@@ -3047,7 +3413,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "185"
           }
         ]
@@ -3063,7 +3431,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "186"
           }
         ]
@@ -3079,7 +3449,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "187"
           }
         ]
@@ -3095,7 +3467,9 @@
         "platformAllocations": [
           {
             "amount": 25000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "188"
           }
         ]
@@ -3111,7 +3485,9 @@
         "platformAllocations": [
           {
             "amount": 120000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "189"
           }
         ]
@@ -3127,7 +3503,9 @@
         "platformAllocations": [
           {
             "amount": 200000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "190"
           }
         ]
@@ -3143,7 +3521,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "191"
           }
         ]
@@ -3159,7 +3539,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "192"
           }
         ]
@@ -3175,7 +3557,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "193"
           }
         ]
@@ -3191,7 +3575,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "194"
           }
         ]
@@ -3207,7 +3593,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "195"
           }
         ]
@@ -3223,7 +3611,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "196"
           }
         ]
@@ -3239,7 +3629,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "197"
           }
         ]
@@ -3255,7 +3647,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "198"
           }
         ]
@@ -3271,7 +3665,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "199"
           }
         ]
@@ -3287,7 +3683,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "200"
           }
         ]
@@ -3303,7 +3701,9 @@
         "platformAllocations": [
           {
             "amount": 150000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "201"
           }
         ]
@@ -3319,7 +3719,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "202"
           }
         ]
@@ -3335,7 +3737,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "203"
           }
         ]
@@ -3351,7 +3755,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "204"
           }
         ]
@@ -3367,7 +3773,9 @@
         "platformAllocations": [
           {
             "amount": 50000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "205"
           }
         ]
@@ -3383,7 +3791,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "206"
           }
         ]
@@ -3399,7 +3809,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "207"
           }
         ]
@@ -3415,7 +3827,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "208"
           }
         ]
@@ -3431,7 +3845,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "209"
           }
         ]
@@ -3447,7 +3863,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "210"
           }
         ]
@@ -3463,7 +3881,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "211"
           }
         ]
@@ -3479,7 +3899,9 @@
         "platformAllocations": [
           {
             "amount": 150000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "212"
           }
         ]
@@ -3495,7 +3917,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "213"
           }
         ]
@@ -3511,7 +3935,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "214"
           }
         ]
@@ -3527,7 +3953,9 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "215"
           }
         ]
@@ -3543,7 +3971,9 @@
         "platformAllocations": [
           {
             "amount": 150000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "216"
           }
         ]
@@ -3559,7 +3989,9 @@
         "platformAllocations": [
           {
             "amount": 70000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "217"
           }
         ]
@@ -3575,7 +4007,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "218"
           }
         ]
@@ -3591,7 +4025,9 @@
         "platformAllocations": [
           {
             "amount": 20000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "219"
           }
         ]
@@ -3607,7 +4043,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "220"
           }
         ]
@@ -3623,7 +4061,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "221"
           }
         ]
@@ -3639,7 +4079,9 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "222"
           }
         ]
@@ -3655,7 +4097,9 @@
         "platformAllocations": [
           {
             "amount": 200000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "223"
           }
         ]
@@ -3671,14 +4115,16 @@
         "platformAllocations": [
           {
             "amount": 15000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "224"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus14y7vw9ncnu0wl59amjf6m5dmxsdhvydg37p8ne",
+        "avaxAddr": "X-columbus1rm36u8p8v2vslddf0z2zmj97shcfx94awvfcgc",
         "xAmount": 0,
         "addressStates": {
           "consortiumMember": true,
@@ -3687,14 +4133,15 @@
         "platformAllocations": [
           {
             "amount": 4500000000000000,
-            "depositOfferID": "o8JnmzXWxufz2LFRn22kXHzJ6kq5pK8q8j7USwALajJmaQekV",
+            "depositDuration": 157680000,
+            "depositOfferID": "2AySgbKZp8PP95KCsttY68uKJyFbsATHnE73jk1P9fSppmqV45",
             "memo": "225"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1nckwrhkr4gt5897v8uzcg2mfsw4kdcds3eg2xn",
+        "avaxAddr": "X-columbus1zq3vqpsxpfakseymatqmm7krm64uhm80q8ey4p",
         "xAmount": 2000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3703,14 +4150,16 @@
         "platformAllocations": [
           {
             "amount": 200000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "226"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1mspvckgspqvwkpdkaszkv5jf75dcs0mv486740",
+        "avaxAddr": "X-columbus1npxkkgtaq8p00uwc8nwrfm25rzf2pdyf2ywpe9",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3719,14 +4168,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "227"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus10hrr04zhflllz8a2eprks9dp52x9vjuetk3l2v",
+        "avaxAddr": "X-columbus16sw3qmf2m4p6enwfzs9qfhjm538dzpf2ess6dg",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3735,14 +4186,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "228"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1d3x9ej2wjnyj5pdmqgzze8jwsx9sjtmrf637e5",
+        "avaxAddr": "X-columbus19rzuswq4ek9u0y47dzefcgvjuxlktwm2a4x827",
         "xAmount": 20000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3753,14 +4206,16 @@
             "amount": 2000000000000000,
             "nodeID": "NodeID-CXYTCzyt3KysvbanQijppcsnSyixuKASv",
             "validatorDuration": 30672000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "229"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1tj4tl8txa0dqgplcwyknvwdawu89v3aytp82lh",
+        "avaxAddr": "X-columbus1c6zz8pqjvyd40rq4mre4azaalur7rsdn69hh6u",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3769,14 +4224,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "230"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1r66krj4tgr3n5syk7y5cl3h77wwh99ychp39qm",
+        "avaxAddr": "X-columbus1xl6ezwlmpxhytmhlvrl85lvnheunjuu5un5qa9",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3785,14 +4242,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "231"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus18ppx0vpjr80yxa80v7h02hep2t6masjyfa2l08",
+        "avaxAddr": "X-columbus1dd39r6a83pd5llzag9r4c9mqdgd38jzlnsd2t2",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3801,14 +4260,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "232"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1d6ykv2mv50qqu2wpecks0m7mlsrcj5nxjsdres",
+        "avaxAddr": "X-columbus1pkfar9ajf34egm9my20tnytmvn98d6d9xdahvr",
         "xAmount": 1500000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3817,14 +4278,16 @@
         "platformAllocations": [
           {
             "amount": 150000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "233"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1nsh8l6cpgy8j2y5mg493gjntlqdnza8mwqvsuw",
+        "avaxAddr": "X-columbus1ph50fuuzxmmkmpskmvkrdzudtdze4zfj33p4ef",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3833,14 +4296,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "234"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1hn3lsa30w6xrlsg7dqfpsjezatts4zvgvz55pp",
+        "avaxAddr": "X-columbus1rrdl8mgqhs7af9ktx4uw9puyanfc93223yn8kd",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3849,14 +4314,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "235"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus147ejnrpf6fgj65s32sgcm6reewyu9yut65tg6z",
+        "avaxAddr": "X-columbus17zjxkrmglzcmuwafag4uknacew39ev2ls9tga3",
         "xAmount": 1500000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3865,14 +4332,16 @@
         "platformAllocations": [
           {
             "amount": 150000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "236"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus14d7aarez2jrg8fq8zg0ezz2d0ayj4vynudt8av",
+        "avaxAddr": "X-columbus1yd8u5d2jq4x9nntadxq6zuz0g8k2x5twgme9d8",
         "xAmount": 20000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3883,14 +4352,16 @@
             "amount": 2000000000000000,
             "nodeID": "NodeID-P7Afz8yMSGE9XYqRXBXvMCGHj5JtvcK6z",
             "validatorDuration": 31536000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "237"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus16ftwxsfyx70nvxsscv3g2rszv062dqt5chnzgt",
+        "avaxAddr": "X-columbus1ymnp6l60g0ykhr9k484qcdfjjfmdskx4hz5gzk",
         "xAmount": 5000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3899,14 +4370,16 @@
         "platformAllocations": [
           {
             "amount": 500000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "238"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1evmsvf7qgpqkucw9dza52qez4tw89nuvld5s3q",
+        "avaxAddr": "X-columbus1xvl6dfj5w9f35duqg97g79pnmffya96p464xc4",
         "xAmount": 3000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3915,14 +4388,16 @@
         "platformAllocations": [
           {
             "amount": 300000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "239"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1wv900zwr7ws5099vzwxxarrj4zratsvqxdsc2p",
+        "avaxAddr": "X-columbus1yumnux0gjuxv2p074gcwqw5hv4cjhpc3gehteh",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3931,14 +4406,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "240"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1dzdhaqxp7gnnk4htuqa6urag8tztd7ktgrj6uu",
+        "avaxAddr": "X-columbus1f5rt0mgznxknyj34vft99s9prfvdhem439ud02",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3947,14 +4424,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "241"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus12melmrs7fg09l6p9cae0qt57z7zeay6luu9yrr",
+        "avaxAddr": "X-columbus1kjxmutel336ev5kzfvsal7e4ytvmu7z6t2dwg2",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3963,14 +4442,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "242"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus125d0gsa82rlprxs8c3jsy0xmjahp9jkr5z4adm",
+        "avaxAddr": "X-columbus16wdrtdycwgvf8q6ct425q2wh8dldj0kzhfuje4",
         "xAmount": 4000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3979,14 +4460,16 @@
         "platformAllocations": [
           {
             "amount": 400000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "243"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus16lz08tm8e7y8v20wj8qg6stykyfvalfevrj7tj",
+        "avaxAddr": "X-columbus1hjh9dspr4wh3kedkpu7mkym9v66x7vqtsntke5",
         "xAmount": 100000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -3995,14 +4478,16 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "244"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1l7epvwzj2lh5a0n0hmvqvssypw9engrqnt0v7r",
+        "avaxAddr": "X-columbus1l84g47rj8r9p8zsznvnz2nce65k3wjxgeyrwzv",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -4011,14 +4496,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "245"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1ma9yvjme5yuywupezk3uc0fmy6vz406mnfmmm4",
+        "avaxAddr": "X-columbus1akmdd3p8e3c2vu2cp9cz40ssyt79tzcragnfl8",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -4027,14 +4514,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "246"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1rffgmzxjnx25qewecqth5x5d99vamk34jysa7t",
+        "avaxAddr": "X-columbus1wpxls6rvgx6gpkm57zhjqy9g7wwq00kgxyugtq",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -4043,14 +4532,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "247"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1yhdgzxy59jfdtdd582nqk9l3wf7j23u7psje7w",
+        "avaxAddr": "X-columbus17p73e7x3qamqh4r0m9dx7ktzd0dck5jrtdyxy4",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -4059,14 +4550,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "248"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1pa6u3rgkkwwtnnp8fshechy33genf243muyjwk",
+        "avaxAddr": "X-columbus1c3dhlnasnjcgfv4tvqzqk47l5upvka4rmfgqqs",
         "xAmount": 5000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -4077,14 +4570,16 @@
             "amount": 500000000000000,
             "nodeID": "NodeID-4EQFrUN4H512882gcc4UPkwDueQwM49bx",
             "validatorDuration": 30240000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "249"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1xajah6wfsmf8jzf9sypp7smtlt87gh67dyuxjr",
+        "avaxAddr": "X-columbus1v9dvjffg95tlxp7u3ehufgmm4xpuunzssaz527",
         "xAmount": 2000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -4093,14 +4588,16 @@
         "platformAllocations": [
           {
             "amount": 200000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "250"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1rljaheer547g4szl2rd7jdmws03nm2szqw74ua",
+        "avaxAddr": "X-columbus1wpxa43ech79mxs5ta9kgrg3jx03rrjc3sv6qmv",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -4109,14 +4606,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "251"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1ujnfc5qz55ged32nf3cnr3nwtc9dd6xdvav9q7",
+        "avaxAddr": "X-columbus1dgky8sv7ps46hrd29uhltjzjfuaavpgpxxnv80",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -4125,14 +4624,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "252"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1w6dszh0s8dgz7kjj3eyvry8d9t4fr0qsjwdakj",
+        "avaxAddr": "X-columbus1p7tlgcxyx8clqq3yvf4pr9gjng22ns9k42lcs0",
         "xAmount": 3000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -4141,14 +4642,16 @@
         "platformAllocations": [
           {
             "amount": 300000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "253"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus14h5d0js0k09tn5tyfuquvp08ncca3xawr0zyp7",
+        "avaxAddr": "X-columbus1qkecpdfst3hjl4sdktn25dvrq4x4gt8ljqsnqp",
         "xAmount": 2500000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -4157,14 +4660,16 @@
         "platformAllocations": [
           {
             "amount": 250000000000000,
-            "depositOfferID": "sYBxoiGqzP7gq3t9LguAetqUJAAKu1zxqJUfWUhFCh68fAgRV",
+            "depositDuration": 141912000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
             "memo": "254"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus125d0gsa82rlprxs8c3jsy0xmjahp9jkr5z4adm",
+        "avaxAddr": "X-columbus16wdrtdycwgvf8q6ct425q2wh8dldj0kzhfuje4",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -4173,14 +4678,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "255"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1vv86khcks27sh9zmpfuqtnckgxga04grgmx4zp",
+        "avaxAddr": "X-columbus1zg907zmsrkk7j37l0gfh7k20yw7s5na2qurp2w",
         "xAmount": 1000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -4189,14 +4696,16 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "256"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1uyxxw4vlp7rrnmrgtk9zle3mrpe8n52ksf2yg3",
+        "avaxAddr": "X-columbus195gy59enhat6qlcqsjrqqn4l68mt7n2x5mh2gv",
         "xAmount": 10000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -4205,14 +4714,16 @@
         "platformAllocations": [
           {
             "amount": 1000000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "257"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus1k20cnmugmy6w239fxquss3ftuelhhl43wa7rfg",
+        "avaxAddr": "X-columbus12hcmkc67wjvcdj7vqlzcqrpehs9lp50y3fpkas",
         "xAmount": 5000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -4221,14 +4732,16 @@
         "platformAllocations": [
           {
             "amount": 500000000000000,
-            "depositOfferID": "wVVZinZkN9x6e9dh3DNNfrmdXaHPPwKWt3Zerx2vD8Ccuo6E7",
+            "depositDuration": 110376000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
             "memo": "258"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus155gp53wurucj7jj0pfnq3xgpcyplnf4q9emu0z",
+        "avaxAddr": "X-columbus1x7mff9z99azsd2djf4j0yp43ne0gxuvsggpnms",
         "xAmount": 15000000000000,
         "addressStates": {
           "consortiumMember": true,
@@ -4237,14 +4750,16 @@
         "platformAllocations": [
           {
             "amount": 1500000000000000,
-            "depositOfferID": "pxYRYqJxsd9G1gU159pQKAXkg5fQogyBAsqypvuqhAzcB7dkD",
+            "depositDuration": 173448000,
+            "timestampOffset": 1209600,
+            "depositOfferID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
             "memo": "259"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-columbus12vt2shtu7z7xuxtlg6m3alvwwpuamnc95536rj",
+        "avaxAddr": "X-columbus1eh9hg8mpm5j9k9ddc5wpk8aj7evx8fzgzpt5yg",
         "xAmount": 0,
         "addressStates": {
           "consortiumMember": true,
@@ -4255,7 +4770,8 @@
             "amount": 10000000000000000,
             "nodeID": "NodeID-5APqagKQK2d9cMrtgR2h3bsC4GrU3UkNr",
             "validatorDuration": 31968000,
-            "depositOfferID": "o8JnmzXWxufz2LFRn22kXHzJ6kq5pK8q8j7USwALajJmaQekV",
+            "depositDuration": 157680000,
+            "depositOfferID": "2AySgbKZp8PP95KCsttY68uKJyFbsATHnE73jk1P9fSppmqV45",
             "memo": "260"
           }
         ]
@@ -4263,134 +4779,153 @@
     ],
     "initialMultisigAddresses": [
       {
-        "alias": "X-columbus1qytfcm2amett26svvjvmjvqptg0evtl0z4jglt",
+        "alias": "X-columbus16wdrtdycwgvf8q6ct425q2wh8dldj0kzhfuje4",
         "addresses": [
-          "X-columbus1vxmf8899y6x7dsam0xnr0hp6syzwz33383z3s7",
-          "X-columbus1w3szy4e5excad4j8xp2ua0ukqcfq2uh425mjj9",
-          "X-columbus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sry5xgd",
-          "X-columbus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8v8khm5v"
+          "X-columbus1g5rn3u8jfse893vc8suctmlkcvnpf097tmcs0l",
+          "X-columbus1c6fttduv83wrhejhagg0xz0dckswe5w3055cjy",
+          "X-columbus1mced2e89pjhvmc6698ywf3ccqh0ttxzr3z5tmw",
+          "X-columbus1uggerc3khhecx4z84h9trukfjj9fu6204h335s"
         ],
-        "threshold": 2
+        "threshold": 2,
+        "memo": "108"
       },
       {
-        "alias": "X-columbus13hq70rrgaycz66qsn3ek6m4q3j8ve2syuvgehc",
+        "alias": "X-columbus1qkecpdfst3hjl4sdktn25dvrq4x4gt8ljqsnqp",
         "addresses": [
-          "X-columbus1vxmf8899y6x7dsam0xnr0hp6syzwz33383z3s7",
-          "X-columbus1w3szy4e5excad4j8xp2ua0ukqcfq2uh425mjj9",
-          "X-columbus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sry5xgd",
-          "X-columbus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8v8khm5v"
+          "X-columbus18jzw0k5pdcsmeyc55wevnxph8amaelt50wyzd3",
+          "X-columbus1604l4rly3kp5pexwm57p2gj5apdk78l9e09cl5"
         ],
-        "threshold": 2
+        "threshold": 1,
+        "memo": "114"
       },
       {
-        "alias": "X-columbus1nyuw6rys0qm0hhc6yrp3sy4gd5e6g6lsfkxrhw",
-        "addresses": [
-          "X-columbus1vxmf8899y6x7dsam0xnr0hp6syzwz33383z3s7",
-          "X-columbus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sry5xgd",
-          "X-columbus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8v8khm5v"
-        ],
-        "threshold": 2
-      },
-      {
-        "alias": "X-columbus1c5548fwqekln6vc7vak8t54e9e5q0v5hkj9xn5",
-        "addresses": [
-          "X-columbus1vxmf8899y6x7dsam0xnr0hp6syzwz33383z3s7",
-          "X-columbus1w3szy4e5excad4j8xp2ua0ukqcfq2uh425mjj9",
-          "X-columbus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sry5xgd",
-          "X-columbus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8v8khm5v"
-        ],
-        "threshold": 3
-      },
-      {
-        "alias": "X-columbus12k7j2hnjkj9nqy0rllwnfqd80v78kqwcmcsw0m",
-        "addresses": [
-          "X-columbus1ht5n4ynt6dlt0r7ce2gadww64y4k2xund7kawe"
-        ],
-        "threshold": 1
-      },
-      {
-        "alias": "X-columbus134aa7levwh0d0cl90dw8rajg8j6ysrxnwdnv8j",
-        "addresses": [
-          "X-columbus1ale9unm94g5at8vp2z0ang7l5hc5maugsrrggh"
-        ],
-        "threshold": 1
-      },
-      {
-        "alias": "X-columbus14y7vw9ncnu0wl59amjf6m5dmxsdhvydg37p8ne",
-        "addresses": [
-          "X-columbus10ghxqewfgujnfzxqz2jjsrcqx8xglr0s7s4c2u",
-          "X-columbus10wq8n5sjctvruhf8wdp4xev4l7ru3ws6707ce9",
-          "X-columbus1nt6kdghwa8j3crxm9t9pa4ehgc0u6f8jy09vdv"
-        ],
-        "threshold": 1
-      },
-      {
-        "alias": "X-columbus1nckwrhkr4gt5897v8uzcg2mfsw4kdcds3eg2xn",
+        "alias": "X-columbus1zq3vqpsxpfakseymatqmm7krm64uhm80q8ey4p",
         "addresses": [
           "X-columbus1rjlxz9m74deugtquzw0uz9ptvwr6ee02tjlyye",
           "X-columbus19khkh86zw6c0w2en0vyw4kqtnmldsx2pkzqgt2",
           "X-columbus13ac3fneqqp5em7mqst4dv7yv7ct4szwj6p57rd"
         ],
-        "threshold": 2
+        "threshold": 2,
+        "memo": "123"
       },
       {
-        "alias": "X-columbus1mspvckgspqvwkpdkaszkv5jf75dcs0mv486740",
+        "alias": "X-columbus1dgky8sv7ps46hrd29uhltjzjfuaavpgpxxnv80",
         "addresses": [
-          "X-columbus1ale9unm94g5at8vp2z0ang7l5hc5maugsrrggh"
+          "X-columbus1vveln3mjr9ee2ls5tx39sqygguatt5thk5spvq",
+          "X-columbus1d26p87euze5gjg5zf8d27fx4aq9nnlhvhl9xef"
         ],
-        "threshold": 1
+        "threshold": 1,
+        "memo": "168"
       },
       {
-        "alias": "X-columbus10hrr04zhflllz8a2eprks9dp52x9vjuetk3l2v",
+        "alias": "X-columbus17p73e7x3qamqh4r0m9dx7ktzd0dck5jrtdyxy4",
         "addresses": [
-          "X-columbus1skv4phaz8n6qcvpwe2jdnsu00gtyzagrwy4va3",
-          "X-columbus1kudhcsk27qtc7zyree2jxj8gm38sn7cp84zjzz"
+          "X-columbus1qvflkawwhe5sau8xuw4apzhu2reztnvulh6679"
         ],
-        "threshold": 1
+        "threshold": 1,
+        "memo": "169"
       },
       {
-        "alias": "X-columbus1d3x9ej2wjnyj5pdmqgzze8jwsx9sjtmrf637e5",
+        "alias": "X-columbus1c3dhlnasnjcgfv4tvqzqk47l5upvka4rmfgqqs",
+        "addresses": [
+          "X-columbus10a979j54ladz0y9q2672vv4ygpxgfjnugq54r3",
+          "X-columbus1llnr6mynmt7ft7kk5dfsly3qkc9l0xyta0u9mp"
+        ],
+        "threshold": 2,
+        "memo": "175"
+      },
+      {
+        "alias": "X-columbus1hjh9dspr4wh3kedkpu7mkym9v66x7vqtsntke5",
+        "addresses": [
+          "X-columbus1n8j7zudp748my7sgntsm3ngd2866genwk43sfh",
+          "X-columbus1akjmmq5mz8uvauhhvcr3ufle54rlnh6jq9pem4"
+        ],
+        "threshold": 1,
+        "memo": "265"
+      },
+      {
+        "alias": "X-columbus1l84g47rj8r9p8zsznvnz2nce65k3wjxgeyrwzv",
+        "addresses": [
+          "X-columbus1qad6z8s8ghehxhyemrdv4uc3ndzk8tqnaxry2u",
+          "X-columbus1nhkdq29jvecgsnhwxg36g3qy3fd6n7ayny4n7w"
+        ],
+        "threshold": 1,
+        "memo": "294"
+      },
+      {
+        "alias": "X-columbus1akmdd3p8e3c2vu2cp9cz40ssyt79tzcragnfl8",
+        "addresses": [
+          "X-columbus18dc4jdycs82yw3p9uk537kvt80snjvkyunge2d",
+          "X-columbus1flnpq33aprfsfwu55teq309zlwwfl5yv2e3x7r",
+          "X-columbus17vmr4hvyl3dw9ec7clptmqt2dpd0uaqzderkkn"
+        ],
+        "threshold": 2,
+        "memo": "348"
+      },
+      {
+        "alias": "X-columbus1v9dvjffg95tlxp7u3ehufgmm4xpuunzssaz527",
+        "addresses": [
+          "X-columbus1r74sn3yjlf6utqxhd62ecwhcmj0rwexxqzzsc0",
+          "X-columbus1jc9fqt0t75v4c8p3rfctafegctkc5cd5lj2cja"
+        ],
+        "threshold": 2,
+        "memo": "382"
+      },
+      {
+        "alias": "X-columbus1f5rt0mgznxknyj34vft99s9prfvdhem439ud02",
+        "addresses": [
+          "X-columbus1jqdr06q5a9csmf5s42rqlfhchlxjlmvzavzu6p",
+          "X-columbus1axmzzappezh88uns0cc6fys92vcztyfr6fmr5v"
+        ],
+        "threshold": 1,
+        "memo": "388"
+      },
+      {
+        "alias": "X-columbus19rzuswq4ek9u0y47dzefcgvjuxlktwm2a4x827",
         "addresses": [
           "X-columbus1pv4gg2nlg3ul43cxt5s5lzgvmnxc6tgux7ez4v",
           "X-columbus1raf8zahwesnyjm38cqf6dnnz0qtmqgyypkr8x6"
         ],
-        "threshold": 1
+        "threshold": 1,
+        "memo": "394"
       },
       {
-        "alias": "X-columbus1tj4tl8txa0dqgplcwyknvwdawu89v3aytp82lh",
+        "alias": "X-columbus1wpxls6rvgx6gpkm57zhjqy9g7wwq00kgxyugtq",
+        "addresses": [
+          "X-columbus1fsz4z9sh7s05hr9cup9yz82cmx4avpt62nzmdd"
+        ],
+        "threshold": 1,
+        "memo": "402"
+      },
+      {
+        "alias": "X-columbus1c6zz8pqjvyd40rq4mre4azaalur7rsdn69hh6u",
         "addresses": [
           "X-columbus1agu0s0k7yv77gwzrcc8k0r6t4cwvrhe26juvq0"
         ],
-        "threshold": 1
+        "threshold": 1,
+        "memo": "421"
       },
       {
-        "alias": "X-columbus1r66krj4tgr3n5syk7y5cl3h77wwh99ychp39qm",
-        "addresses": [
-          "X-columbus1rtgc42mnalqkfcsxx2m4027a340tttm6uqw3em",
-          "X-columbus1k6a24y06jr9hs2ztu3yevy9ax7uk5d6arjs2x4",
-          "X-columbus1a70jassv2cmt93j3fdtqm77q25y2ru4hqpd50l"
-        ],
-        "threshold": 2
-      },
-      {
-        "alias": "X-columbus18ppx0vpjr80yxa80v7h02hep2t6masjyfa2l08",
+        "alias": "X-columbus1dd39r6a83pd5llzag9r4c9mqdgd38jzlnsd2t2",
         "addresses": [
           "X-columbus1c5hzeksvkgaydyk5mvxqtdu5ud0smeqp9fk4nt",
           "X-columbus16h4jp22kqeykwsejfsqw2huaeka9hd37n4vdyv",
           "X-columbus1acfdnrpxm3ep58h9qzrtupxkvhemr67alqqf0f"
         ],
-        "threshold": 2
+        "threshold": 2,
+        "memo": "422"
       },
       {
-        "alias": "X-columbus1d6ykv2mv50qqu2wpecks0m7mlsrcj5nxjsdres",
+        "alias": "X-columbus1pkfar9ajf34egm9my20tnytmvn98d6d9xdahvr",
         "addresses": [
           "X-columbus1xj5d33f760jtqm49ednl5dxjac3sl6vnwlx0sl",
           "X-columbus1s5ualug048zxhlj50nr3527lk06dnyxrpg8lpq"
         ],
-        "threshold": 1
+        "threshold": 1,
+        "memo": "423"
       },
       {
-        "alias": "X-columbus1nsh8l6cpgy8j2y5mg493gjntlqdnza8mwqvsuw",
+        "alias": "X-columbus1ph50fuuzxmmkmpskmvkrdzudtdze4zfj33p4ef",
         "addresses": [
           "X-columbus1p0qgvr8ykvzjntjvcuclmsvv9mkav4ryp7rxhm",
           "X-columbus1ynz6fr7xpf6y2zfnc8g797e8pmnj85ma69wqp7",
@@ -4398,10 +4933,46 @@
           "X-columbus1sk5shk4dxpk0t32ktc5gqzpptqmdhaytwgdyys",
           "X-columbus16ju73s7am4w8q6rutlhl794hcuyv7tl6293cvm"
         ],
-        "threshold": 2
+        "threshold": 2,
+        "memo": "424"
       },
       {
-        "alias": "X-columbus1hn3lsa30w6xrlsg7dqfpsjezatts4zvgvz55pp",
+        "alias": "X-columbus1zg907zmsrkk7j37l0gfh7k20yw7s5na2qurp2w",
+        "addresses": [
+          "X-columbus1gvpq52ghwvts7085ddrvqzug2tmqcpxhk93y56",
+          "X-columbus10dmmqhhevraamhf74hm6d0ah6l6p6s6yxva3wg"
+        ],
+        "threshold": 1,
+        "memo": "441"
+      },
+      {
+        "alias": "X-columbus1xl6ezwlmpxhytmhlvrl85lvnheunjuu5un5qa9",
+        "addresses": [
+          "X-columbus1rtgc42mnalqkfcsxx2m4027a340tttm6uqw3em",
+          "X-columbus1k6a24y06jr9hs2ztu3yevy9ax7uk5d6arjs2x4",
+          "X-columbus1a70jassv2cmt93j3fdtqm77q25y2ru4hqpd50l"
+        ],
+        "threshold": 2,
+        "memo": "492"
+      },
+      {
+        "alias": "X-columbus1k9d6k4keaje95mwfw6qtz5whkhar3spekmmtvv",
+        "addresses": [
+          "X-columbus1ht5n4ynt6dlt0r7ce2gadww64y4k2xund7kawe"
+        ],
+        "threshold": 1,
+        "memo": "564"
+      },
+      {
+        "alias": "X-columbus1eh9hg8mpm5j9k9ddc5wpk8aj7evx8fzgzpt5yg",
+        "addresses": [
+          "X-columbus1avzavnjk9fgmga3drf4scmycnwl8m2pvrflgv2"
+        ],
+        "threshold": 1,
+        "memo": "565"
+      },
+      {
+        "alias": "X-columbus1rrdl8mgqhs7af9ktx4uw9puyanfc93223yn8kd",
         "addresses": [
           "X-columbus1qx7x8d472llxgtg9h4wfw9q6mfzfqv7metum4c",
           "X-columbus1y77kfdm5g293y7zm7ck2ap25w873wkv7xc5n0v",
@@ -4410,211 +4981,168 @@
           "X-columbus1vrxtv3uyy2c442vx4u279ygx58lee3zj8594hm",
           "X-columbus162g2l9j7dkyrfvz68tnnph86zdycuq5eh637x8"
         ],
-        "threshold": 3
+        "threshold": 3,
+        "memo": "568"
       },
       {
-        "alias": "X-columbus147ejnrpf6fgj65s32sgcm6reewyu9yut65tg6z",
+        "alias": "X-columbus17zjxkrmglzcmuwafag4uknacew39ev2ls9tga3",
         "addresses": [
           "X-columbus1pwfsrcae9kxr4faq5w0upa4stj45q9jzlgjq33",
           "X-columbus1x6my7jdu0wy2zgfeurt0ue0q7ypnrlacx5nzzu",
           "X-columbus13c69m2kfrr3u83f4fr5zxvp8797wp9fv6vcpud"
         ],
-        "threshold": 2
+        "threshold": 2,
+        "memo": "569"
       },
       {
-        "alias": "X-columbus14d7aarez2jrg8fq8zg0ezz2d0ayj4vynudt8av",
-        "addresses": [
-          "X-columbus1xlr8nhvm78s8ypqr4jpt0353mvzz6xjdtx9x46",
-          "X-columbus1tx2unmz2sw4f56gw5sjkmrtf5u87lccej2nzc4",
-          "X-columbus1h8mwk0rk00pnf5mxueapkuarfj337yazuqqeml"
-        ],
-        "threshold": 2
-      },
-      {
-        "alias": "X-columbus16ftwxsfyx70nvxsscv3g2rszv062dqt5chnzgt",
-        "addresses": [
-          "X-columbus13du65yjyrvrfgua8s02ytvx4rslsqzde4mqf80",
-          "X-columbus1ujh4jfc5fa6aa6h44pg33u8jt3q8xaqavzvp5c"
-        ],
-        "threshold": 1
-      },
-      {
-        "alias": "X-columbus1evmsvf7qgpqkucw9dza52qez4tw89nuvld5s3q",
-        "addresses": [
-          "X-columbus1mvysmuzdg3vmhyz5z7z2ar79k8gjshvrgrpw3f"
-        ],
-        "threshold": 1
-      },
-      {
-        "alias": "X-columbus1wv900zwr7ws5099vzwxxarrj4zratsvqxdsc2p",
-        "addresses": [
-          "X-columbus1ulucvsrhveqzdt37zhfdysycskw0v2f9td222z"
-        ],
-        "threshold": 1
-      },
-      {
-        "alias": "X-columbus1dzdhaqxp7gnnk4htuqa6urag8tztd7ktgrj6uu",
-        "addresses": [
-          "X-columbus1jqdr06q5a9csmf5s42rqlfhchlxjlmvzavzu6p",
-          "X-columbus1axmzzappezh88uns0cc6fys92vcztyfr6fmr5v"
-        ],
-        "threshold": 1
-      },
-      {
-        "alias": "X-columbus12melmrs7fg09l6p9cae0qt57z7zeay6luu9yrr",
+        "alias": "X-columbus1kjxmutel336ev5kzfvsal7e4ytvmu7z6t2dwg2",
         "addresses": [
           "X-columbus1n7zvnqe63pcjmglwm7jyg3a9n0dter3rv2x3n2",
           "X-columbus1ujcat254t7askj4tpju3uc70p3k3gm8j649ux5",
           "X-columbus1l8slwyve2c2pzenapm450fykuh82mw3dlpfx3w"
         ],
-        "threshold": 2
+        "threshold": 2,
+        "memo": "576"
       },
       {
-        "alias": "X-columbus15r290xt9mnpkmj2x7h4qvrca5zg7hysakutj3f",
+        "alias": "X-columbus1yumnux0gjuxv2p074gcwqw5hv4cjhpc3gehteh",
         "addresses": [
-          "X-columbus1g5rn3u8jfse893vc8suctmlkcvnpf097tmcs0l",
-          "X-columbus1c6fttduv83wrhejhagg0xz0dckswe5w3055cjy",
-          "X-columbus1mced2e89pjhvmc6698ywf3ccqh0ttxzr3z5tmw",
-          "X-columbus1uggerc3khhecx4z84h9trukfjj9fu6204h335s"
+          "X-columbus1ulucvsrhveqzdt37zhfdysycskw0v2f9td222z"
         ],
-        "threshold": 2
+        "threshold": 1,
+        "memo": "602"
       },
       {
-        "alias": "X-columbus16lz08tm8e7y8v20wj8qg6stykyfvalfevrj7tj",
+        "alias": "X-columbus1x7mff9z99azsd2djf4j0yp43ne0gxuvsggpnms",
         "addresses": [
-          "X-columbus1n8j7zudp748my7sgntsm3ngd2866genwk43sfh",
-          "X-columbus1akjmmq5mz8uvauhhvcr3ufle54rlnh6jq9pem4"
+          "X-columbus1n367g50tsmkgsspnp2qaf5vmrsa2kamc3c5q8h"
         ],
-        "threshold": 1
+        "threshold": 1,
+        "memo": "611"
       },
       {
-        "alias": "X-columbus1l7epvwzj2lh5a0n0hmvqvssypw9engrqnt0v7r",
+        "alias": "X-columbus1npxkkgtaq8p00uwc8nwrfm25rzf2pdyf2ywpe9",
         "addresses": [
-          "X-columbus1qad6z8s8ghehxhyemrdv4uc3ndzk8tqnaxry2u",
-          "X-columbus1nhkdq29jvecgsnhwxg36g3qy3fd6n7ayny4n7w"
+          "X-columbus1ale9unm94g5at8vp2z0ang7l5hc5maugsrrggh"
         ],
-        "threshold": 1
+        "threshold": 1,
+        "memo": "674"
       },
       {
-        "alias": "X-columbus1ma9yvjme5yuywupezk3uc0fmy6vz406mnfmmm4",
-        "addresses": [
-          "X-columbus18dc4jdycs82yw3p9uk537kvt80snjvkyunge2d",
-          "X-columbus1flnpq33aprfsfwu55teq309zlwwfl5yv2e3x7r",
-          "X-columbus17vmr4hvyl3dw9ec7clptmqt2dpd0uaqzderkkn"
-        ],
-        "threshold": 2
-      },
-      {
-        "alias": "X-columbus1rffgmzxjnx25qewecqth5x5d99vamk34jysa7t",
-        "addresses": [
-          "X-columbus1fsz4z9sh7s05hr9cup9yz82cmx4avpt62nzmdd"
-        ],
-        "threshold": 1
-      },
-      {
-        "alias": "X-columbus1yhdgzxy59jfdtdd582nqk9l3wf7j23u7psje7w",
-        "addresses": [
-          "X-columbus1qvflkawwhe5sau8xuw4apzhu2reztnvulh6679"
-        ],
-        "threshold": 1
-      },
-      {
-        "alias": "X-columbus1pa6u3rgkkwwtnnp8fshechy33genf243muyjwk",
-        "addresses": [
-          "X-columbus10a979j54ladz0y9q2672vv4ygpxgfjnugq54r3",
-          "X-columbus1llnr6mynmt7ft7kk5dfsly3qkc9l0xyta0u9mp"
-        ],
-        "threshold": 2
-      },
-      {
-        "alias": "X-columbus1xajah6wfsmf8jzf9sypp7smtlt87gh67dyuxjr",
-        "addresses": [
-          "X-columbus1r74sn3yjlf6utqxhd62ecwhcmj0rwexxqzzsc0",
-          "X-columbus1jc9fqt0t75v4c8p3rfctafegctkc5cd5lj2cja"
-        ],
-        "threshold": 2
-      },
-      {
-        "alias": "X-columbus1rljaheer547g4szl2rd7jdmws03nm2szqw74ua",
-        "addresses": [
-          "X-columbus107pmtdx0rgq2dknf6ffxhlaehmnausdcpesjwg",
-          "X-columbus13p3x5z04cfmln5mn5dj8ljr3a3rj733hgn5629",
-          "X-columbus1ez6s747dce6w9f6tsl96l8ljxx36v8y8jkll4c"
-        ],
-        "threshold": 2
-      },
-      {
-        "alias": "X-columbus1ujnfc5qz55ged32nf3cnr3nwtc9dd6xdvav9q7",
-        "addresses": [
-          "X-columbus1vveln3mjr9ee2ls5tx39sqygguatt5thk5spvq",
-          "X-columbus1d26p87euze5gjg5zf8d27fx4aq9nnlhvhl9xef"
-        ],
-        "threshold": 1
-      },
-      {
-        "alias": "X-columbus1w6dszh0s8dgz7kjj3eyvry8d9t4fr0qsjwdakj",
-        "addresses": [
-          "X-columbus1yrqhgzgadkyy3wgz3z67vx7zrhm4us06es9d72",
-          "X-columbus1xh62a0ada45g93x342r7vhhv5a9hs7x5wml7nc"
-        ],
-        "threshold": 1
-      },
-      {
-        "alias": "X-columbus14h5d0js0k09tn5tyfuquvp08ncca3xawr0zyp7",
-        "addresses": [
-          "X-columbus18jzw0k5pdcsmeyc55wevnxph8amaelt50wyzd3",
-          "X-columbus1604l4rly3kp5pexwm57p2gj5apdk78l9e09cl5"
-        ],
-        "threshold": 1
-      },
-      {
-        "alias": "X-columbus125d0gsa82rlprxs8c3jsy0xmjahp9jkr5z4adm",
-        "addresses": [
-          "X-columbus1g5rn3u8jfse893vc8suctmlkcvnpf097tmcs0l",
-          "X-columbus1c6fttduv83wrhejhagg0xz0dckswe5w3055cjy",
-          "X-columbus1mced2e89pjhvmc6698ywf3ccqh0ttxzr3z5tmw",
-          "X-columbus1uggerc3khhecx4z84h9trukfjj9fu6204h335s"
-        ],
-        "threshold": 2
-      },
-      {
-        "alias": "X-columbus1vv86khcks27sh9zmpfuqtnckgxga04grgmx4zp",
-        "addresses": [
-          "X-columbus1gvpq52ghwvts7085ddrvqzug2tmqcpxhk93y56",
-          "X-columbus10dmmqhhevraamhf74hm6d0ah6l6p6s6yxva3wg"
-        ],
-        "threshold": 1
-      },
-      {
-        "alias": "X-columbus1uyxxw4vlp7rrnmrgtk9zle3mrpe8n52ksf2yg3",
+        "alias": "X-columbus195gy59enhat6qlcqsjrqqn4l68mt7n2x5mh2gv",
         "addresses": [
           "X-columbus1vqt5lqcw4jrleckhp3z6r3mpame8gdhxhy9j8f",
           "X-columbus13xugknzqyfptssgke9fwmkveex8z2u3tm9zn3l",
           "X-columbus1lff8ns8ra2drccej8s6gx5sqadjupj9c7txpks"
         ],
-        "threshold": 2
+        "threshold": 2,
+        "memo": "675"
       },
       {
-        "alias": "X-columbus1k20cnmugmy6w239fxquss3ftuelhhl43wa7rfg",
+        "alias": "X-columbus1rm36u8p8v2vslddf0z2zmj97shcfx94awvfcgc",
+        "addresses": [
+          "X-columbus10ghxqewfgujnfzxqz2jjsrcqx8xglr0s7s4c2u",
+          "X-columbus10wq8n5sjctvruhf8wdp4xev4l7ru3ws6707ce9",
+          "X-columbus1nt6kdghwa8j3crxm9t9pa4ehgc0u6f8jy09vdv"
+        ],
+        "threshold": 1,
+        "memo": "682"
+      },
+      {
+        "alias": "X-columbus12hcmkc67wjvcdj7vqlzcqrpehs9lp50y3fpkas",
         "addresses": [
           "X-columbus1p0v0fh8mtdqau6qvjfz6ksewgznkqwrf0h0wh2",
           "X-columbus1nr4nrvdqd8s5setmuuegqs5pv4k9ncvhfq4nt7"
         ],
-        "threshold": 2
+        "threshold": 2,
+        "memo": "728"
       },
       {
-        "alias": "X-columbus155gp53wurucj7jj0pfnq3xgpcyplnf4q9emu0z",
+        "alias": "X-columbus1p7tlgcxyx8clqq3yvf4pr9gjng22ns9k42lcs0",
         "addresses": [
-          "X-columbus1n367g50tsmkgsspnp2qaf5vmrsa2kamc3c5q8h"
+          "X-columbus1yrqhgzgadkyy3wgz3z67vx7zrhm4us06es9d72",
+          "X-columbus1xh62a0ada45g93x342r7vhhv5a9hs7x5wml7nc"
         ],
-        "threshold": 1
+        "threshold": 1,
+        "memo": "730"
       },
       {
-        "alias": "X-columbus12vt2shtu7z7xuxtlg6m3alvwwpuamnc95536rj",
+        "alias": "X-columbus16sw3qmf2m4p6enwfzs9qfhjm538dzpf2ess6dg",
         "addresses": [
-          "X-columbus1avzavnjk9fgmga3drf4scmycnwl8m2pvrflgv2"
+          "X-columbus1skv4phaz8n6qcvpwe2jdnsu00gtyzagrwy4va3",
+          "X-columbus1kudhcsk27qtc7zyree2jxj8gm38sn7cp84zjzz"
         ],
-        "threshold": 1
+        "threshold": 1,
+        "memo": "736"
+      },
+      {
+        "alias": "X-columbus1ymnp6l60g0ykhr9k484qcdfjjfmdskx4hz5gzk",
+        "addresses": [
+          "X-columbus13du65yjyrvrfgua8s02ytvx4rslsqzde4mqf80",
+          "X-columbus1ujh4jfc5fa6aa6h44pg33u8jt3q8xaqavzvp5c"
+        ],
+        "threshold": 1,
+        "memo": "757"
+      },
+      {
+        "alias": "X-columbus1yd8u5d2jq4x9nntadxq6zuz0g8k2x5twgme9d8",
+        "addresses": [
+          "X-columbus1xlr8nhvm78s8ypqr4jpt0353mvzz6xjdtx9x46",
+          "X-columbus1tx2unmz2sw4f56gw5sjkmrtf5u87lccej2nzc4",
+          "X-columbus1h8mwk0rk00pnf5mxueapkuarfj337yazuqqeml"
+        ],
+        "threshold": 2,
+        "memo": "818"
+      },
+      {
+        "alias": "X-columbus1xvl6dfj5w9f35duqg97g79pnmffya96p464xc4",
+        "addresses": [
+          "X-columbus1mvysmuzdg3vmhyz5z7z2ar79k8gjshvrgrpw3f"
+        ],
+        "threshold": 1,
+        "memo": "914"
+      },
+      {
+        "alias": "X-columbus1v7kdfuh0u2sg26cu7nf6drptz7lzayfm7vqrnk",
+        "addresses": [
+          "X-columbus1vxmf8899y6x7dsam0xnr0hp6syzwz33383z3s7",
+          "X-columbus1w3szy4e5excad4j8xp2ua0ukqcfq2uh425mjj9",
+          "X-columbus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sry5xgd",
+          "X-columbus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8v8khm5v"
+        ],
+        "threshold": 2,
+        "memo": "931"
+      },
+      {
+        "alias": "X-columbus1ce27vm0mwdkf03ct6vh8gtldur0rm4rdv0uazk",
+        "addresses": [
+          "X-columbus1vxmf8899y6x7dsam0xnr0hp6syzwz33383z3s7",
+          "X-columbus1w3szy4e5excad4j8xp2ua0ukqcfq2uh425mjj9",
+          "X-columbus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sry5xgd",
+          "X-columbus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8v8khm5v"
+        ],
+        "threshold": 2,
+        "memo": "932"
+      },
+      {
+        "alias": "X-columbus1vscyf7czawylztn6ghhg0z27swwewxgzzxkyke",
+        "addresses": [
+          "X-columbus1vxmf8899y6x7dsam0xnr0hp6syzwz33383z3s7",
+          "X-columbus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sry5xgd",
+          "X-columbus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8v8khm5v"
+        ],
+        "threshold": 2,
+        "memo": "933"
+      },
+      {
+        "alias": "X-columbus1wpxa43ech79mxs5ta9kgrg3jx03rrjc3sv6qmv",
+        "addresses": [
+          "X-columbus107pmtdx0rgq2dknf6ffxhlaehmnausdcpesjwg",
+          "X-columbus13p3x5z04cfmln5mn5dj8ljr3a3rj733hgn5629",
+          "X-columbus1ez6s747dce6w9f6tsl96l8ljxx36v8y8jkll4c"
+        ],
+        "threshold": 2,
+        "memo": "975"
       }
     ]
   },
