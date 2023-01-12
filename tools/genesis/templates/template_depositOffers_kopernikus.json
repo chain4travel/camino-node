@@ -12,6 +12,7 @@
     "initialAdmin": "X-kopernikus14nkahpl55zl3h049skrgw8dk70nv5l5nqxgwhh",
     "depositOffers": [
       {
+        "offerID": "2SAadCwUEjHWfZEiK2DgRNQTE4YHgT8guTvmhB4uJDswabvvsi",
         "interestRateNominator": 80000,
         "startOffset": 0,
         "endOffset": 111585600,
@@ -25,6 +26,7 @@
         }
       },
       {
+        "offerID": "2AySgbKZp8PP95KCsttY68uKJyFbsATHnE73jk1P9fSppmqV45",
         "interestRateNominator": 0,
         "startOffset": 0,
         "endOffset": 158889600,
@@ -38,6 +40,7 @@
         }
       },
       {
+        "offerID": "2uGR8giEWip1mGWQzF1DXNVpUXY8M1futjhVErqV7uJntHmWrh",
         "interestRateNominator": 90000,
         "startOffset": 0,
         "endOffset": 143121600,
@@ -51,6 +54,7 @@
         }
       },
       {
+        "offerID": "2ad2QNdpDQWGUMx7WWRwAG1bxFwx5amEZzfoqGrGF1D7N3HNLp",
         "interestRateNominator": 100000,
         "startOffset": 0,
         "endOffset": 174657600,
@@ -64,6 +68,7 @@
         }
       },
       {
+        "offerID": "k5VaqN4kFtcKQWfjyJpk4YA8VBwW7TyeRicDGsdzRNRNSG1R1",
         "interestRateNominator": 90000,
         "startOffset": 0,
         "endOffset": 31536000,
@@ -77,6 +82,7 @@
         }
       },
       {
+        "offerID": "2vGw1ZaUWWGxhAm69Dt13zw5sUvmtCbzVTvvzPp34Ch5qEznBg",
         "interestRateNominator": 110000,
         "startOffset": 0,
         "endOffset": 63072000,
@@ -88,6 +94,7 @@
         "flags": {}
       },
       {
+        "offerID": "24zEuyv4zBvF2pGPbzwVYhCxPQUfuqD4pWDRfJrJapXBhFfxDh",
         "interestRateNominator": 210000,
         "startOffset": 0,
         "endOffset": 63072000,
