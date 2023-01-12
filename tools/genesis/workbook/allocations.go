@@ -1,15 +1,15 @@
 package workbook
 
 import (
-	"encoding/hex"
 	"fmt"
+	"log"
 	"strconv"
 	"strings"
 
 	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/crypto"
 	"github.com/ava-labs/avalanchego/utils/formatting/address"
 	"github.com/ava-labs/avalanchego/utils/units"
+	"github.com/chain4travel/camino-node/tools/genesis/utils"
 )
 
 const (
@@ -34,6 +34,7 @@ type Allocation struct {
 	RewardPercent       int
 	FirstName           string
 	TokenDeliveryOffset uint64
+	PublicKey           string
 }
 
 type AllocationRow int
@@ -116,18 +117,18 @@ func (a *Allocation) FromRow(row []string) error {
 	keyRead := false
 	if row[PublicKey] != "" {
 		row[PublicKey] = strings.TrimPrefix(row[PublicKey], "0x")
-		pkBytes, err := hex.DecodeString(row[PublicKey])
+
+		pk, err := utils.PublicKeyFromString(row[PublicKey])
 		if err != nil {
-			return fmt.Errorf("could not parse public key bytes %s", row[PublicKey])
+			return fmt.Errorf("could not parse public key, expected uncompressed bytes %s", row[PublicKey])
+		}
+		addr, err := utils.ToPAddress(pk)
+		if err != nil {
+			return fmt.Errorf("[X/P] could not parse public key %s, %w", row[PublicKey], err)
 		}
 
-		fx := crypto.FactorySECP256K1R{}
-		pk, err := fx.ToPublicKey(pkBytes)
-		if err != nil {
-			return fmt.Errorf("could not parse public key %s, %w", row[PublicKey], err)
-		}
-
-		a.Address, keyRead = pk.Address(), true
+		a.Address, keyRead = addr, true
+		a.PublicKey = row[PublicKey]
 	}
 	if !keyRead && len(row[PChainAddress]) >= 47 {
 		_, _, addrBytes, err := address.Parse(row[PChainAddress])
@@ -137,6 +138,9 @@ func (a *Allocation) FromRow(row []string) error {
 		a.Address, _ = ids.ToShortID(addrBytes)
 	}
 
+	if row[Pioneer] != "TRUE" && row[Pioneer] != "FALSE" {
+		log.Panic("Pioneer column must be TRUE or FALSE, but got ", row[Pioneer])
+	}
 	a.TokenDeliveryOffset = 0
 	if row[Pioneer] == "FALSE" {
 		a.TokenDeliveryOffset = TwoWeeksInSeconds
