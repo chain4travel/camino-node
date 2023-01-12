@@ -3,9 +3,11 @@ package main
 import (
 	"fmt"
 	"log"
+	"sort"
 
 	"github.com/chain4travel/camino-node/tools/genesis/workbook"
 	"github.com/xuri/excelize/v2"
+	"golang.org/x/exp/maps"
 )
 
 // Reads all rows from xls file "Allocations" workbook
@@ -33,7 +35,7 @@ func parseMultiSigGroups(multisigRows [][]string, allocs []*workbook.Allocation)
 		msMap[controlGroup] = append(msMap[controlGroup], row)
 	}
 
-	multis := []*workbook.MultiSig{}
+	multis := map[string]*workbook.MultiSig{}
 	for _, a := range allocs {
 		ctrlGroup, ok := msMap[a.ControlGroup]
 		if !ok {
@@ -48,10 +50,25 @@ func parseMultiSigGroups(multisigRows [][]string, allocs []*workbook.Allocation)
 			fmt.Println("could not parse multisig for ", a.RowNo, a.ControlGroup, err)
 			continue
 		}
-		multis = append(multis, ms)
+
+		if prevMs, ok := multis[ms.ControlGroup]; ok {
+			if prevMs.Threshold != ms.Threshold {
+				log.Panic("ctrl group which differs by threshold found ", ms.ControlGroup, ": ", prevMs.Threshold, " vs ", ms.Threshold)
+			}
+			continue
+		}
+		multis[ms.ControlGroup] = ms
 	}
 
-	return multis, nil
+	// also lets have MSig ordered by CtrlGroup
+	cgroups := maps.Keys(multis)
+	sort.Strings(cgroups)
+	sortedMultis := make([]*workbook.MultiSig, len(cgroups))
+	for i, cgroup := range cgroups {
+		sortedMultis[i] = multis[cgroup]
+	}
+
+	return sortedMultis, nil
 }
 
 func loadRows(xls *excelize.File, workbook string) [][]string {

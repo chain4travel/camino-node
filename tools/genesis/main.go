@@ -47,17 +47,24 @@ func main() {
 
 	// Set ID on DepositOffers
 	offerValuesToID := make(map[string]ids.ID)
+	depositOffers := make([]genesis.UnparsedDepositOffer, len(genesisConfig.Camino.DepositOffers))
 	for i, offer := range genesisConfig.Camino.DepositOffers {
 		parsedOffer, err := offer.Parse(genesisConfig.StartTime)
 		if err != nil {
 			log.Panic("Error parsing offer at", i, err)
 		}
+		parsedOffer.End += workbook.TwoWeeksInSeconds
 		id, _ := parsedOffer.ID()
 		index := valueIndex(offer)
 
 		offerValuesToID[index] = id
 		fmt.Println("DepositOffer index ", index, " ID:", id)
+
+		if err = depositOffers[i].Unparse(parsedOffer, genesisConfig.StartTime); err != nil {
+			log.Panic("Error unparsing offer ", i, "after modifications", err)
+		}
 	}
+	genesisConfig.Camino.DepositOffers = depositOffers
 
 	fmt.Println("Loadingspreadsheet", spreadsheetFile)
 	xls, err := excelize.OpenFile(spreadsheetFile)
