@@ -131,7 +131,7 @@ func (a *Allocation) FromRow(row []string) error {
 		a.PublicKey = row[PublicKey]
 	}
 	if !keyRead && len(row[PChainAddress]) >= 47 {
-		_, _, addrBytes, err := address.Parse(row[PChainAddress])
+		_, _, addrBytes, err := address.Parse(strings.TrimSpace(row[PChainAddress]))
 		if err != nil {
 			return fmt.Errorf("could not parse address %s", row[PChainAddress])
 		}

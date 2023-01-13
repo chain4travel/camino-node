@@ -12,10 +12,10 @@ import (
 )
 
 func PublicKeyFromString(publicKey string) (*secp256k1.PublicKey, error) {
-	publicKey = strings.TrimPrefix(publicKey, "0x")
+	publicKey = strings.TrimSpace(strings.TrimPrefix(publicKey, "0x"))
 	pkBytes, err := hex.DecodeString(publicKey)
 	if err != nil {
-		return nil, fmt.Errorf("could not parse public key bytes %s", publicKey)
+		return nil, fmt.Errorf("could not parse public key bytes %v", publicKey)
 	}
 	return secp256k1.ParsePubKey(pkBytes)
 }

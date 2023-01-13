@@ -35,8 +35,7 @@ func generateMSigDefinitions(networkID uint32, msigs []*workbook.MultiSig) (Mult
 		msDefs = append(msDefs, ma)
 		cgToMSig[memo] = ma.Alias
 
-		addr, _ := address.Format("X", constants.NetworkIDToHRP[networkID], ma.Alias.Bytes())
-		fmt.Println("MSig alias generated ", memo, "  Addr:", addr)
+		fmt.Println("MSig alias generated ", memo, "  Addr:", addrToString(networkID, ma.Alias))
 	}
 
 	defs := MultisigDefs{
@@ -58,10 +57,20 @@ func generateMSigDefinitions(networkID uint32, msigs []*workbook.MultiSig) (Mult
 	return defs, nil
 }
 
+type UnlockedFunds int
+
+// TransferToPChain for now is the default. At some point we want to have a choice.
+const (
+	TransferToPChain UnlockedFunds = iota
+	// TransferToXChain
+)
+
 func generateAllocations(
+	networkID uint32,
 	allocations []*workbook.Allocation,
 	offerValueToID map[string]ids.ID,
 	msigCtrlGrpToAlias map[string]ids.ShortID,
+	unlockedFundsDestination UnlockedFunds,
 ) ([]*genesis.CaminoAllocation, ids.ShortID) {
 	parsedAlloc := make([]*genesis.CaminoAllocation, 0, len(allocations))
 	skippedRows := 0
@@ -70,7 +79,12 @@ func generateAllocations(
 		msigAlias, ok := msigCtrlGrpToAlias[al.ControlGroup]
 		if ok {
 			al.Address = msigAlias
-			fmt.Println("replaced row ", al.RowNo, "address with its control group alias  ", al.ControlGroup)
+			fmt.Printf("replaced row %3d address with its control group alias %s\n", al.RowNo, al.ControlGroup)
+		}
+
+		// print addresses generated from public keys
+		if !ok && al.PublicKey != "" {
+			fmt.Printf("replaced row %3d public key %s resolved to address %s\n", al.RowNo, al.PublicKey[:11], addrToString(networkID, al.Address))
 		}
 
 		// early exits
@@ -96,9 +110,9 @@ func generateAllocations(
 		offerValueUnlockPeriodDuration := uint64(al.UnbondingPeriod * YearToSeconds)
 		offerValueIndex := strconv.FormatUint(offerValueMinDuration, 10) + "_" + strconv.FormatUint(offerValueUnlockPeriodDuration, 10) + "_" + strconv.FormatInt(int64(al.RewardPercent), 10)
 
-		directXAmount := uint64(0)
+		directAmount := uint64(0)
 		if offerValueMinDuration == 0 && offerValueUnlockPeriodDuration == 0 {
-			directXAmount = al.Amount
+			directAmount = al.Amount
 		}
 
 		onePercent := uint64(0)
@@ -110,7 +124,6 @@ func generateAllocations(
 		isKycVerified := al.Kyc == "y"
 
 		a := &genesis.CaminoAllocation{
-			XAmount:       directXAmount + onePercent,
 			AVAXAddr:      al.Address,
 			AddressStates: genesis.AddressStates{ConsortiumMember: isConsortiumMember, KYCVerified: isKycVerified},
 		}
@@ -133,6 +146,18 @@ func generateAllocations(
 				Memo:              strconv.Itoa(al.RowNo),
 			}
 			a.PlatformAllocations = append(a.PlatformAllocations, pa)
+		}
+
+		unlockedFunds := directAmount + onePercent
+		if unlockedFunds > 0 && unlockedFundsDestination == TransferToPChain {
+			additionalUnlocked := genesis.PlatformAllocation{
+				Amount:          unlockedFunds,
+				TimestampOffset: al.TokenDeliveryOffset,
+				Memo:            fmt.Sprintf("%d+", al.RowNo),
+			}
+			a.PlatformAllocations = append(a.PlatformAllocations, additionalUnlocked)
+		} else {
+			a.XAmount = unlockedFunds
 		}
 
 		parsedAlloc = append(parsedAlloc, a)
@@ -160,6 +185,11 @@ func unparseAllocations(genAlloc []*genesis.CaminoAllocation, networkID uint32) 
 		confAlloc = append(confAlloc, uga)
 	}
 	return confAlloc
+}
+
+func addrToString(networkID uint32, addr ids.ShortID) string {
+	fmtAddr, _ := address.Format("X", constants.NetworkIDToHRP[networkID], addr.Bytes())
+	return fmtAddr
 }
 
 func memoSanityCheck(ma *platform.MultisigAlias, index int) error {
