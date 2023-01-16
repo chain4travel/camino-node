@@ -26,6 +26,9 @@ func main() {
 	networkName := os.Args[3]
 	outputPath := os.Args[4]
 
+	// Allows to choose where additional unlocked funds (e.g. 1%) will be sent
+	unlockedFunds := TransferToPChain
+
 	networkID := uint32(0)
 	switch networkName {
 	case "camino":
@@ -83,7 +86,7 @@ func main() {
 	msigGroups, _ := generateMSigDefinitions(genesisConfig.NetworkID, multisigs)
 	genesisConfig.Camino.InitialMultisigAddresses = msigGroups.MultisigAliaseas
 	// create Genesis allocation records
-	genAlloc, adminAddr := generateAllocations(allocations, offerValuesToID, msigGroups.ControlGroupToAlias)
+	genAlloc, adminAddr := generateAllocations(genesisConfig.NetworkID, allocations, offerValuesToID, msigGroups.ControlGroupToAlias, unlockedFunds)
 	// Overwrite the admin addr if given
 	if adminAddr != ids.ShortEmpty {
 		avaxAddr, _ := address.Format(

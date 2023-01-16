@@ -2,6 +2,7 @@ package workbook
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/ava-labs/avalanchego/ids"
 	"github.com/ava-labs/avalanchego/utils/formatting/address"
@@ -37,7 +38,7 @@ func (msig *MultiSig) FromRow(threshold uint32, rowGroup [][]string) error {
 		if row[ControlGroup] != msig.ControlGroup {
 			return fmt.Errorf("control group mismatch")
 		}
-		_, _, addrBytes, err := address.Parse(row[PChainAddress])
+		_, _, addrBytes, err := address.Parse(strings.TrimSpace(row[PChainAddress]))
 		if err != nil {
 			return fmt.Errorf("could not parse address %s for ctrl group %s - err: %s", row[PChainAddress], msig.ControlGroup, err)
 		}
