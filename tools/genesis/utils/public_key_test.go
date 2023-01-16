@@ -73,7 +73,7 @@ func TestPAddressFormatting(t *testing.T) {
 			"P-columbus15edgkc7d8ptxy9kvl9x66a0hapu7xummkpu9cd",
 		},
 		{
-			"049cfbac90749c7261306e2c2209653027992166fb720879d8c18b8bcf1ec75ea4e289fb8646c5e711f45af9eac761b19ceec02de608a9d6b9fcf91aafc60e5d57",
+			"049cfbac90749c7261306e2c2209653027992166fb720879d8c18b8bcf1ec75ea4e289fb8646c5e711f45af9eac761b19ceec02de608a9d6b9fcf91aafc60e5d57\n",
 			"P-columbus1k3l0wtdstm8fse5wenuwrqv2x92pu94x0wrpg4",
 		},
 	}
