@@ -56,7 +56,7 @@ func main() {
 		if err != nil {
 			log.Panic("Error parsing offer at", i, err)
 		}
-		parsedOffer.End += workbook.TwoWeeksInSeconds
+		parsedOffer.End += workbook.TierTimeDelayInSeconds
 		id, _ := parsedOffer.ID()
 		index := valueIndex(offer)
 
