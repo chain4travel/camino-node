@@ -13,8 +13,8 @@ import (
 )
 
 const (
-	Allocations              = "Camino Allocation"
-	TwoWeeksInSeconds uint64 = 2 * 7 * 24 * 60 * 60
+	Allocations                   = "Camino Allocation"
+	TierTimeDelayInSeconds uint64 = 30 * 24 * 60 * 60
 )
 
 type Allocation struct {
@@ -143,7 +143,7 @@ func (a *Allocation) FromRow(row []string) error {
 	}
 	a.TokenDeliveryOffset = 0
 	if row[Pioneer] == "FALSE" {
-		a.TokenDeliveryOffset = TwoWeeksInSeconds
+		a.TokenDeliveryOffset = TierTimeDelayInSeconds
 	}
 
 	a.UnbondingStart, err = strconv.ParseFloat(row[UnbondingStartYears], 64)
