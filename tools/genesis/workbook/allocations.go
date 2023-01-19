@@ -2,7 +2,6 @@ package workbook
 
 import (
 	"fmt"
-	"log"
 	"strconv"
 	"strings"
 
@@ -13,8 +12,7 @@ import (
 )
 
 const (
-	Allocations                   = "Camino Allocation"
-	TierTimeDelayInSeconds uint64 = 30 * 24 * 60 * 60
+	Allocations = "Camino Allocation"
 )
 
 type Allocation struct {
@@ -28,33 +26,37 @@ type Allocation struct {
 	MsigThreshold       uint32
 	NodeID              ids.NodeID
 	ValidatorPeriodDays uint32
-	UnbondingStart      float64
-	UnbondingPeriod     float64
 	Additional1Percent  string
-	RewardPercent       int
+	OfferID             string
 	FirstName           string
 	TokenDeliveryOffset uint64
+	DepositDuration     uint32
 	PublicKey           string
 }
 
 type AllocationRow int
 
-func (a *Allocation) FromRow(row []string) error {
+const (
+	TrueValue  = "TRUE"
+	FalseValue = "FALSE"
+)
+
+func (a *Allocation) FromRow(fileRowNo int, row []string) error {
 	// COLUMNS
 	const (
-		RowNo AllocationRow = iota
+		_RowNo AllocationRow = iota
 		ComapnyName
 		FirstName
-		LastName
-		KnownBy
+		_LastName
+		_KnownBy
 		Kyc
-		Street
-		Street2
-		Zip
-		City
-		Country
+		_Street
+		_Street2
+		_Zip
+		_City
+		_Country
 		Bucket
-		CamPurchasePrice
+		_CamPurchasePrice
 		CamAmount
 		PChainAddress
 		PublicKey
@@ -63,26 +65,21 @@ func (a *Allocation) FromRow(row []string) error {
 		MultisigThreshold
 		NodeID
 		ValidationPeriodDays
-		UnbondingStartYears
-		UnbondingPeriodYears
 		Additional1Percent
-		RewardPercent
 		OfferID
-		Pioneer
+		AllocationStartOffet
+		DepositDuration
 	)
 
 	var err error
+	a.RowNo = fileRowNo
 	a.Bucket = row[Bucket]
-	a.Kyc = row[Kyc]
+	a.Kyc = strings.TrimSpace(row[Kyc])
 	a.FirstName = row[FirstName]
-	a.ConsortiumMember = row[ConsortiumMember]
-	a.ControlGroup = row[ControlGroup]
-	a.Additional1Percent = row[Additional1Percent]
-
-	a.RowNo, err = strconv.Atoi(row[RowNo])
-	if err != nil {
-		return fmt.Errorf("could not parse row number %s", row[RowNo])
-	}
+	a.ConsortiumMember = strings.TrimSpace(row[ConsortiumMember])
+	a.ControlGroup = strings.TrimSpace(row[ControlGroup])
+	a.Additional1Percent = strings.TrimSpace(row[Additional1Percent])
+	a.OfferID = strings.TrimSpace(row[OfferID])
 
 	a.Amount, err = strconv.ParseUint(row[CamAmount], 10, 64)
 	if err != nil {
@@ -138,31 +135,16 @@ func (a *Allocation) FromRow(row []string) error {
 		a.Address, _ = ids.ToShortID(addrBytes)
 	}
 
-	if row[Pioneer] != "TRUE" && row[Pioneer] != "FALSE" {
-		log.Panic("Pioneer column must be TRUE or FALSE, but got ", row[Pioneer])
-	}
-	a.TokenDeliveryOffset = 0
-	if row[Pioneer] == "FALSE" {
-		a.TokenDeliveryOffset = TierTimeDelayInSeconds
+	a.TokenDeliveryOffset, err = strconv.ParseUint(row[AllocationStartOffet], 10, 64)
+	if err != nil {
+		return fmt.Errorf("could not parse allocation offset %s", row[AllocationStartOffet])
 	}
 
-	a.UnbondingStart, err = strconv.ParseFloat(row[UnbondingStartYears], 64)
-	if err != nil {
-		a.UnbondingStart = 0
+	dd, err := strconv.ParseUint(row[DepositDuration], 10, 32)
+	if row[DepositDuration] != "" && err != nil {
+		return fmt.Errorf("could not parse deposit duration %s: %w", row[DepositDuration], err)
 	}
-	a.UnbondingPeriod, err = strconv.ParseFloat(row[UnbondingPeriodYears], 64)
-	if err != nil {
-		a.UnbondingPeriod = 0
-	}
-
-	if strings.HasSuffix(row[RewardPercent], "%") {
-		a.RewardPercent, err = strconv.Atoi(row[RewardPercent][:len(row[RewardPercent])-1])
-		if err != nil {
-			a.RewardPercent = -1
-		}
-	} else {
-		a.RewardPercent = -1
-	}
+	a.DepositDuration = uint32(dd)
 
 	return nil
 }
