@@ -12,99 +12,127 @@
     "initialAdmin": "X-kopernikus1xnzumqv2nzcg24g5ql34jv38qhpjyfxk9h069d",
     "depositOffers": [
       {
-        "offerID": "2UMVoKEBYeVP21k5co3gvEDyCpkgE6kmEb5kTy8QxVpnCaczGM",
         "interestRateNominator": 80000,
         "startOffset": 0,
-        "endOffset": 114177600,
+        "endOffset": 111589200,
         "minAmount": 1,
         "minDuration": 110376000,
         "maxDuration": 110376000,
         "unlockPeriodDuration": 31536000,
         "noRewardsPeriodDuration": 15768000,
+        "memo": "presale 3Y - not pickable after network creation, only for genesis allocations",
         "flags": {
           "locked": true
         }
       },
       {
-        "offerID": "2jfAVePJSFaouYKFBaCYPK7npaE2BTyySLRnC8MZmAkyQM1YQu",
-        "interestRateNominator": 0,
-        "startOffset": 0,
-        "endOffset": 161481600,
-        "minAmount": 1,
-        "minDuration": 157680000,
-        "maxDuration": 157680000,
-        "unlockPeriodDuration": 63072000,
-        "noRewardsPeriodDuration": 31536000,
-        "flags": {
-          "locked": true
-        }
-      },
-      {
-        "offerID": "2fCQPn66pFuNDKhn3yo6KZka2xrVHnreCT6u7GHReDnZYf9ucX",
         "interestRateNominator": 90000,
         "startOffset": 0,
-        "endOffset": 145713600,
+        "endOffset": 143125200,
         "minAmount": 1,
         "minDuration": 141912000,
         "maxDuration": 141912000,
         "unlockPeriodDuration": 31536000,
         "noRewardsPeriodDuration": 15768000,
+        "memo": "presale 4Y - not pickable after network creation, only for genesis allocations",
         "flags": {
           "locked": true
         }
       },
       {
-        "offerID": "2hSSCLqw1uPZPYdW3j3Zwo68QBepguYrMjjnq79FzTkWXT2LnD",
         "interestRateNominator": 100000,
         "startOffset": 0,
-        "endOffset": 177249600,
+        "endOffset": 174661200,
         "minAmount": 1,
         "minDuration": 173448000,
         "maxDuration": 173448000,
         "unlockPeriodDuration": 31536000,
         "noRewardsPeriodDuration": 15768000,
+        "memo": "presale 5Y - not pickable after network creation, only for genesis allocations",
         "flags": {
           "locked": true
         }
       },
       {
-        "offerID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+        "interestRateNominator": 0,
+        "startOffset": 0,
+        "endOffset": 174661200,
+        "minAmount": 1,
+        "minDuration": 157680000,
+        "maxDuration": 157680000,
+        "unlockPeriodDuration": 157680000,
+        "noRewardsPeriodDuration": 0,
+        "memo": "Directly start with undeposit for 5years -- (Mostly used for longterm funds of the camino foundation reserve, marketing, team, second sale, etc)",
+        "flags": {
+          "locked": true
+        }
+      },
+      {
+        "interestRateNominator": 0,
+        "startOffset": 0,
+        "endOffset": 111589200,
+        "minAmount": 1,
+        "minDuration": 110376000,
+        "maxDuration": 110376000,
+        "unlockPeriodDuration": 31536000,
+        "noRewardsPeriodDuration": 0,
+        "memo": "Seed investors lock",
+        "flags": {
+          "locked": true
+        }
+      },
+      {
+        "interestRateNominator": 0,
+        "startOffset": 0,
+        "endOffset": 158893200,
+        "minAmount": 1,
+        "minDuration": 157680000,
+        "maxDuration": 157680000,
+        "unlockPeriodDuration": 63072000,
+        "noRewardsPeriodDuration": 0,
+        "memo": "Founders/Team 5Y - not pickable after network creation, only for genesis allocations",
+        "flags": {
+          "locked": true
+        }
+      },
+      {
         "interestRateNominator": 90000,
         "startOffset": 0,
-        "endOffset": 34128000,
+        "endOffset": 31539600,
         "minAmount": 1,
         "minDuration": 31536000,
         "maxDuration": 31536000,
         "unlockPeriodDuration": 31536000,
         "noRewardsPeriodDuration": 15768000,
+        "memo": "un-deposit test - not pickable after network creation, only for genesis allocations",
         "flags": {
           "locked": true
         }
       },
       {
-        "offerID": "2v3jKLqt6k49uJCvrm9bXvSGxKyRGg951FCNePFAdxtrWVXaaz",
         "interestRateNominator": 110000,
         "startOffset": 0,
-        "endOffset": 65664000,
+        "endOffset": 63075600,
         "minAmount": 1,
         "minDuration": 60,
         "maxDuration": 31536000,
         "unlockPeriodDuration": 0,
         "noRewardsPeriodDuration": 0,
+        "memo": "depositOffer test#1 - pickable after network creation and not in genesis as duration is not choosable per allocation!",
         "flags": {
           "locked": false
         }
       },
       {
-        "offerID": "2KcftFNc5i85MfRPXEJ9Zts3z241xpJbhmu8Mc4KhMCZm6uUrh",
         "interestRateNominator": 210000,
         "startOffset": 0,
-        "endOffset": 65664000,
+        "endOffset": 63075600,
         "minAmount": 1,
         "minDuration": 86400,
         "maxDuration": 31536000,
         "unlockPeriodDuration": 43200,
         "noRewardsPeriodDuration": 43200,
+        "memo": "depositOffer test#2 - pickable after network creation and not in genesis as duration is not choosable per allocation!",
         "flags": {
           "locked": false
         }
@@ -122,14 +150,14 @@
         "platformAllocations": [
           {
             "amount": 10000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "1+"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus1v7kdfuh0u2sg26cu7nf6drptz7lzayfm5twpft",
+        "avaxAddr": "X-kopernikus194sm66h2qrmtae7gcesnmxdstzqv0mpt53yjft",
         "xAmount": 0,
         "addressStates": {
           "consortiumMember": true,
@@ -141,20 +169,20 @@
             "nodeID": "NodeID-6XD16eZ22fadTKq3qsxro9TPFZyxTiFv3",
             "validatorDuration": 31104000,
             "depositDuration": 110376000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "2UMVoKEBYeVP21k5co3gvEDyCpkgE6kmEb5kTy8QxVpnCaczGM",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "presale 3Y - not pickable after network creation, only for genesis allocations",
             "memo": "2"
           },
           {
             "amount": 1000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "2+"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus1ce27vm0mwdkf03ct6vh8gtldur0rm4rdxgjlct",
+        "avaxAddr": "X-kopernikus1z5ykr4vxdhqder6jl0j5je2kl9cqxxlnrm55v2",
         "xAmount": 0,
         "addressStates": {
           "consortiumMember": true,
@@ -166,13 +194,13 @@
             "nodeID": "NodeID-6rsqgkg4F1i3SBjzj4tS5ucQWH7JMEouj",
             "validatorDuration": 62208000,
             "depositDuration": 141912000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "2fCQPn66pFuNDKhn3yo6KZka2xrVHnreCT6u7GHReDnZYf9ucX",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "presale 4Y - not pickable after network creation, only for genesis allocations",
             "memo": "3"
           },
           {
             "amount": 1000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "3+"
           }
         ]
@@ -189,20 +217,20 @@
           {
             "amount": 10000000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "4"
           },
           {
             "amount": 100000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "4+"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus1vscyf7czawylztn6ghhg0z27swwewxgzgpcxvy",
+        "avaxAddr": "X-kopernikus1prxyey5xugn5c6tqusha9m4hd4rvld23h0sxam",
         "xAmount": 0,
         "addressStates": {
           "consortiumMember": false,
@@ -210,8 +238,8 @@
         },
         "platformAllocations": [
           {
-            "amount": 837693200000000000,
-            "timestampOffset": 2592000,
+            "amount": 736583200000000000,
+            "timestampOffset": 3600,
             "memo": "5+"
           }
         ]
@@ -228,7 +256,7 @@
           {
             "amount": 100000000000000,
             "depositDuration": 157680000,
-            "depositOfferID": "2jfAVePJSFaouYKFBaCYPK7npaE2BTyySLRnC8MZmAkyQM1YQu",
+            "depositOfferMemo": "Founders/Team 5Y - not pickable after network creation, only for genesis allocations",
             "memo": "6"
           }
         ]
@@ -245,13 +273,13 @@
           {
             "amount": 10000000000000,
             "depositDuration": 110376000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "2UMVoKEBYeVP21k5co3gvEDyCpkgE6kmEb5kTy8QxVpnCaczGM",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "presale 3Y - not pickable after network creation, only for genesis allocations",
             "memo": "7"
           },
           {
             "amount": 100000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "7+"
           }
         ]
@@ -268,13 +296,13 @@
           {
             "amount": 10000000000000,
             "depositDuration": 141912000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "2fCQPn66pFuNDKhn3yo6KZka2xrVHnreCT6u7GHReDnZYf9ucX",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "presale 4Y - not pickable after network creation, only for genesis allocations",
             "memo": "8"
           },
           {
             "amount": 100000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "8+"
           }
         ]
@@ -291,13 +319,13 @@
           {
             "amount": 10000000000000,
             "depositDuration": 173448000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "2hSSCLqw1uPZPYdW3j3Zwo68QBepguYrMjjnq79FzTkWXT2LnD",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "presale 5Y - not pickable after network creation, only for genesis allocations",
             "memo": "9"
           },
           {
             "amount": 100000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "9+"
           }
         ]
@@ -312,8 +340,15 @@
         },
         "platformAllocations": [
           {
-            "amount": 10100000000000000,
-            "timestampOffset": 2592000,
+            "amount": 10000000000000000,
+            "depositDuration": 31536000,
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
+            "memo": "10"
+          },
+          {
+            "amount": 100000000000000,
+            "timestampOffset": 3600,
             "memo": "10+"
           }
         ]
@@ -330,13 +365,13 @@
           {
             "amount": 10000000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "11"
           },
           {
             "amount": 100000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "11+"
           }
         ]
@@ -353,13 +388,13 @@
           {
             "amount": 100000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "12"
           },
           {
             "amount": 1000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "12+"
           }
         ]
@@ -374,8 +409,8 @@
         },
         "platformAllocations": [
           {
-            "amount": 10000000000000000,
-            "timestampOffset": 2592000,
+            "amount": 100000000000000000,
+            "timestampOffset": 3600,
             "memo": "13+"
           }
         ]
@@ -392,8 +427,8 @@
           {
             "amount": 100000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "14"
           }
         ]
@@ -410,20 +445,20 @@
           {
             "amount": 10000000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "15"
           },
           {
             "amount": 100000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "15+"
           }
         ]
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus1v7kdfuh0u2sg26cu7nf6drptz7lzayfm5twpft",
+        "avaxAddr": "X-kopernikus194sm66h2qrmtae7gcesnmxdstzqv0mpt53yjft",
         "xAmount": 0,
         "addressStates": {
           "consortiumMember": false,
@@ -431,15 +466,8 @@
         },
         "platformAllocations": [
           {
-            "amount": 100000000000000,
-            "depositDuration": 110376000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "2UMVoKEBYeVP21k5co3gvEDyCpkgE6kmEb5kTy8QxVpnCaczGM",
-            "memo": "16"
-          },
-          {
-            "amount": 1000000000000,
-            "timestampOffset": 2592000,
+            "amount": 101000000000000,
+            "timestampOffset": 3600,
             "memo": "16+"
           }
         ]
@@ -456,13 +484,13 @@
           {
             "amount": 100000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "17"
           },
           {
             "amount": 1000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "17+"
           }
         ]
@@ -479,13 +507,13 @@
           {
             "amount": 100000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "18"
           },
           {
             "amount": 1000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "18+"
           }
         ]
@@ -502,13 +530,13 @@
           {
             "amount": 100000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "19"
           },
           {
             "amount": 1000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "19+"
           }
         ]
@@ -525,13 +553,13 @@
           {
             "amount": 100000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "20"
           },
           {
             "amount": 1000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "20+"
           }
         ]
@@ -548,8 +576,8 @@
           {
             "amount": 10000000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "21"
           }
         ]
@@ -566,13 +594,13 @@
           {
             "amount": 100000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "22"
           },
           {
             "amount": 1000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "22+"
           }
         ]
@@ -589,13 +617,13 @@
           {
             "amount": 100000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "23"
           },
           {
             "amount": 1000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "23+"
           }
         ]
@@ -612,13 +640,13 @@
           {
             "amount": 100000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "24"
           },
           {
             "amount": 1000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "24+"
           }
         ]
@@ -635,13 +663,13 @@
           {
             "amount": 100000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "25"
           },
           {
             "amount": 1000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "25+"
           }
         ]
@@ -658,13 +686,13 @@
           {
             "amount": 100000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "26"
           },
           {
             "amount": 1000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "26+"
           }
         ]
@@ -681,13 +709,13 @@
           {
             "amount": 150000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "27"
           },
           {
             "amount": 1500000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "27+"
           }
         ]
@@ -704,13 +732,13 @@
           {
             "amount": 100000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "28"
           },
           {
             "amount": 1000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "28+"
           }
         ]
@@ -727,13 +755,13 @@
           {
             "amount": 100000000000000,
             "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
             "memo": "29"
           },
           {
             "amount": 1000000000000,
-            "timestampOffset": 2592000,
+            "timestampOffset": 3600,
             "memo": "29+"
           }
         ]
@@ -748,52 +776,291 @@
         },
         "platformAllocations": [
           {
+            "amount": 1010000000000000,
+            "timestampOffset": 3600,
+            "memo": "30+"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus102uap4au55t22m797rr030wyrw0jlgw25ut8vj",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
             "amount": 1000000000000000,
-            "depositDuration": 31536000,
-            "timestampOffset": 2592000,
-            "depositOfferID": "oS6QLaeupSMRic7S44skswr6RBgAxzPn5VsXq64i8SpConM9Z",
-            "memo": "30"
+            "depositDuration": 110376000,
+            "timestampOffset": 3600,
+            "depositOfferMemo": "presale 3Y - not pickable after network creation, only for genesis allocations",
+            "memo": "31"
           },
           {
             "amount": 10000000000000,
-            "timestampOffset": 2592000,
-            "memo": "30+"
+            "timestampOffset": 3600,
+            "memo": "31+"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1c35zu69gd42yu9ecrptzwf0z9g7fhfvrmrjgam",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 1000000000000000,
+            "depositDuration": 141912000,
+            "timestampOffset": 3600,
+            "depositOfferMemo": "presale 4Y - not pickable after network creation, only for genesis allocations",
+            "memo": "32"
+          },
+          {
+            "amount": 10000000000000,
+            "timestampOffset": 3600,
+            "memo": "32+"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus10xf9u6we06ljq20jtq90hj0f6q8l2psp0njqmu",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 1000000000000000,
+            "depositDuration": 173448000,
+            "timestampOffset": 3600,
+            "depositOfferMemo": "presale 5Y - not pickable after network creation, only for genesis allocations",
+            "memo": "33"
+          },
+          {
+            "amount": 10000000000000,
+            "timestampOffset": 3600,
+            "memo": "33+"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1dgrg4j4p5e6k5jn8080n6333r934pyum0zgczg",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 1000000000000000,
+            "depositDuration": 157680000,
+            "timestampOffset": 3600,
+            "depositOfferMemo": "Directly start with undeposit for 5years -- (Mostly used for longterm funds of the camino foundation reserve, marketing, team, second sale, etc)",
+            "memo": "34"
+          },
+          {
+            "amount": 10000000000000,
+            "timestampOffset": 3600,
+            "memo": "34+"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1qfyvkqnv8yd9rmlf6sv0gdx20dgg4erslxurav",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 1000000000000000,
+            "depositDuration": 110376000,
+            "timestampOffset": 3600,
+            "depositOfferMemo": "Seed investors lock",
+            "memo": "35"
+          },
+          {
+            "amount": 10000000000000,
+            "timestampOffset": 3600,
+            "memo": "35+"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1fvr4nd743ew0gcy00se24hp2ecpmk4h7lhkll4",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 1000000000000000,
+            "depositDuration": 157680000,
+            "timestampOffset": 3600,
+            "depositOfferMemo": "Founders/Team 5Y - not pickable after network creation, only for genesis allocations",
+            "memo": "36"
+          },
+          {
+            "amount": 10000000000000,
+            "timestampOffset": 3600,
+            "memo": "36+"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1yk9lw48um0r0rn9ydf9fhjfwwfq0qh7qpytjcr",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 1000000000000000,
+            "depositDuration": 31536000,
+            "timestampOffset": 3600,
+            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
+            "memo": "37"
+          },
+          {
+            "amount": 10000000000000,
+            "timestampOffset": 3600,
+            "memo": "37+"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1lmwsgy9zv8hyxwsek0pvsq7cpejtkvwk2nm7k0",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 1000000000000000,
+            "depositDuration": 86400,
+            "timestampOffset": 3600,
+            "depositOfferMemo": "depositOffer test#1 - pickable after network creation and not in genesis as duration is not choosable per allocation!",
+            "memo": "38"
+          },
+          {
+            "amount": 10000000000000,
+            "timestampOffset": 3600,
+            "memo": "38+"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1maff3tql60ndkwn9mvz06ssywvag4uf48el62q",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 1000000000000000,
+            "depositDuration": 864000,
+            "timestampOffset": 3600,
+            "depositOfferMemo": "depositOffer test#2 - pickable after network creation and not in genesis as duration is not choosable per allocation!",
+            "memo": "39"
+          },
+          {
+            "amount": 10000000000000,
+            "timestampOffset": 3600,
+            "memo": "39+"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus18gw475en5h5jvtkslp7xqed7t7ugq6rmc4zrvh",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 1000000000000000,
+            "depositDuration": 110376000,
+            "timestampOffset": 3600,
+            "depositOfferMemo": "presale 3Y - not pickable after network creation, only for genesis allocations",
+            "memo": "40"
+          },
+          {
+            "amount": 10000000000000,
+            "timestampOffset": 3600,
+            "memo": "40+"
           }
         ]
       }
     ],
     "initialMultisigAddresses": [
       {
-        "alias": "X-kopernikus1v7kdfuh0u2sg26cu7nf6drptz7lzayfm5twpft",
+        "alias": "X-kopernikus194sm66h2qrmtae7gcesnmxdstzqv0mpt53yjft",
         "addresses": [
-          "X-kopernikus1vxmf8899y6x7dsam0xnr0hp6syzwz333dkvn2r",
-          "X-kopernikus1w3szy4e5excad4j8xp2ua0ukqcfq2uh4qn4sgc",
-          "X-kopernikus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sfr6yjs",
-          "X-kopernikus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8vd3eew3"
+          "X-kopernikus18pry238vq8uzzpar32wa4x4p2rkyc7wx2qnctc",
+          "X-kopernikus18l0l8dz03vmk7k7y5cgax8k2l5mphj4p5k040u",
+          "X-kopernikus1d0ydd4wyq670lzrp0y7xd3wej4z7ysp2surum8",
+          "X-kopernikus1h87ampd07hwtnqywpsagrxm9ygkmcr34ndjah9"
         ],
         "threshold": 2,
         "memo": "931"
       },
       {
-        "alias": "X-kopernikus1ce27vm0mwdkf03ct6vh8gtldur0rm4rdxgjlct",
+        "alias": "X-kopernikus1z5ykr4vxdhqder6jl0j5je2kl9cqxxlnrm55v2",
         "addresses": [
-          "X-kopernikus1vxmf8899y6x7dsam0xnr0hp6syzwz333dkvn2r",
-          "X-kopernikus1w3szy4e5excad4j8xp2ua0ukqcfq2uh4qn4sgc",
-          "X-kopernikus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sfr6yjs",
-          "X-kopernikus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8vd3eew3"
+          "X-kopernikus18pry238vq8uzzpar32wa4x4p2rkyc7wx2qnctc",
+          "X-kopernikus18l0l8dz03vmk7k7y5cgax8k2l5mphj4p5k040u",
+          "X-kopernikus1d0ydd4wyq670lzrp0y7xd3wej4z7ysp2surum8",
+          "X-kopernikus1h87ampd07hwtnqywpsagrxm9ygkmcr34ndjah9"
         ],
         "threshold": 2,
         "memo": "932"
       },
       {
-        "alias": "X-kopernikus1vscyf7czawylztn6ghhg0z27swwewxgzgpcxvy",
+        "alias": "X-kopernikus1prxyey5xugn5c6tqusha9m4hd4rvld23h0sxam",
         "addresses": [
-          "X-kopernikus1vxmf8899y6x7dsam0xnr0hp6syzwz333dkvn2r",
-          "X-kopernikus10q3dc78tw70m89s8lgl9fgwe9tfu4a0sfr6yjs",
-          "X-kopernikus1kuaaqcggcl8ke6dhm8zmuhl2xc544q8vd3eew3"
+          "X-kopernikus18pry238vq8uzzpar32wa4x4p2rkyc7wx2qnctc",
+          "X-kopernikus18l0l8dz03vmk7k7y5cgax8k2l5mphj4p5k040u",
+          "X-kopernikus1h87ampd07hwtnqywpsagrxm9ygkmcr34ndjah9"
         ],
         "threshold": 2,
         "memo": "933"
+      },
+      {
+        "alias": "X-kopernikus18gw475en5h5jvtkslp7xqed7t7ugq6rmc4zrvh",
+        "addresses": [
+          "X-kopernikus1qfyvkqnv8yd9rmlf6sv0gdx20dgg4erslxurav",
+          "X-kopernikus1yk9lw48um0r0rn9ydf9fhjfwwfq0qh7qpytjcr",
+          "X-kopernikus1fvr4nd743ew0gcy00se24hp2ecpmk4h7lhkll4",
+          "X-kopernikus1dgrg4j4p5e6k5jn8080n6333r934pyum0zgczg",
+          "X-kopernikus10xf9u6we06ljq20jtq90hj0f6q8l2psp0njqmu",
+          "X-kopernikus102uap4au55t22m797rr030wyrw0jlgw25ut8vj",
+          "X-kopernikus1c35zu69gd42yu9ecrptzwf0z9g7fhfvrmrjgam",
+          "X-kopernikus1maff3tql60ndkwn9mvz06ssywvag4uf48el62q",
+          "X-kopernikus1lmwsgy9zv8hyxwsek0pvsq7cpejtkvwk2nm7k0"
+        ],
+        "threshold": 2,
+        "memo": "999"
       }
     ]
   },

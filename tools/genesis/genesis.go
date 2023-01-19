@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/hex"
 	"fmt"
 	"log"
 	"strconv"
@@ -12,6 +13,33 @@ import (
 	platform "github.com/ava-labs/avalanchego/vms/platformvm/genesis"
 	"github.com/chain4travel/camino-node/tools/genesis/workbook"
 )
+
+var EmptyETHAddress = "0x" + hex.EncodeToString(ids.ShortEmpty.Bytes())
+
+func generateDepositOffers(depositOffersRows [][]string, genesisConfig genesis.UnparsedConfig, maxStartOffset uint64) (
+	DepositOffersWithOrder, []genesis.UnparsedDepositOffer, error,
+) {
+	// Set ID on DepositOffers
+	depositOffers := []genesis.UnparsedDepositOffer{}
+	parsedDepositOfferRows := parseDepositOfferRows(depositOffersRows)
+	for _, offerID := range parsedDepositOfferRows.Order {
+		offer := parsedDepositOfferRows.Offers[offerID]
+		parsedOffer, err := offer.Parse(genesisConfig.StartTime)
+		if err != nil {
+			return parsedDepositOfferRows, depositOffers, fmt.Errorf("error parsing offer %s: %w", offerID, err)
+		}
+		parsedOffer.End += maxStartOffset
+		fmt.Println("DepositOffer  ", offerID, "\t Memo:", parsedOffer.Memo)
+
+		depositOffer, err := parsedOffer.Unparse(genesisConfig.StartTime)
+		if err != nil {
+			return parsedDepositOfferRows, depositOffers, fmt.Errorf("error unparsing offer %s after modifications: %w", offerID, err)
+		}
+		parsedDepositOfferRows.Offers[offerID] = &depositOffer
+		depositOffers = append(depositOffers, depositOffer)
+	}
+	return parsedDepositOfferRows, depositOffers, nil
+}
 
 func generateMSigDefinitions(networkID uint32, msigs []*workbook.MultiSig) (MultisigDefs, error) {
 	var (
@@ -68,22 +96,22 @@ const (
 func generateAllocations(
 	networkID uint32,
 	allocations []*workbook.Allocation,
-	offerValueToID map[string]ids.ID,
+	offersMap DepositOffersWithOrder,
 	msigCtrlGrpToAlias map[string]ids.ShortID,
 	unlockedFundsDestination UnlockedFunds,
-) ([]*genesis.CaminoAllocation, ids.ShortID) {
-	parsedAlloc := make([]*genesis.CaminoAllocation, 0, len(allocations))
+) ([]genesis.UnparsedCaminoAllocation, ids.ShortID) {
+	unparsedAlloc := make([]genesis.UnparsedCaminoAllocation, 0, len(allocations))
 	skippedRows := 0
 	adminAddr := ids.ShortEmpty
 	for _, al := range allocations {
-		msigAlias, ok := msigCtrlGrpToAlias[al.ControlGroup]
-		if ok {
+		msigAlias, hasAlias := msigCtrlGrpToAlias[al.ControlGroup]
+		if hasAlias {
 			al.Address = msigAlias
 			fmt.Printf("replaced row %3d address with its control group alias %s\n", al.RowNo, al.ControlGroup)
 		}
 
 		// print addresses generated from public keys
-		if !ok && al.PublicKey != "" {
+		if !hasAlias && al.PublicKey != "" {
 			fmt.Printf("replaced row %3d public key %s resolved to address %s\n", al.RowNo, al.PublicKey[:11], addrToString(networkID, al.Address))
 		}
 
@@ -104,14 +132,13 @@ func generateAllocations(
 			continue
 		}
 
-		// Computation of the offer value as a key to the map of DepositOffers
-		YearToSeconds := float64(365 * 24 * 60 * 60)
-		offerValueMinDuration := uint64((al.UnbondingStart + al.UnbondingPeriod) * YearToSeconds)
-		offerValueUnlockPeriodDuration := uint64(al.UnbondingPeriod * YearToSeconds)
-		offerValueIndex := strconv.FormatUint(offerValueMinDuration, 10) + "_" + strconv.FormatUint(offerValueUnlockPeriodDuration, 10) + "_" + strconv.FormatInt(int64(al.RewardPercent), 10)
+		offer, hasOffer := offersMap.Offers[al.OfferID]
+		if al.OfferID != "" && !hasOffer {
+			log.Panic("Error row ", al.RowNo, " specified offer id cannot be found: ", al.OfferID)
+		}
 
 		directAmount := uint64(0)
-		if offerValueMinDuration == 0 && offerValueUnlockPeriodDuration == 0 {
+		if !hasOffer {
 			directAmount = al.Amount
 		}
 
@@ -123,24 +150,24 @@ func generateAllocations(
 		isConsortiumMember := al.ConsortiumMember != ""
 		isKycVerified := al.Kyc == "y"
 
-		a := &genesis.CaminoAllocation{
-			AVAXAddr:      al.Address,
+		a := genesis.UnparsedCaminoAllocation{
+			ETHAddr:       EmptyETHAddress,
+			AVAXAddr:      addrToString(networkID, al.Address),
 			AddressStates: genesis.AddressStates{ConsortiumMember: isConsortiumMember, KYCVerified: isKycVerified},
 		}
 
-		if offerValueMinDuration != 0 && offerValueUnlockPeriodDuration != 0 {
-			depositOfferID, ok := offerValueToID[offerValueIndex]
-			if !ok {
-				fmt.Println("Skipping Row # ", al.RowNo, " Reason: No fitting allocation found for values -- index: ", offerValueIndex)
-				skippedRows++
-				continue
+		if hasOffer {
+			duration := offer.MinDuration
+			if offer.MinDuration <= al.DepositDuration && al.DepositDuration <= offer.MaxDuration {
+				duration = al.DepositDuration
+			} else if al.DepositDuration > 0 {
+				fmt.Printf("Error row %3d: Wrong duration set on allocation deposit duration %d is outside of offer's range [%d, %d]. OfferID %s.\n", al.RowNo, al.DepositDuration, offer.MinDuration, offer.MaxDuration, al.OfferID)
 			}
-
-			pa := genesis.PlatformAllocation{
+			pa := genesis.UnparsedPlatformAllocation{
 				Amount:            al.Amount,
-				DepositOfferID:    depositOfferID,
-				DepositDuration:   offerValueMinDuration,
-				NodeID:            al.NodeID,
+				DepositOfferMemo:  offer.Memo,
+				DepositDuration:   uint64(duration),
+				NodeID:            nodeIDToString(al.NodeID),
 				ValidatorDuration: uint64(al.ValidatorPeriodDays * 24 * 60 * 60),
 				TimestampOffset:   al.TokenDeliveryOffset,
 				Memo:              strconv.Itoa(al.RowNo),
@@ -150,7 +177,7 @@ func generateAllocations(
 
 		unlockedFunds := directAmount + onePercent
 		if unlockedFunds > 0 && unlockedFundsDestination == TransferToPChain {
-			additionalUnlocked := genesis.PlatformAllocation{
+			additionalUnlocked := genesis.UnparsedPlatformAllocation{
 				Amount:          unlockedFunds,
 				TimestampOffset: al.TokenDeliveryOffset,
 				Memo:            fmt.Sprintf("%d+", al.RowNo),
@@ -160,36 +187,23 @@ func generateAllocations(
 			a.XAmount = unlockedFunds
 		}
 
-		parsedAlloc = append(parsedAlloc, a)
+		unparsedAlloc = append(unparsedAlloc, a)
 	}
 	fmt.Println("Skipped ", skippedRows, "allocation rows")
 
-	return parsedAlloc, adminAddr
-}
-
-func valueIndex(offer genesis.UnparsedDepositOffer) string {
-	// offer.MinDuration :: Min-duration in seconds -- is for example 3.5years as seconds for the offer with 2.5 + 1 year unlock
-	// offer.UnlockPeriodDuration :: The duration the unlock will last -- it's exactly what it's written in the excel file (in years) for unbonding period in seconds
-	// offer.InterestRateNominator :: the percentage given as a reward * 10000
-	index := strconv.FormatUint(uint64(offer.MinDuration), 10) + "_" + strconv.FormatUint(uint64(offer.UnlockPeriodDuration), 10) + "_" + strconv.FormatUint(offer.InterestRateNominator/10_000, 10)
-	return index
-}
-
-func unparseAllocations(genAlloc []*genesis.CaminoAllocation, networkID uint32) []genesis.UnparsedCaminoAllocation {
-	confAlloc := make([]genesis.UnparsedCaminoAllocation, 0, len(genAlloc))
-	for i, ga := range genAlloc {
-		uga, err := ga.Unparse(networkID)
-		if err != nil {
-			fmt.Println("Could not unparse allocation for ", i, err)
-		}
-		confAlloc = append(confAlloc, uga)
-	}
-	return confAlloc
+	return unparsedAlloc, adminAddr
 }
 
 func addrToString(networkID uint32, addr ids.ShortID) string {
 	fmtAddr, _ := address.Format("X", constants.NetworkIDToHRP[networkID], addr.Bytes())
 	return fmtAddr
+}
+
+func nodeIDToString(id ids.NodeID) string {
+	if ids.ShortID(id) != ids.ShortEmpty {
+		return id.String()
+	}
+	return ""
 }
 
 func memoSanityCheck(ma *platform.MultisigAlias, index int) error {
