@@ -6,6 +6,7 @@ import (
 
 	"github.com/ava-labs/avalanchego/ids"
 	"github.com/ava-labs/avalanchego/utils/formatting/address"
+	"github.com/chain4travel/camino-node/tools/genesis/utils"
 )
 
 const MultisigDefinitions = "MultiSig Addresses"
@@ -28,6 +29,7 @@ func (msig *MultiSig) FromRow(threshold uint32, rowGroup [][]string) error {
 		LastName
 		Kyc
 		PChainAddress
+		PublicKey
 	)
 
 	msig.Threshold = threshold
@@ -38,11 +40,30 @@ func (msig *MultiSig) FromRow(threshold uint32, rowGroup [][]string) error {
 		if row[ControlGroup] != msig.ControlGroup {
 			return fmt.Errorf("control group mismatch")
 		}
-		_, _, addrBytes, err := address.Parse(strings.TrimSpace(row[PChainAddress]))
-		if err != nil {
-			return fmt.Errorf("could not parse address %s for ctrl group %s - err: %s", row[PChainAddress], msig.ControlGroup, err)
+
+		keyRead := false
+		var addr ids.ShortID
+		if row[PublicKey] != "" {
+			row[PublicKey] = strings.TrimPrefix(row[PublicKey], "0x")
+
+			pk, err := utils.PublicKeyFromString(row[PublicKey])
+			if err != nil {
+				return fmt.Errorf("could not parse public key, expected uncompressed bytes %s", row[PublicKey])
+			}
+			addr, err = utils.ToPAddress(pk)
+			if err != nil {
+				return fmt.Errorf("[X/P] could not parse public key %s, %w", row[PublicKey], err)
+			}
+
+			keyRead = true
 		}
-		addr, _ := ids.ToShortID(addrBytes)
+		if !keyRead && len(row[PChainAddress]) >= 47 {
+			_, _, addrBytes, err := address.Parse(strings.TrimSpace(row[PChainAddress]))
+			if err != nil {
+				return fmt.Errorf("could not parse address %s for ctrl group %s - err: %s", row[PChainAddress], msig.ControlGroup, err)
+			}
+			addr, _ = ids.ToShortID(addrBytes)
+		}
 		msig.Addrs = append(msig.Addrs, addr)
 	}
 	return nil

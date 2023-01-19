@@ -48,27 +48,6 @@ func main() {
 	fmt.Println("Read genesis template with NetworkID", genesisConfig.NetworkID, " overwriting with ", networkID)
 	genesisConfig.NetworkID = networkID
 
-	// Set ID on DepositOffers
-	offerValuesToID := make(map[string]ids.ID)
-	depositOffers := make([]genesis.UnparsedDepositOffer, len(genesisConfig.Camino.DepositOffers))
-	for i, offer := range genesisConfig.Camino.DepositOffers {
-		parsedOffer, err := offer.Parse(genesisConfig.StartTime)
-		if err != nil {
-			log.Panic("Error parsing offer at", i, err)
-		}
-		parsedOffer.End += workbook.TierTimeDelayInSeconds
-		id, _ := parsedOffer.ID()
-		index := valueIndex(offer)
-
-		offerValuesToID[index] = id
-		fmt.Println("DepositOffer index ", index, " ID:", id)
-
-		if err = depositOffers[i].Unparse(parsedOffer, genesisConfig.StartTime); err != nil {
-			log.Panic("Error unparsing offer ", i, "after modifications", err)
-		}
-	}
-	genesisConfig.Camino.DepositOffers = depositOffers
-
 	fmt.Println("Loadingspreadsheet", spreadsheetFile)
 	xls, err := excelize.OpenFile(spreadsheetFile)
 	if err != nil {
@@ -77,16 +56,31 @@ func main() {
 	defer xls.Close()
 	allocationRows := loadRows(xls, workbook.Allocations)
 	multisigRows := loadRows(xls, workbook.MultisigDefinitions)
+	depositOffersRows := loadRows(xls, workbook.DepositOffers)
 
-	allocations, err := parseAllocations(allocationRows)
+	allocations := parseAllocations(allocationRows)
 	fmt.Println("Loaded allocations", len(allocations), "err", err)
-	multisigs, err := parseMultiSigGroups(multisigRows, allocations)
+	// Pick the max start offset to delay deposit offers end
+	maxStartOffset := uint64(0)
+	for _, allocation := range allocations {
+		if allocation.TokenDeliveryOffset > maxStartOffset {
+			maxStartOffset = allocation.TokenDeliveryOffset
+		}
+	}
+
+	offersMap, depositOffers, err := generateDepositOffers(depositOffersRows, genesisConfig, maxStartOffset)
+	if err != nil {
+		log.Panic("Could not generate deposit offers", err)
+	}
+	genesisConfig.Camino.DepositOffers = depositOffers
+
+	multisigs := parseMultiSigGroups(multisigRows, allocations)
 	fmt.Println("Loaded multisigs", len(multisigs), "err", err)
 
 	msigGroups, _ := generateMSigDefinitions(genesisConfig.NetworkID, multisigs)
 	genesisConfig.Camino.InitialMultisigAddresses = msigGroups.MultisigAliaseas
 	// create Genesis allocation records
-	genAlloc, adminAddr := generateAllocations(genesisConfig.NetworkID, allocations, offerValuesToID, msigGroups.ControlGroupToAlias, unlockedFunds)
+	genAlloc, adminAddr := generateAllocations(genesisConfig.NetworkID, allocations, offersMap, msigGroups.ControlGroupToAlias, unlockedFunds)
 	// Overwrite the admin addr if given
 	if adminAddr != ids.ShortEmpty {
 		avaxAddr, _ := address.Format(
@@ -97,10 +91,7 @@ func main() {
 		genesisConfig.Camino.InitialAdmin = avaxAddr
 		fmt.Println("InitialAdmin address set with:", avaxAddr)
 	}
-
-	// Uparse for Kopernikus and fill the allocation to config
-	confAlloc := unparseAllocations(genAlloc, networkID)
-	genesisConfig.Camino.Allocations = confAlloc
+	genesisConfig.Camino.Allocations = genAlloc
 
 	// saving the json file
 	bytes, err := json.MarshalIndent(genesisConfig, "", "  ")
