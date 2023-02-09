@@ -16,32 +16,32 @@ import (
 
 var EmptyETHAddress = "0x" + hex.EncodeToString(ids.ShortEmpty.Bytes())
 
-func generateDepositOffers(depositOffersRows [][]string, genesisConfig genesis.UnparsedConfig, maxStartOffset uint64) (
-	DepositOffersWithOrder, []genesis.UnparsedDepositOffer, error,
+func generateDepositOffers(depositOffersRows workbook.DepositOffersWithOrder, genesisConfig genesis.UnparsedConfig, maxStartOffset uint64) (
+	workbook.DepositOffersWithOrder, []genesis.UnparsedDepositOffer, error,
 ) {
 	// Set ID on DepositOffers
 	depositOffers := []genesis.UnparsedDepositOffer{}
-	parsedDepositOfferRows := parseDepositOfferRows(depositOffersRows)
-	for _, offerID := range parsedDepositOfferRows.Order {
-		offer := parsedDepositOfferRows.Offers[offerID]
+
+	for _, offerID := range depositOffersRows.Order {
+		offer := depositOffersRows.Offers[offerID]
 		parsedOffer, err := offer.Parse(genesisConfig.StartTime)
 		if err != nil {
-			return parsedDepositOfferRows, depositOffers, fmt.Errorf("error parsing offer %s: %w", offerID, err)
+			return depositOffersRows, depositOffers, fmt.Errorf("error parsing offer %s: %w", offerID, err)
 		}
 		parsedOffer.End += maxStartOffset
 		fmt.Println("DepositOffer  ", offerID, "\t Memo:", parsedOffer.Memo)
 
 		depositOffer, err := parsedOffer.Unparse(genesisConfig.StartTime)
 		if err != nil {
-			return parsedDepositOfferRows, depositOffers, fmt.Errorf("error unparsing offer %s after modifications: %w", offerID, err)
+			return depositOffersRows, depositOffers, fmt.Errorf("error unparsing offer %s after modifications: %w", offerID, err)
 		}
-		parsedDepositOfferRows.Offers[offerID] = &depositOffer
+		depositOffersRows.Offers[offerID] = &depositOffer
 		depositOffers = append(depositOffers, depositOffer)
 	}
-	return parsedDepositOfferRows, depositOffers, nil
+	return depositOffersRows, depositOffers, nil
 }
 
-func generateMSigDefinitions(networkID uint32, msigs []*workbook.MultiSig) (MultisigDefs, error) {
+func generateMSigDefinitions(networkID uint32, msigs []*workbook.MultiSigGroup) (MultisigDefs, error) {
 	var (
 		msDefs   = []platform.MultisigAlias{}
 		cgToMSig = map[string]ids.ShortID{}
@@ -95,8 +95,8 @@ const (
 
 func generateAllocations(
 	networkID uint32,
-	allocations []*workbook.Allocation,
-	offersMap DepositOffersWithOrder,
+	allocations []*workbook.AllocationRow,
+	offersMap workbook.DepositOffersWithOrder,
 	msigCtrlGrpToAlias map[string]ids.ShortID,
 	unlockedFundsDestination UnlockedFunds,
 ) ([]genesis.UnparsedCaminoAllocation, ids.ShortID) {
@@ -189,7 +189,6 @@ func generateAllocations(
 
 		unparsedAlloc = append(unparsedAlloc, a)
 	}
-	fmt.Println("Skipped ", skippedRows, "allocation rows")
 
 	return unparsedAlloc, adminAddr
 }

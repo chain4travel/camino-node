@@ -2,6 +2,7 @@ package workbook
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 
 	"github.com/ava-labs/avalanchego/ids"
@@ -9,62 +10,68 @@ import (
 	"github.com/chain4travel/camino-node/tools/genesis/utils"
 )
 
-const MultisigDefinitions = "MultiSig Addresses"
-
-type MultiSig struct {
+type MultiSigGroup struct {
 	ControlGroup string
-	Company      string
 	Threshold    uint32
 	Addrs        []ids.ShortID
 }
 
-type MultiSigRow int
+type MultiSigColumn int
 
-func (msig *MultiSig) FromRow(threshold uint32, rowGroup [][]string) error {
+type MultiSigRow struct {
+	ControlGroup string
+	Threshold    uint32
+	Addr         ids.ShortID
+}
+
+func (msig *MultiSigRow) Header() []string { return []string{"Control Group", "Threshold", "Company"} }
+
+func (msig *MultiSigRow) FromRow(_ int, msigRow []string) error {
 	// COLUMNS
 	const (
-		ControlGroup MultiSigRow = iota
-		Company
-		FirstName
-		LastName
-		Kyc
+		ControlGroup MultiSigColumn = iota
+		Threshold
+		_Company
+		_FirstName
+		_LastName
+		_Kyc
 		PChainAddress
 		PublicKey
 	)
 
-	msig.Threshold = threshold
-	msig.Company = rowGroup[0][Company]
-	msig.ControlGroup = rowGroup[0][ControlGroup]
-
-	for _, row := range rowGroup {
-		if row[ControlGroup] != msig.ControlGroup {
-			return fmt.Errorf("control group mismatch")
+	msig.ControlGroup = strings.TrimSpace(msigRow[ControlGroup])
+	if msigRow[Threshold] != "" {
+		threshold, err := strconv.ParseUint(msigRow[Threshold], 10, 32)
+		msig.Threshold = uint32(threshold)
+		if err != nil {
+			return fmt.Errorf("could not parse msig threshold %s", msigRow[Threshold])
 		}
-
-		keyRead := false
-		var addr ids.ShortID
-		if row[PublicKey] != "" {
-			row[PublicKey] = strings.TrimPrefix(row[PublicKey], "0x")
-
-			pk, err := utils.PublicKeyFromString(row[PublicKey])
-			if err != nil {
-				return fmt.Errorf("could not parse public key, expected uncompressed bytes %s", row[PublicKey])
-			}
-			addr, err = utils.ToPAddress(pk)
-			if err != nil {
-				return fmt.Errorf("[X/P] could not parse public key %s, %w", row[PublicKey], err)
-			}
-
-			keyRead = true
-		}
-		if !keyRead && len(row[PChainAddress]) >= 47 {
-			_, _, addrBytes, err := address.Parse(strings.TrimSpace(row[PChainAddress]))
-			if err != nil {
-				return fmt.Errorf("could not parse address %s for ctrl group %s - err: %s", row[PChainAddress], msig.ControlGroup, err)
-			}
-			addr, _ = ids.ToShortID(addrBytes)
-		}
-		msig.Addrs = append(msig.Addrs, addr)
 	}
+
+	keyRead := false
+	var addr ids.ShortID
+	if len(msigRow) > int(PublicKey) && msigRow[PublicKey] != "" {
+		msigRow[PublicKey] = strings.TrimPrefix(strings.TrimSpace(msigRow[PublicKey]), "0x")
+
+		pk, err := utils.PublicKeyFromString(msigRow[PublicKey])
+		if err != nil {
+			return fmt.Errorf("could not parse public key, expected uncompressed bytes %s", msigRow[PublicKey])
+		}
+		addr, err = utils.ToPAddress(pk)
+		if err != nil {
+			return fmt.Errorf("[X/P] could not parse public key %s, %w", msigRow[PublicKey], err)
+		}
+
+		keyRead = true
+	}
+	if !keyRead && len(msigRow[PChainAddress]) >= 47 {
+		_, _, addrBytes, err := address.Parse(strings.TrimSpace(msigRow[PChainAddress]))
+		if err != nil {
+			return fmt.Errorf("could not parse address %s for ctrl group %s - err: %s", msigRow[PChainAddress], msig.ControlGroup, err)
+		}
+		addr, _ = ids.ToShortID(addrBytes)
+	}
+	msig.Addr = addr
+
 	return nil
 }

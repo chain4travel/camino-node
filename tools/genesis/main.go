@@ -54,33 +54,32 @@ func main() {
 		log.Panic("Could not open the file", err)
 	}
 	defer xls.Close()
-	allocationRows := loadRows(xls, workbook.Allocations)
-	multisigRows := loadRows(xls, workbook.MultisigDefinitions)
-	depositOffersRows := loadRows(xls, workbook.DepositOffers)
 
-	allocations := parseAllocations(allocationRows)
-	fmt.Println("Loaded allocations", len(allocations), "err", err)
+	multiSigRows := workbook.ParseMultiSigGroups(xls)
+	allocationRows := workbook.ParseAllocations(xls)
+	depositOfferRows := workbook.ParseDepositOfferRows(xls)
+
+	fmt.Println("Loaded multiSigRows groups", len(multiSigRows), "err", err)
+	msigGroups, _ := generateMSigDefinitions(genesisConfig.NetworkID, multiSigRows)
+	genesisConfig.Camino.InitialMultisigAddresses = msigGroups.MultisigAliaseas
+
+	fmt.Println("Loaded allocationRows", len(allocationRows), "err", err)
 	// Pick the max start offset to delay deposit offers end
 	maxStartOffset := uint64(0)
-	for _, allocation := range allocations {
+	for _, allocation := range allocationRows {
 		if allocation.TokenDeliveryOffset > maxStartOffset {
 			maxStartOffset = allocation.TokenDeliveryOffset
 		}
 	}
 
-	offersMap, depositOffers, err := generateDepositOffers(depositOffersRows, genesisConfig, maxStartOffset)
+	offersMap, depositOffers, err := generateDepositOffers(depositOfferRows, genesisConfig, maxStartOffset)
 	if err != nil {
 		log.Panic("Could not generate deposit offers", err)
 	}
 	genesisConfig.Camino.DepositOffers = depositOffers
 
-	multisigs := parseMultiSigGroups(multisigRows, allocations)
-	fmt.Println("Loaded multisigs", len(multisigs), "err", err)
-
-	msigGroups, _ := generateMSigDefinitions(genesisConfig.NetworkID, multisigs)
-	genesisConfig.Camino.InitialMultisigAddresses = msigGroups.MultisigAliaseas
 	// create Genesis allocation records
-	genAlloc, adminAddr := generateAllocations(genesisConfig.NetworkID, allocations, offersMap, msigGroups.ControlGroupToAlias, unlockedFunds)
+	genAlloc, adminAddr := generateAllocations(genesisConfig.NetworkID, allocationRows, offersMap, msigGroups.ControlGroupToAlias, unlockedFunds)
 	// Overwrite the admin addr if given
 	if adminAddr != ids.ShortEmpty {
 		avaxAddr, _ := address.Format(
