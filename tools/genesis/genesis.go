@@ -147,8 +147,8 @@ func generateAllocations(
 			onePercent = al.Amount / 100
 		}
 
-		isConsortiumMember := al.ConsortiumMember != ""
-		isKycVerified := al.Kyc == "y"
+		isConsortiumMember := al.ConsortiumMember == workbook.CheckedValue
+		isKycVerified := al.Kyc == workbook.YesValue
 
 		a := genesis.UnparsedCaminoAllocation{
 			ETHAddr:       EmptyETHAddress,
