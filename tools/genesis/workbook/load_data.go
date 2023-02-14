@@ -17,6 +17,12 @@ const (
 	MultisigDefinitions TabName = "MultiSig Addresses"
 	DepositOffers       TabName = "depositOffers"
 	Allocations         TabName = "Camino Allocation"
+
+	TrueValue    = "TRUE"
+	FalseValue   = "FALSE"
+	YesValue     = "Y"
+	NoValue      = "N"
+	CheckedValue = "X"
 )
 
 // ParseAllocations Reads all rows from xls file "Allocations" workbook
