@@ -6557,7 +6557,7 @@
         "xAmount": 0,
         "addressStates": {
           "consortiumMember": true,
-          "kycVerified": false
+          "kycVerified": true
         },
         "platformAllocations": [
           {

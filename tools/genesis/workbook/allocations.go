@@ -31,11 +31,6 @@ type AllocationRow struct {
 	PublicKey           string
 }
 
-const (
-	TrueValue  = "TRUE"
-	FalseValue = "FALSE"
-)
-
 func (a *AllocationRow) Header() []string { return []string{"#", "Company", "First Name"} }
 
 func (a *AllocationRow) FromRow(fileRowNo int, row []string) error {
@@ -71,9 +66,9 @@ func (a *AllocationRow) FromRow(fileRowNo int, row []string) error {
 	// xls file's rows are 1-indexed
 	a.RowNo = fileRowNo + 1
 	a.Bucket = row[Bucket]
-	a.Kyc = strings.TrimSpace(row[Kyc])
+	a.Kyc = strings.ToUpper(strings.TrimSpace(row[Kyc]))
 	a.FirstName = row[FirstName]
-	a.ConsortiumMember = strings.TrimSpace(row[ConsortiumMember])
+	a.ConsortiumMember = strings.ToUpper(strings.TrimSpace(row[ConsortiumMember]))
 	a.ControlGroup = strings.TrimSpace(row[ControlGroup])
 	a.Additional1Percent = strings.TrimSpace(row[Additional1Percent])
 	a.OfferID = strings.TrimSpace(row[OfferID])
@@ -137,6 +132,14 @@ func (a *AllocationRow) FromRow(fileRowNo int, row []string) error {
 		return fmt.Errorf("could not parse deposit duration %s: %w", row[DepositDuration], err)
 	}
 	a.DepositDuration = uint32(dd)
+
+	if a.Kyc != YesValue && a.Kyc != NoValue {
+		return fmt.Errorf("invalid KYC value (%s), can be either 'Y' or 'N'", a.Kyc)
+	}
+
+	if a.ConsortiumMember != "" && a.ConsortiumMember != CheckedValue {
+		return fmt.Errorf("invalid consortium member value (%s), can be either empty or 'X'", a.ConsortiumMember)
+	}
 
 	return nil
 }
