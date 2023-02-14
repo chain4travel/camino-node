@@ -14,13 +14,13 @@
       {
         "interestRateNominator": 80000,
         "startOffset": 0,
-        "endOffset": 111589200,
+        "endOffset": 114177600,
         "minAmount": 1,
         "minDuration": 110376000,
         "maxDuration": 110376000,
         "unlockPeriodDuration": 31536000,
         "noRewardsPeriodDuration": 15768000,
-        "memo": "presale 3Y - not pickable after network creation, only for genesis allocations",
+        "memo": "PreSale 3 Years 8%",
         "flags": {
           "locked": true
         }
@@ -28,13 +28,13 @@
       {
         "interestRateNominator": 90000,
         "startOffset": 0,
-        "endOffset": 143125200,
+        "endOffset": 145713600,
         "minAmount": 1,
         "minDuration": 141912000,
         "maxDuration": 141912000,
         "unlockPeriodDuration": 31536000,
         "noRewardsPeriodDuration": 15768000,
-        "memo": "presale 4Y - not pickable after network creation, only for genesis allocations",
+        "memo": "PreSale 4 Years 9%",
         "flags": {
           "locked": true
         }
@@ -42,13 +42,13 @@
       {
         "interestRateNominator": 100000,
         "startOffset": 0,
-        "endOffset": 174661200,
+        "endOffset": 177249600,
         "minAmount": 1,
         "minDuration": 173448000,
         "maxDuration": 173448000,
         "unlockPeriodDuration": 31536000,
         "noRewardsPeriodDuration": 15768000,
-        "memo": "presale 5Y - not pickable after network creation, only for genesis allocations",
+        "memo": "PreSale 5 Years 10%",
         "flags": {
           "locked": true
         }
@@ -56,13 +56,13 @@
       {
         "interestRateNominator": 0,
         "startOffset": 0,
-        "endOffset": 174661200,
+        "endOffset": 177249600,
         "minAmount": 1,
         "minDuration": 157680000,
         "maxDuration": 157680000,
         "unlockPeriodDuration": 157680000,
         "noRewardsPeriodDuration": 0,
-        "memo": "Directly start with undeposit for 5years -- (Mostly used for longterm funds of the camino foundation reserve, marketing, team, second sale, etc)",
+        "memo": "Undeposit 5 Years 0%",
         "flags": {
           "locked": true
         }
@@ -70,13 +70,13 @@
       {
         "interestRateNominator": 0,
         "startOffset": 0,
-        "endOffset": 111589200,
+        "endOffset": 114177600,
         "minAmount": 1,
         "minDuration": 110376000,
         "maxDuration": 110376000,
         "unlockPeriodDuration": 31536000,
         "noRewardsPeriodDuration": 0,
-        "memo": "Seed investors lock",
+        "memo": "Seed 3 Years 0%",
         "flags": {
           "locked": true
         }
@@ -84,13 +84,13 @@
       {
         "interestRateNominator": 0,
         "startOffset": 0,
-        "endOffset": 158893200,
+        "endOffset": 161481600,
         "minAmount": 1,
         "minDuration": 157680000,
         "maxDuration": 157680000,
         "unlockPeriodDuration": 63072000,
         "noRewardsPeriodDuration": 0,
-        "memo": "Founders/Team 5Y - not pickable after network creation, only for genesis allocations",
+        "memo": "Team 5 Years 0%",
         "flags": {
           "locked": true
         }
@@ -98,13 +98,13 @@
       {
         "interestRateNominator": 90000,
         "startOffset": 0,
-        "endOffset": 31539600,
+        "endOffset": 34128000,
         "minAmount": 1,
         "minDuration": 31536000,
         "maxDuration": 31536000,
         "unlockPeriodDuration": 31536000,
         "noRewardsPeriodDuration": 15768000,
-        "memo": "un-deposit test - not pickable after network creation, only for genesis allocations",
+        "memo": "UnDepositTest 1 Year 9%",
         "flags": {
           "locked": true
         }
@@ -112,13 +112,13 @@
       {
         "interestRateNominator": 110000,
         "startOffset": 0,
-        "endOffset": 63075600,
+        "endOffset": 65664000,
         "minAmount": 1,
         "minDuration": 60,
         "maxDuration": 31536000,
         "unlockPeriodDuration": 0,
         "noRewardsPeriodDuration": 0,
-        "memo": "depositOffer test#1 - pickable after network creation and not in genesis as duration is not choosable per allocation!",
+        "memo": "FlexDepositTest 60s-1Y 11%",
         "flags": {
           "locked": false
         }
@@ -126,13 +126,13 @@
       {
         "interestRateNominator": 210000,
         "startOffset": 0,
-        "endOffset": 63075600,
+        "endOffset": 65664000,
         "minAmount": 1,
         "minDuration": 86400,
         "maxDuration": 31536000,
         "unlockPeriodDuration": 43200,
         "noRewardsPeriodDuration": 43200,
-        "memo": "depositOffer test#2 - pickable after network creation and not in genesis as duration is not choosable per allocation!",
+        "memo": "FlexDepositTest 1d-1Y 21%",
         "flags": {
           "locked": false
         }
@@ -151,7 +151,7 @@
           {
             "amount": 10000000000000,
             "timestampOffset": 3600,
-            "memo": "1+"
+            "memo": "2+"
           }
         ]
       },
@@ -170,13 +170,13 @@
             "validatorDuration": 31104000,
             "depositDuration": 110376000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "presale 3Y - not pickable after network creation, only for genesis allocations",
-            "memo": "2"
+            "depositOfferMemo": "PreSale 3 Years 8%",
+            "memo": "3"
           },
           {
             "amount": 1000000000000,
             "timestampOffset": 3600,
-            "memo": "2+"
+            "memo": "3+"
           }
         ]
       },
@@ -195,13 +195,13 @@
             "validatorDuration": 62208000,
             "depositDuration": 141912000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "presale 4Y - not pickable after network creation, only for genesis allocations",
-            "memo": "3"
+            "depositOfferMemo": "PreSale 4 Years 9%",
+            "memo": "4"
           },
           {
             "amount": 1000000000000,
             "timestampOffset": 3600,
-            "memo": "3+"
+            "memo": "4+"
           }
         ]
       },
@@ -218,13 +218,13 @@
             "amount": 10000000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "4"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "5"
           },
           {
             "amount": 100000000000000,
             "timestampOffset": 3600,
-            "memo": "4+"
+            "memo": "5+"
           }
         ]
       },
@@ -238,9 +238,9 @@
         },
         "platformAllocations": [
           {
-            "amount": 736583200000000000,
+            "amount": 735583200000000000,
             "timestampOffset": 3600,
-            "memo": "5+"
+            "memo": "6+"
           }
         ]
       },
@@ -256,8 +256,8 @@
           {
             "amount": 100000000000000,
             "depositDuration": 157680000,
-            "depositOfferMemo": "Founders/Team 5Y - not pickable after network creation, only for genesis allocations",
-            "memo": "6"
+            "depositOfferMemo": "Team 5 Years 0%",
+            "memo": "7"
           }
         ]
       },
@@ -274,13 +274,13 @@
             "amount": 10000000000000,
             "depositDuration": 110376000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "presale 3Y - not pickable after network creation, only for genesis allocations",
-            "memo": "7"
+            "depositOfferMemo": "PreSale 3 Years 8%",
+            "memo": "8"
           },
           {
             "amount": 100000000000,
             "timestampOffset": 3600,
-            "memo": "7+"
+            "memo": "8+"
           }
         ]
       },
@@ -297,13 +297,13 @@
             "amount": 10000000000000,
             "depositDuration": 141912000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "presale 4Y - not pickable after network creation, only for genesis allocations",
-            "memo": "8"
+            "depositOfferMemo": "PreSale 4 Years 9%",
+            "memo": "9"
           },
           {
             "amount": 100000000000,
             "timestampOffset": 3600,
-            "memo": "8+"
+            "memo": "9+"
           }
         ]
       },
@@ -320,13 +320,13 @@
             "amount": 10000000000000,
             "depositDuration": 173448000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "presale 5Y - not pickable after network creation, only for genesis allocations",
-            "memo": "9"
+            "depositOfferMemo": "PreSale 5 Years 10%",
+            "memo": "10"
           },
           {
             "amount": 100000000000,
             "timestampOffset": 3600,
-            "memo": "9+"
+            "memo": "10+"
           }
         ]
       },
@@ -343,13 +343,13 @@
             "amount": 10000000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "10"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "11"
           },
           {
             "amount": 100000000000000,
             "timestampOffset": 3600,
-            "memo": "10+"
+            "memo": "11+"
           }
         ]
       },
@@ -366,13 +366,13 @@
             "amount": 10000000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "11"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "12"
           },
           {
             "amount": 100000000000000,
             "timestampOffset": 3600,
-            "memo": "11+"
+            "memo": "12+"
           }
         ]
       },
@@ -389,13 +389,13 @@
             "amount": 100000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "12"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "13"
           },
           {
             "amount": 1000000000000,
             "timestampOffset": 3600,
-            "memo": "12+"
+            "memo": "13+"
           }
         ]
       },
@@ -411,7 +411,7 @@
           {
             "amount": 100000000000000000,
             "timestampOffset": 3600,
-            "memo": "13+"
+            "memo": "14+"
           }
         ]
       },
@@ -428,8 +428,8 @@
             "amount": 100000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "14"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "15"
           }
         ]
       },
@@ -446,13 +446,13 @@
             "amount": 10000000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "15"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "16"
           },
           {
             "amount": 100000000000000,
             "timestampOffset": 3600,
-            "memo": "15+"
+            "memo": "16+"
           }
         ]
       },
@@ -468,7 +468,7 @@
           {
             "amount": 101000000000000,
             "timestampOffset": 3600,
-            "memo": "16+"
+            "memo": "17+"
           }
         ]
       },
@@ -485,13 +485,13 @@
             "amount": 100000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "17"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "18"
           },
           {
             "amount": 1000000000000,
             "timestampOffset": 3600,
-            "memo": "17+"
+            "memo": "18+"
           }
         ]
       },
@@ -508,13 +508,13 @@
             "amount": 100000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "18"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "19"
           },
           {
             "amount": 1000000000000,
             "timestampOffset": 3600,
-            "memo": "18+"
+            "memo": "19+"
           }
         ]
       },
@@ -531,13 +531,13 @@
             "amount": 100000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "19"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "20"
           },
           {
             "amount": 1000000000000,
             "timestampOffset": 3600,
-            "memo": "19+"
+            "memo": "20+"
           }
         ]
       },
@@ -554,13 +554,13 @@
             "amount": 100000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "20"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "21"
           },
           {
             "amount": 1000000000000,
             "timestampOffset": 3600,
-            "memo": "20+"
+            "memo": "21+"
           }
         ]
       },
@@ -577,8 +577,8 @@
             "amount": 10000000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "21"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "22"
           }
         ]
       },
@@ -595,13 +595,13 @@
             "amount": 100000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "22"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "23"
           },
           {
             "amount": 1000000000000,
             "timestampOffset": 3600,
-            "memo": "22+"
+            "memo": "23+"
           }
         ]
       },
@@ -618,13 +618,13 @@
             "amount": 100000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "23"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "24"
           },
           {
             "amount": 1000000000000,
             "timestampOffset": 3600,
-            "memo": "23+"
+            "memo": "24+"
           }
         ]
       },
@@ -641,13 +641,13 @@
             "amount": 100000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "24"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "25"
           },
           {
             "amount": 1000000000000,
             "timestampOffset": 3600,
-            "memo": "24+"
+            "memo": "25+"
           }
         ]
       },
@@ -664,13 +664,13 @@
             "amount": 100000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "25"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "26"
           },
           {
             "amount": 1000000000000,
             "timestampOffset": 3600,
-            "memo": "25+"
+            "memo": "26+"
           }
         ]
       },
@@ -687,13 +687,13 @@
             "amount": 100000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "26"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "27"
           },
           {
             "amount": 1000000000000,
             "timestampOffset": 3600,
-            "memo": "26+"
+            "memo": "27+"
           }
         ]
       },
@@ -710,13 +710,13 @@
             "amount": 150000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "27"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "28"
           },
           {
             "amount": 1500000000000,
             "timestampOffset": 3600,
-            "memo": "27+"
+            "memo": "28+"
           }
         ]
       },
@@ -733,13 +733,13 @@
             "amount": 100000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "28"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "29"
           },
           {
             "amount": 1000000000000,
             "timestampOffset": 3600,
-            "memo": "28+"
+            "memo": "29+"
           }
         ]
       },
@@ -756,13 +756,13 @@
             "amount": 100000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "29"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "30"
           },
           {
             "amount": 1000000000000,
             "timestampOffset": 3600,
-            "memo": "29+"
+            "memo": "30+"
           }
         ]
       },
@@ -778,7 +778,7 @@
           {
             "amount": 1010000000000000,
             "timestampOffset": 3600,
-            "memo": "30+"
+            "memo": "31+"
           }
         ]
       },
@@ -795,13 +795,13 @@
             "amount": 1000000000000000,
             "depositDuration": 110376000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "presale 3Y - not pickable after network creation, only for genesis allocations",
-            "memo": "31"
+            "depositOfferMemo": "PreSale 3 Years 8%",
+            "memo": "32"
           },
           {
             "amount": 10000000000000,
             "timestampOffset": 3600,
-            "memo": "31+"
+            "memo": "32+"
           }
         ]
       },
@@ -818,13 +818,13 @@
             "amount": 1000000000000000,
             "depositDuration": 141912000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "presale 4Y - not pickable after network creation, only for genesis allocations",
-            "memo": "32"
+            "depositOfferMemo": "PreSale 4 Years 9%",
+            "memo": "33"
           },
           {
             "amount": 10000000000000,
             "timestampOffset": 3600,
-            "memo": "32+"
+            "memo": "33+"
           }
         ]
       },
@@ -841,13 +841,13 @@
             "amount": 1000000000000000,
             "depositDuration": 173448000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "presale 5Y - not pickable after network creation, only for genesis allocations",
-            "memo": "33"
+            "depositOfferMemo": "PreSale 5 Years 10%",
+            "memo": "34"
           },
           {
             "amount": 10000000000000,
             "timestampOffset": 3600,
-            "memo": "33+"
+            "memo": "34+"
           }
         ]
       },
@@ -864,13 +864,13 @@
             "amount": 1000000000000000,
             "depositDuration": 157680000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "Directly start with undeposit for 5years -- (Mostly used for longterm funds of the camino foundation reserve, marketing, team, second sale, etc)",
-            "memo": "34"
+            "depositOfferMemo": "Undeposit 5 Years 0%",
+            "memo": "35"
           },
           {
             "amount": 10000000000000,
             "timestampOffset": 3600,
-            "memo": "34+"
+            "memo": "35+"
           }
         ]
       },
@@ -887,13 +887,13 @@
             "amount": 1000000000000000,
             "depositDuration": 110376000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "Seed investors lock",
-            "memo": "35"
+            "depositOfferMemo": "Seed 3 Years 0%",
+            "memo": "36"
           },
           {
             "amount": 10000000000000,
             "timestampOffset": 3600,
-            "memo": "35+"
+            "memo": "36+"
           }
         ]
       },
@@ -910,13 +910,13 @@
             "amount": 1000000000000000,
             "depositDuration": 157680000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "Founders/Team 5Y - not pickable after network creation, only for genesis allocations",
-            "memo": "36"
+            "depositOfferMemo": "Team 5 Years 0%",
+            "memo": "37"
           },
           {
             "amount": 10000000000000,
             "timestampOffset": 3600,
-            "memo": "36+"
+            "memo": "37+"
           }
         ]
       },
@@ -933,13 +933,13 @@
             "amount": 1000000000000000,
             "depositDuration": 31536000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "un-deposit test - not pickable after network creation, only for genesis allocations",
-            "memo": "37"
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "38"
           },
           {
             "amount": 10000000000000,
             "timestampOffset": 3600,
-            "memo": "37+"
+            "memo": "38+"
           }
         ]
       },
@@ -956,13 +956,13 @@
             "amount": 1000000000000000,
             "depositDuration": 86400,
             "timestampOffset": 3600,
-            "depositOfferMemo": "depositOffer test#1 - pickable after network creation and not in genesis as duration is not choosable per allocation!",
-            "memo": "38"
+            "depositOfferMemo": "FlexDepositTest 60s-1Y 11%",
+            "memo": "39"
           },
           {
             "amount": 10000000000000,
             "timestampOffset": 3600,
-            "memo": "38+"
+            "memo": "39+"
           }
         ]
       },
@@ -979,13 +979,13 @@
             "amount": 1000000000000000,
             "depositDuration": 864000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "depositOffer test#2 - pickable after network creation and not in genesis as duration is not choosable per allocation!",
-            "memo": "39"
+            "depositOfferMemo": "FlexDepositTest 1d-1Y 21%",
+            "memo": "40"
           },
           {
             "amount": 10000000000000,
             "timestampOffset": 3600,
-            "memo": "39+"
+            "memo": "40+"
           }
         ]
       },
@@ -1002,18 +1002,49 @@
             "amount": 1000000000000000,
             "depositDuration": 110376000,
             "timestampOffset": 3600,
-            "depositOfferMemo": "presale 3Y - not pickable after network creation, only for genesis allocations",
-            "memo": "40"
+            "depositOfferMemo": "PreSale 3 Years 8%",
+            "memo": "41"
           },
           {
             "amount": 10000000000000,
             "timestampOffset": 3600,
-            "memo": "40+"
+            "memo": "41+"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus17tldvcdnq52a29y5vplw5l4pys80jnlpj78cm4",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": false,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 1000000000000000,
+            "depositDuration": 110376000,
+            "timestampOffset": 2592000,
+            "depositOfferMemo": "PreSale 3 Years 8%",
+            "memo": "42"
+          },
+          {
+            "amount": 10000000000000,
+            "timestampOffset": 2592000,
+            "memo": "42+"
           }
         ]
       }
     ],
     "initialMultisigAddresses": [
+      {
+        "alias": "X-kopernikus10jsl9f669s9dn6zpxjgerv57pmhnaup5pmhtxn",
+        "addresses": [
+          "X-kopernikus17tldvcdnq52a29y5vplw5l4pys80jnlpj78cm4"
+        ],
+        "threshold": 1,
+        "memo": "155"
+      },
       {
         "alias": "X-kopernikus194sm66h2qrmtae7gcesnmxdstzqv0mpt53yjft",
         "addresses": [

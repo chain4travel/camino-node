@@ -11,11 +11,9 @@ import (
 	"github.com/chain4travel/camino-node/tools/genesis/utils"
 )
 
-const (
-	Allocations = "Camino Allocation"
-)
+type AllocationColumn int
 
-type Allocation struct {
+type AllocationRow struct {
 	RowNo               int
 	Bucket              string
 	Kyc                 string
@@ -23,7 +21,6 @@ type Allocation struct {
 	Address             ids.ShortID
 	ConsortiumMember    string
 	ControlGroup        string
-	MsigThreshold       uint32
 	NodeID              ids.NodeID
 	ValidatorPeriodDays uint32
 	Additional1Percent  string
@@ -34,18 +31,18 @@ type Allocation struct {
 	PublicKey           string
 }
 
-type AllocationRow int
-
 const (
 	TrueValue  = "TRUE"
 	FalseValue = "FALSE"
 )
 
-func (a *Allocation) FromRow(fileRowNo int, row []string) error {
+func (a *AllocationRow) Header() []string { return []string{"#", "Company", "First Name"} }
+
+func (a *AllocationRow) FromRow(fileRowNo int, row []string) error {
 	// COLUMNS
 	const (
-		_RowNo AllocationRow = iota
-		ComapnyName
+		_RowNo AllocationColumn = iota
+		_ComapnyName
 		FirstName
 		_LastName
 		_KnownBy
@@ -62,7 +59,6 @@ func (a *Allocation) FromRow(fileRowNo int, row []string) error {
 		PublicKey
 		ConsortiumMember
 		ControlGroup
-		MultisigThreshold
 		NodeID
 		ValidationPeriodDays
 		Additional1Percent
@@ -72,7 +68,8 @@ func (a *Allocation) FromRow(fileRowNo int, row []string) error {
 	)
 
 	var err error
-	a.RowNo = fileRowNo
+	// xls file's rows are 1-indexed
+	a.RowNo = fileRowNo + 1
 	a.Bucket = row[Bucket]
 	a.Kyc = strings.TrimSpace(row[Kyc])
 	a.FirstName = row[FirstName]
@@ -86,14 +83,6 @@ func (a *Allocation) FromRow(fileRowNo int, row []string) error {
 		return fmt.Errorf("could not parse amount %s", row[CamAmount])
 	}
 	a.Amount *= units.Avax
-
-	if row[MultisigThreshold] != "" {
-		threshold, err := strconv.ParseUint(row[MultisigThreshold], 10, 32)
-		a.MsigThreshold = uint32(threshold)
-		if err != nil {
-			return fmt.Errorf("could not parse msig threshold %s", row[MultisigThreshold])
-		}
-	}
 
 	row[NodeID] = strings.TrimSpace(row[NodeID])
 	if row[NodeID] != "" && row[NodeID] != "X" {
@@ -135,9 +124,12 @@ func (a *Allocation) FromRow(fileRowNo int, row []string) error {
 		a.Address, _ = ids.ToShortID(addrBytes)
 	}
 
-	a.TokenDeliveryOffset, err = strconv.ParseUint(row[AllocationStartOffet], 10, 64)
-	if err != nil {
-		return fmt.Errorf("could not parse allocation offset %s", row[AllocationStartOffet])
+	a.TokenDeliveryOffset = 0
+	if strings.TrimSpace(row[AllocationStartOffet]) != "" {
+		a.TokenDeliveryOffset, err = strconv.ParseUint(row[AllocationStartOffet], 10, 64)
+		if err != nil {
+			return fmt.Errorf("could not parse allocation offset (%s) %w", row[AllocationStartOffet], err)
+		}
 	}
 
 	dd, err := strconv.ParseUint(row[DepositDuration], 10, 32)
