@@ -69,20 +69,19 @@ func ParseMultiSigGroups(xls *excelize.File) []*MultiSigGroup {
 	}
 
 	multis := map[string]*MultiSigGroup{}
-
+	currentGroup := ""
 	for _, ms := range rows {
-		// skip header urow
-		if ms.ControlGroup == "Control Group" && ms.Threshold == 0 {
-			continue
-		}
-
 		group, ok := multis[ms.ControlGroup]
 		if ok {
+			if ms.ControlGroup != currentGroup {
+				log.Panicf("control group (%s) defined twice or interlaped other groups", ms.ControlGroup)
+			}
 			if group.Threshold != ms.Threshold {
-				log.Panic("ctrl group which differs by threshold found ", ms.ControlGroup, ": ", group.Threshold, " vs ", ms.Threshold)
+				log.Panicf("ctrl group which differs by threshold found %s: %d vs %d", ms.ControlGroup, group.Threshold, ms.Threshold)
 			}
 		} else {
 			group = &MultiSigGroup{ControlGroup: ms.ControlGroup, Threshold: ms.Threshold, Addrs: []ids.ShortID{}}
+			currentGroup = ms.ControlGroup
 		}
 		group.Addrs = append(group.Addrs, ms.Addr)
 		multis[ms.ControlGroup] = group

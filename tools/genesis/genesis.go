@@ -8,9 +8,9 @@ import (
 
 	"github.com/ava-labs/avalanchego/genesis"
 	"github.com/ava-labs/avalanchego/ids"
+	"github.com/ava-labs/avalanchego/utils"
 	"github.com/ava-labs/avalanchego/utils/constants"
 	"github.com/ava-labs/avalanchego/utils/formatting/address"
-	platform "github.com/ava-labs/avalanchego/vms/platformvm/genesis"
 	"github.com/chain4travel/camino-node/tools/genesis/workbook"
 )
 
@@ -43,21 +43,17 @@ func generateDepositOffers(depositOffersRows workbook.DepositOffersWithOrder, ge
 
 func generateMSigDefinitions(networkID uint32, msigs []*workbook.MultiSigGroup) (MultisigDefs, error) {
 	var (
-		msDefs   = []platform.MultisigAlias{}
+		msDefs   = []genesis.MultisigAlias{}
 		cgToMSig = map[string]ids.ShortID{}
 	)
 
 	txID := ids.Empty
-	for idx, ms := range msigs {
+	for _, ms := range msigs {
 		// Note: only control_group makes an alias, I'm ignoring unlikely possible hashing collisions
 		memo := ms.ControlGroup
-		ma, err := platform.NewMultisigAlias(txID, ms.Addrs, ms.Threshold, memo)
+		ma, err := newMultisigAlias(txID, ms.Addrs, ms.Threshold, memo)
 		if err != nil {
-			fmt.Println("Could not create multisig definition for ", ms.ControlGroup, err)
-		}
-
-		if err = memoSanityCheck(&ma, idx); err != nil {
-			log.Panic(err)
+			log.Panic("Could not create multisig definition for ", ms.ControlGroup, " error: ", err)
 		}
 
 		msDefs = append(msDefs, ma)
@@ -73,8 +69,7 @@ func generateMSigDefinitions(networkID uint32, msigs []*workbook.MultiSigGroup) 
 
 	strAliases := map[ids.ShortID]genesis.UnparsedMultisigAlias{}
 	for _, ali := range msDefs {
-		uma := genesis.UnparsedMultisigAlias{}
-		err := uma.Unparse(ali, networkID)
+		uma, err := ali.Unparse(networkID)
 		if err != nil {
 			fmt.Println("Could not unparse multisig definition for ", ali.Alias, err)
 		}
@@ -205,10 +200,25 @@ func nodeIDToString(id ids.NodeID) string {
 	return ""
 }
 
-func memoSanityCheck(ma *platform.MultisigAlias, index int) error {
+type MultisigDefs struct {
+	ControlGroupToAlias map[string]ids.ShortID
+	MultisigAliaseas    []genesis.UnparsedMultisigAlias
+}
+
+func newMultisigAlias(txID ids.ID, addrs []ids.ShortID, threshold uint32, memo string) (genesis.MultisigAlias, error) {
+	utils.Sort(addrs)
+	ma := genesis.MultisigAlias{
+		Threshold: threshold,
+		Addresses: addrs,
+		Memo:      memo,
+	}
+	ma.Alias = ma.ComputeAlias(txID)
+	return ma, msigSanityCheck(ma, txID)
+}
+
+func msigSanityCheck(ma genesis.MultisigAlias, txID ids.ID) error {
 	// Sanity check: Unparse & Parse & Verify
-	uma := genesis.UnparsedMultisigAlias{}
-	err := uma.Unparse(*ma, 1)
+	uma, err := ma.Unparse(1)
 	if err != nil {
 		return err
 	}
@@ -217,11 +227,14 @@ func memoSanityCheck(ma *platform.MultisigAlias, index int) error {
 		return err
 	}
 
-	// reverse computation check
-	return mm.Verify(ids.Empty)
-}
+	if ma.Alias != mm.ComputeAlias(txID) {
+		return fmt.Errorf("alias mismatch between original and recreated one")
+	}
 
-type MultisigDefs struct {
-	ControlGroupToAlias map[string]ids.ShortID
-	MultisigAliaseas    []genesis.UnparsedMultisigAlias
+	internalAlias, err := genesis.MultisigAliasFromConfig(mm)
+	if err != nil {
+		return err
+	}
+
+	return internalAlias.Verify()
 }
