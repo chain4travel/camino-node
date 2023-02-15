@@ -238,7 +238,7 @@
         },
         "platformAllocations": [
           {
-            "amount": 735583200000000000,
+            "amount": 735472200000000000,
             "timestampOffset": 3600,
             "memo": "6+"
           }
@@ -1014,7 +1014,7 @@
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus17tldvcdnq52a29y5vplw5l4pys80jnlpj78cm4",
+        "avaxAddr": "X-kopernikus1xw2kqx2xzqsvnuecz2yw6fwpt87k48s25ean4x",
         "xAmount": 0,
         "addressStates": {
           "consortiumMember": false,
@@ -1034,16 +1034,32 @@
             "memo": "42+"
           }
         ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1kuv84fhr5meu3nwuh4y284k7y2dxatqt0jx8cv",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": true,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 101000000000000,
+            "timestampOffset": 3600,
+            "memo": "43+"
+          }
+        ]
       }
     ],
     "initialMultisigAddresses": [
       {
-        "alias": "X-kopernikus10jsl9f669s9dn6zpxjgerv57pmhnaup5pmhtxn",
+        "alias": "X-kopernikus1xw2kqx2xzqsvnuecz2yw6fwpt87k48s25ean4x",
         "addresses": [
           "X-kopernikus17tldvcdnq52a29y5vplw5l4pys80jnlpj78cm4"
         ],
         "threshold": 1,
-        "memo": "155"
+        "memo": "1155"
       },
       {
         "alias": "X-kopernikus194sm66h2qrmtae7gcesnmxdstzqv0mpt53yjft",

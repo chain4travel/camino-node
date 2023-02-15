@@ -106,6 +106,10 @@ func main() {
 		log.Panic("Could not write the output file: ", outputFileName, err)
 	}
 
+	fmt.Println("Sanity check the generated genesis file")
+	if err := validateConfig(bytes); err != nil {
+		log.Panic("Generated genesis file is invalid ", err)
+	}
 	fmt.Println("DONE")
 }
 
@@ -122,4 +126,18 @@ func readGenesisConfig(genesisFile string) (genesis.UnparsedConfig, error) {
 	}
 
 	return genesisConfig, err
+}
+
+func validateConfig(jsonFileContent []byte) error {
+	genesisConfig := genesis.UnparsedConfig{}
+	err := json.Unmarshal(jsonFileContent, &genesisConfig)
+	if err != nil {
+		return fmt.Errorf("error while unserializing generated json, %w", err)
+	}
+	config, err := genesisConfig.Parse()
+	if err != nil {
+		return fmt.Errorf("error while parsing generated genesis json, %w", err)
+	}
+
+	return genesis.ValidateConfig(&config)
 }
