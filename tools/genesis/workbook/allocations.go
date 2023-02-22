@@ -83,7 +83,7 @@ func (a *AllocationRow) FromRow(fileRowNo int, row []string) error {
 	if row[NodeID] != "" && row[NodeID] != "X" {
 		a.NodeID, err = ids.NodeIDFromString(row[NodeID])
 		if err != nil {
-			fmt.Println("could not parse node id", row[NodeID])
+			return fmt.Errorf("could not parse node id: %s", row[NodeID])
 		}
 	}
 
@@ -91,7 +91,7 @@ func (a *AllocationRow) FromRow(fileRowNo int, row []string) error {
 		vpd, err := strconv.ParseUint(row[ValidationPeriodDays], 10, 32)
 		a.ValidatorPeriodDays = uint32(vpd)
 		if err != nil {
-			fmt.Println("could not parse Validator Period: ", row[ValidationPeriodDays])
+			return fmt.Errorf("could not parse Validator Period: %s", row[ValidationPeriodDays])
 		}
 	}
 
@@ -139,6 +139,10 @@ func (a *AllocationRow) FromRow(fileRowNo int, row []string) error {
 
 	if a.ConsortiumMember != "" && a.ConsortiumMember != CheckedValue {
 		return fmt.Errorf("invalid consortium member value (%s), can be either empty or 'X'", a.ConsortiumMember)
+	}
+
+	if a.NodeID != ids.EmptyNodeID && a.ConsortiumMember != CheckedValue {
+		return fmt.Errorf("non-consortium member validator node (with NodeID) defined")
 	}
 
 	return nil

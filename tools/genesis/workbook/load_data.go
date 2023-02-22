@@ -7,6 +7,7 @@ import (
 
 	"github.com/ava-labs/avalanchego/genesis"
 	"github.com/ava-labs/avalanchego/ids"
+	"github.com/ava-labs/avalanchego/utils/set"
 	"github.com/xuri/excelize/v2"
 	"golang.org/x/exp/maps"
 )
@@ -43,6 +44,14 @@ func ParseAllocations(xls *excelize.File) []*AllocationRow {
 			log.Panic("could not parse row: ", i+1, err)
 		}
 		rows = append(rows, row)
+	}
+
+	uniqueValidatorNodes := set.NewSet[ids.NodeID](0)
+	for _, row := range rows {
+		if row.NodeID != ids.EmptyNodeID && uniqueValidatorNodes.Contains(row.NodeID) {
+			log.Panicf("duplicatied node id in allocation row %d, %s", row.RowNo, row.NodeID)
+		}
+		uniqueValidatorNodes.Add(row.NodeID)
 	}
 
 	return rows
