@@ -11,7 +11,9 @@ import (
 	"github.com/ava-labs/avalanchego/utils"
 	"github.com/ava-labs/avalanchego/utils/constants"
 	"github.com/ava-labs/avalanchego/utils/formatting/address"
+	"github.com/ava-labs/avalanchego/vms/components/multisig"
 	"github.com/chain4travel/camino-node/tools/genesis/workbook"
+	"github.com/decred/dcrd/dcrec/secp256k1/v3"
 )
 
 var EmptyETHAddress = "0x" + hex.EncodeToString(ids.ShortEmpty.Bytes())
@@ -51,7 +53,7 @@ func generateMSigDefinitions(networkID uint32, msigs []*workbook.MultiSigGroup) 
 	for _, ms := range msigs {
 		// Note: only control_group makes an alias, I'm ignoring unlikely possible hashing collisions
 		memo := ms.ControlGroup
-		ma, err := newMultisigAlias(txID, ms.Addrs, ms.Threshold, memo)
+		ma, err := newMultisigAlias(txID, ms.PublicKeys, ms.Threshold, memo)
 		if err != nil {
 			log.Panic("Could not create multisig definition for ", ms.ControlGroup, " error: ", err)
 		}
@@ -205,18 +207,36 @@ type MultisigDefs struct {
 	MultisigAliaseas    []genesis.UnparsedMultisigAlias
 }
 
-func newMultisigAlias(txID ids.ID, addrs []ids.ShortID, threshold uint32, memo string) (genesis.MultisigAlias, error) {
-	utils.Sort(addrs)
+func newMultisigAlias(txID ids.ID, pks []*secp256k1.PublicKey, threshold uint32, memo string) (genesis.MultisigAlias, error) {
+	publicKeys := make([]multisig.PublicKey, 0, len(pks))
+	for _, pk := range pks {
+		pub, err := multisig.PublicKeyFromBytes(pk.SerializeCompressed())
+		if err != nil {
+			return genesis.MultisigAlias{}, err
+		}
+		publicKeys = append(publicKeys, pub)
+	}
+	utils.Sort(publicKeys)
+
 	ma := genesis.MultisigAlias{
-		Threshold: threshold,
-		Addresses: addrs,
-		Memo:      memo,
+		Threshold:  threshold,
+		PublicKeys: publicKeys,
+		Memo:       memo,
 	}
 	ma.Alias = ma.ComputeAlias(txID)
 	return ma, msigSanityCheck(ma, txID)
 }
 
 func msigSanityCheck(ma genesis.MultisigAlias, txID ids.ID) error {
+	msigAlias, err := genesis.MultisigAliasRawFromConfig(ma)
+	if err != nil {
+		return err
+	}
+
+	if err = msigAlias.Verify(); err != nil {
+		return err
+	}
+
 	// Sanity check: Unparse & Parse & Verify
 	uma, err := ma.Unparse(1)
 	if err != nil {
@@ -227,14 +247,10 @@ func msigSanityCheck(ma genesis.MultisigAlias, txID ids.ID) error {
 		return err
 	}
 
+	// Sanity check: Alias should be the same
 	if ma.Alias != mm.ComputeAlias(txID) {
 		return fmt.Errorf("alias mismatch between original and recreated one")
 	}
 
-	internalAlias, err := genesis.MultisigAliasFromConfig(mm)
-	if err != nil {
-		return err
-	}
-
-	return internalAlias.Verify()
+	return nil
 }

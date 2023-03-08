@@ -5,15 +5,14 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/formatting/address"
 	"github.com/chain4travel/camino-node/tools/genesis/utils"
+	"github.com/decred/dcrd/dcrec/secp256k1/v3"
 )
 
 type MultiSigGroup struct {
 	ControlGroup string
 	Threshold    uint32
-	Addrs        []ids.ShortID
+	PublicKeys   []*secp256k1.PublicKey
 }
 
 type MultiSigColumn int
@@ -21,7 +20,7 @@ type MultiSigColumn int
 type MultiSigRow struct {
 	ControlGroup string
 	Threshold    uint32
-	Addr         ids.ShortID
+	PublicKey    *secp256k1.PublicKey
 }
 
 func (msig *MultiSigRow) Header() []string { return []string{"Control Group", "Threshold", "Company"} }
@@ -35,7 +34,7 @@ func (msig *MultiSigRow) FromRow(_ int, msigRow []string) error {
 		_FirstName
 		_LastName
 		_Kyc
-		PChainAddress
+		_PChainAddress
 		PublicKey
 	)
 
@@ -48,30 +47,16 @@ func (msig *MultiSigRow) FromRow(_ int, msigRow []string) error {
 		}
 	}
 
-	keyRead := false
-	var addr ids.ShortID
 	if len(msigRow) > int(PublicKey) && msigRow[PublicKey] != "" {
 		msigRow[PublicKey] = strings.TrimPrefix(strings.TrimSpace(msigRow[PublicKey]), "0x")
-
 		pk, err := utils.PublicKeyFromString(msigRow[PublicKey])
+		msig.PublicKey = pk
 		if err != nil {
-			return fmt.Errorf("could not parse public key, expected uncompressed bytes %s", msigRow[PublicKey])
+			return fmt.Errorf("could not parse public key")
 		}
-		addr, err = utils.ToPAddress(pk)
-		if err != nil {
-			return fmt.Errorf("[X/P] could not parse public key %s, %w", msigRow[PublicKey], err)
-		}
-
-		keyRead = true
+	} else {
+		return fmt.Errorf("empty / invalid public key")
 	}
-	if !keyRead && len(msigRow[PChainAddress]) >= 47 {
-		_, _, addrBytes, err := address.Parse(strings.TrimSpace(msigRow[PChainAddress]))
-		if err != nil {
-			return fmt.Errorf("could not parse address %s for ctrl group %s - err: %s", msigRow[PChainAddress], msig.ControlGroup, err)
-		}
-		addr, _ = ids.ToShortID(addrBytes)
-	}
-	msig.Addr = addr
 
 	return nil
 }

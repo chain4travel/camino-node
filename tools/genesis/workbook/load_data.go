@@ -8,6 +8,7 @@ import (
 	"github.com/ava-labs/avalanchego/genesis"
 	"github.com/ava-labs/avalanchego/ids"
 	"github.com/ava-labs/avalanchego/utils/set"
+	"github.com/decred/dcrd/dcrec/secp256k1/v3"
 	"github.com/xuri/excelize/v2"
 	"golang.org/x/exp/maps"
 )
@@ -41,7 +42,8 @@ func ParseAllocations(xls *excelize.File) []*AllocationRow {
 		}
 
 		if err = row.FromRow(i, urow); err != nil {
-			log.Panic("could not parse row: ", i+1, err)
+			fmt.Printf("could not parse row: %d (%v)\n", i+1, err)
+			continue
 		}
 		rows = append(rows, row)
 	}
@@ -72,7 +74,8 @@ func ParseMultiSigGroups(xls *excelize.File) []*MultiSigGroup {
 		}
 
 		if err = row.FromRow(i, urow); err != nil {
-			log.Panic("could not parse row", i+1, err)
+			fmt.Printf("could not parse row: %d (%v)\n", i+1, err)
+			continue
 		}
 		rows = append(rows, row)
 	}
@@ -89,19 +92,26 @@ func ParseMultiSigGroups(xls *excelize.File) []*MultiSigGroup {
 				log.Panicf("ctrl group which differs by threshold found %s: %d vs %d", ms.ControlGroup, group.Threshold, ms.Threshold)
 			}
 		} else {
-			group = &MultiSigGroup{ControlGroup: ms.ControlGroup, Threshold: ms.Threshold, Addrs: []ids.ShortID{}}
+			group = &MultiSigGroup{ControlGroup: ms.ControlGroup, Threshold: ms.Threshold, PublicKeys: []*secp256k1.PublicKey{}}
 			currentGroup = ms.ControlGroup
 		}
-		group.Addrs = append(group.Addrs, ms.Addr)
+		if ms.PublicKey != nil {
+			group.PublicKeys = append(group.PublicKeys, ms.PublicKey)
+		} else {
+			fmt.Println("WARN: public key is empty for control group", ms.ControlGroup)
+		}
 		multis[ms.ControlGroup] = group
 	}
 
 	// also lets have MSig ordered by CtrlGroup
 	cgroups := maps.Keys(multis)
 	sort.Strings(cgroups)
-	sortedMultis := make([]*MultiSigGroup, len(cgroups))
-	for i, cgroup := range cgroups {
-		sortedMultis[i] = multis[cgroup]
+	sortedMultis := make([]*MultiSigGroup, 0, len(cgroups))
+	for _, cgroup := range cgroups {
+		if len(multis[cgroup].PublicKeys) < int(multis[cgroup].Threshold) {
+			continue
+		}
+		sortedMultis = append(sortedMultis, multis[cgroup])
 	}
 
 	return sortedMultis

@@ -157,7 +157,7 @@
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus194sm66h2qrmtae7gcesnmxdstzqv0mpt53yjft",
+        "avaxAddr": "X-kopernikus1vvleqjqu5063z54vjr75z8e5dsp2etu4xskd5w",
         "xAmount": 0,
         "addressStates": {
           "consortiumMember": true,
@@ -182,7 +182,7 @@
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus1z5ykr4vxdhqder6jl0j5je2kl9cqxxlnrm55v2",
+        "avaxAddr": "X-kopernikus14dcvgapqztpt7dw78pt2gh42px0dxy32uj0384",
         "xAmount": 0,
         "addressStates": {
           "consortiumMember": true,
@@ -230,7 +230,7 @@
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus1prxyey5xugn5c6tqusha9m4hd4rvld23h0sxam",
+        "avaxAddr": "X-kopernikus1tar56we2h5a3npf2ptexyvfv2u976ednf7t86f",
         "xAmount": 0,
         "addressStates": {
           "consortiumMember": false,
@@ -238,7 +238,7 @@
         },
         "platformAllocations": [
           {
-            "amount": 735472200000000000,
+            "amount": 735169200000000000,
             "timestampOffset": 3600,
             "memo": "6+"
           }
@@ -458,7 +458,7 @@
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus194sm66h2qrmtae7gcesnmxdstzqv0mpt53yjft",
+        "avaxAddr": "X-kopernikus1vvleqjqu5063z54vjr75z8e5dsp2etu4xskd5w",
         "xAmount": 0,
         "addressStates": {
           "consortiumMember": false,
@@ -991,7 +991,7 @@
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus18gw475en5h5jvtkslp7xqed7t7ugq6rmc4zrvh",
+        "avaxAddr": "X-kopernikus1x3r26fpsutn726wfhdafsxk73djea4kqdmtwlq",
         "xAmount": 0,
         "addressStates": {
           "consortiumMember": false,
@@ -1014,7 +1014,7 @@
       },
       {
         "ethAddr": "0x0000000000000000000000000000000000000000",
-        "avaxAddr": "X-kopernikus1xw2kqx2xzqsvnuecz2yw6fwpt87k48s25ean4x",
+        "avaxAddr": "X-kopernikus1v4xs0s7tey94fw58thfwjq70f220h0y57jht4l",
         "xAmount": 0,
         "addressStates": {
           "consortiumMember": false,
@@ -1054,57 +1054,57 @@
     ],
     "initialMultisigAddresses": [
       {
-        "alias": "X-kopernikus1xw2kqx2xzqsvnuecz2yw6fwpt87k48s25ean4x",
-        "addresses": [
-          "X-kopernikus17tldvcdnq52a29y5vplw5l4pys80jnlpj78cm4"
+        "alias": "X-kopernikus1v4xs0s7tey94fw58thfwjq70f220h0y57jht4l",
+        "members": [
+          "030908bd19e6cce8cd10f140a239965c8777f37fe0e3c30d8091dd28e9bdf9ce90"
         ],
         "threshold": 1,
         "memo": "1155"
       },
       {
-        "alias": "X-kopernikus194sm66h2qrmtae7gcesnmxdstzqv0mpt53yjft",
-        "addresses": [
-          "X-kopernikus18pry238vq8uzzpar32wa4x4p2rkyc7wx2qnctc",
-          "X-kopernikus18l0l8dz03vmk7k7y5cgax8k2l5mphj4p5k040u",
-          "X-kopernikus1d0ydd4wyq670lzrp0y7xd3wej4z7ysp2surum8",
-          "X-kopernikus1h87ampd07hwtnqywpsagrxm9ygkmcr34ndjah9"
+        "alias": "X-kopernikus1vvleqjqu5063z54vjr75z8e5dsp2etu4xskd5w",
+        "members": [
+          "022f8337fd2a0a87200e4675f50db854d3e79e348f2cc31749f51f4c264f77d1fc",
+          "023445c5cab078381431005d86c4cb46f97576492cdbcb2aa4de6b3eaab4befd6f",
+          "02b4007c6e82df6e3d02adea3a69910c9b38060ee7e1327a30a7e6c7974f6781eb",
+          "0305e08a3bc814a34203ed633e006433db032bccd052900c5030a9b1ea93e9c985"
         ],
         "threshold": 2,
         "memo": "931"
       },
       {
-        "alias": "X-kopernikus1z5ykr4vxdhqder6jl0j5je2kl9cqxxlnrm55v2",
-        "addresses": [
-          "X-kopernikus18pry238vq8uzzpar32wa4x4p2rkyc7wx2qnctc",
-          "X-kopernikus18l0l8dz03vmk7k7y5cgax8k2l5mphj4p5k040u",
-          "X-kopernikus1d0ydd4wyq670lzrp0y7xd3wej4z7ysp2surum8",
-          "X-kopernikus1h87ampd07hwtnqywpsagrxm9ygkmcr34ndjah9"
+        "alias": "X-kopernikus14dcvgapqztpt7dw78pt2gh42px0dxy32uj0384",
+        "members": [
+          "022f8337fd2a0a87200e4675f50db854d3e79e348f2cc31749f51f4c264f77d1fc",
+          "023445c5cab078381431005d86c4cb46f97576492cdbcb2aa4de6b3eaab4befd6f",
+          "02b4007c6e82df6e3d02adea3a69910c9b38060ee7e1327a30a7e6c7974f6781eb",
+          "0305e08a3bc814a34203ed633e006433db032bccd052900c5030a9b1ea93e9c985"
         ],
         "threshold": 2,
         "memo": "932"
       },
       {
-        "alias": "X-kopernikus1prxyey5xugn5c6tqusha9m4hd4rvld23h0sxam",
-        "addresses": [
-          "X-kopernikus18pry238vq8uzzpar32wa4x4p2rkyc7wx2qnctc",
-          "X-kopernikus18l0l8dz03vmk7k7y5cgax8k2l5mphj4p5k040u",
-          "X-kopernikus1h87ampd07hwtnqywpsagrxm9ygkmcr34ndjah9"
+        "alias": "X-kopernikus1tar56we2h5a3npf2ptexyvfv2u976ednf7t86f",
+        "members": [
+          "023445c5cab078381431005d86c4cb46f97576492cdbcb2aa4de6b3eaab4befd6f",
+          "02b4007c6e82df6e3d02adea3a69910c9b38060ee7e1327a30a7e6c7974f6781eb",
+          "0305e08a3bc814a34203ed633e006433db032bccd052900c5030a9b1ea93e9c985"
         ],
         "threshold": 2,
         "memo": "933"
       },
       {
-        "alias": "X-kopernikus18gw475en5h5jvtkslp7xqed7t7ugq6rmc4zrvh",
-        "addresses": [
-          "X-kopernikus1qfyvkqnv8yd9rmlf6sv0gdx20dgg4erslxurav",
-          "X-kopernikus1yk9lw48um0r0rn9ydf9fhjfwwfq0qh7qpytjcr",
-          "X-kopernikus1fvr4nd743ew0gcy00se24hp2ecpmk4h7lhkll4",
-          "X-kopernikus1dgrg4j4p5e6k5jn8080n6333r934pyum0zgczg",
-          "X-kopernikus10xf9u6we06ljq20jtq90hj0f6q8l2psp0njqmu",
-          "X-kopernikus102uap4au55t22m797rr030wyrw0jlgw25ut8vj",
-          "X-kopernikus1c35zu69gd42yu9ecrptzwf0z9g7fhfvrmrjgam",
-          "X-kopernikus1maff3tql60ndkwn9mvz06ssywvag4uf48el62q",
-          "X-kopernikus1lmwsgy9zv8hyxwsek0pvsq7cpejtkvwk2nm7k0"
+        "alias": "X-kopernikus1x3r26fpsutn726wfhdafsxk73djea4kqdmtwlq",
+        "members": [
+          "022507a6a7e997709a61078a4a175a5b49e90177df3475862c1490399b68b7e5a9",
+          "02379a8074d5ed7372841c5911ff140a1a8f4931dc0583dbab8ea5e8891e506e82",
+          "029a710bb58c87daf5284973ec6f634633816a9a099190f4c11c632d08c3fc5866",
+          "02bc324d588e078750d7ca4cbf0633ea3082de266fc79431fa83413ea0158c4bc9",
+          "03042aa5f676e603110f5ea634adb2dfef3847281f92fa319c000d42d8bec5d802",
+          "0313c031e903d129ae822087564ba6562476302e58b8e978793e6c08966a6976a0",
+          "038be808819bc80653308ced14aa862cfc75f542166382247db3d064e2438f0368",
+          "03e989643ee39489e6a6d89b6f11f83cfe0634f0642e40fdf568f864fd0a84a945",
+          "03fdd1897710ea7c7b6880e197da14d8c61c80df56b040679a079ceb0d62ce37c6"
         ],
         "threshold": 2,
         "memo": "999"
