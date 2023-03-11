@@ -55,16 +55,15 @@ func (msig *MultiSigRow) FromRow(_ int, msigRow []string) error {
 
 		pk, err := utils.PublicKeyFromString(msigRow[PublicKey])
 		if err != nil {
-			return fmt.Errorf("could not parse public key, expected uncompressed bytes %s", msigRow[PublicKey])
+			return fmt.Errorf("could not parse public key")
 		}
 		addr, err = utils.ToPAddress(pk)
 		if err != nil {
 			return fmt.Errorf("[X/P] could not parse public key %s, %w", msigRow[PublicKey], err)
 		}
-
 		keyRead = true
 	}
-	if !keyRead && len(msigRow[PChainAddress]) >= 47 {
+	if !keyRead && len(msigRow[PChainAddress]) > 0 {
 		_, _, addrBytes, err := address.Parse(strings.TrimSpace(msigRow[PChainAddress]))
 		if err != nil {
 			return fmt.Errorf("could not parse address %s for ctrl group %s - err: %s", msigRow[PChainAddress], msig.ControlGroup, err)

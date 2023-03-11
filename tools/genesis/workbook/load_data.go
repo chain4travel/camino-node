@@ -41,7 +41,8 @@ func ParseAllocations(xls *excelize.File) []*AllocationRow {
 		}
 
 		if err = row.FromRow(i, urow); err != nil {
-			log.Panic("could not parse row: ", i+1, err)
+			fmt.Printf("could not parse row: %d (%v)\n", i+1, err)
+			continue
 		}
 		rows = append(rows, row)
 	}
@@ -72,7 +73,8 @@ func ParseMultiSigGroups(xls *excelize.File) []*MultiSigGroup {
 		}
 
 		if err = row.FromRow(i, urow); err != nil {
-			log.Panic("could not parse row", i+1, err)
+			fmt.Printf("could not parse row: %d (%v)\n", i+1, err)
+			continue
 		}
 		rows = append(rows, row)
 	}
@@ -99,9 +101,12 @@ func ParseMultiSigGroups(xls *excelize.File) []*MultiSigGroup {
 	// also lets have MSig ordered by CtrlGroup
 	cgroups := maps.Keys(multis)
 	sort.Strings(cgroups)
-	sortedMultis := make([]*MultiSigGroup, len(cgroups))
-	for i, cgroup := range cgroups {
-		sortedMultis[i] = multis[cgroup]
+	sortedMultis := make([]*MultiSigGroup, 0, len(cgroups))
+	for _, cgroup := range cgroups {
+		if len(multis[cgroup].Addrs) < int(multis[cgroup].Threshold) {
+			continue
+		}
+		sortedMultis = append(sortedMultis, multis[cgroup])
 	}
 
 	return sortedMultis
