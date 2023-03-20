@@ -112,7 +112,7 @@ func generateAllocations(
 
 		// early exits
 		if al.Address == ids.ShortEmpty {
-			fmt.Println("Skipping Row # ", al.RowNo, " Reason: Address Empty")
+			fmt.Println("\033[31mSkipping Row # ", al.RowNo, " Reason: Address Empty\033[0m")
 			skippedRows++
 			continue
 		}
@@ -122,7 +122,7 @@ func generateAllocations(
 		}
 
 		if al.Amount == 0 {
-			fmt.Println("Skipping Row # ", al.RowNo, " Reason: No allocation amount given")
+			fmt.Println("\033[31mSkipping Row # ", al.RowNo, " Reason: No allocation amount given\033[0m")
 			skippedRows++
 			continue
 		}
