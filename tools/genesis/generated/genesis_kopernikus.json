@@ -955,13 +955,13 @@
           {
             "amount": 1000000000000000,
             "depositDuration": 286,
-            "timestampOffset": 3600,
+            "timestampOffset": 2592000,
             "depositOfferMemo": "FlexDepositTest 60s-1Y 11%",
             "memo": "39"
           },
           {
             "amount": 10000000000000,
-            "timestampOffset": 3600,
+            "timestampOffset": 2592000,
             "memo": "39+"
           }
         ]
@@ -978,13 +978,13 @@
           {
             "amount": 1000000000000000,
             "depositDuration": 864000,
-            "timestampOffset": 3600,
+            "timestampOffset": 2592000,
             "depositOfferMemo": "FlexDepositTest 1d-1Y 21%",
             "memo": "40"
           },
           {
             "amount": 10000000000000,
-            "timestampOffset": 3600,
+            "timestampOffset": 2592000,
             "memo": "40+"
           }
         ]
@@ -1109,13 +1109,13 @@
           {
             "amount": 250000000000000,
             "depositDuration": 120,
-            "timestampOffset": 3600,
+            "timestampOffset": 2592000,
             "depositOfferMemo": "FlexDepositTest 60s-1Y 11%",
             "memo": "46"
           },
           {
             "amount": 2500000000000,
-            "timestampOffset": 3600,
+            "timestampOffset": 2592000,
             "memo": "46+"
           }
         ]
@@ -1132,13 +1132,13 @@
           {
             "amount": 250000000000000,
             "depositDuration": 86400,
-            "timestampOffset": 3600,
+            "timestampOffset": 2592000,
             "depositOfferMemo": "FlexDepositTest 1d-1Y 21%",
             "memo": "47"
           },
           {
             "amount": 2500000000000,
-            "timestampOffset": 3600,
+            "timestampOffset": 2592000,
             "memo": "47+"
           }
         ]
