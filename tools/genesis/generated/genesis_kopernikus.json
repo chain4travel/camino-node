@@ -166,7 +166,7 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "nodeID": "NodeID-6XD16eZ22fadTKq3qsxro9TPFZyxTiFv3",
+            "nodeID": "NodeID-YUy7DaNMhNe9mqdLX9PDsusaQFeRZKSy",
             "validatorDuration": 31104000,
             "depositDuration": 110376000,
             "timestampOffset": 3600,
@@ -191,7 +191,7 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "nodeID": "NodeID-6rsqgkg4F1i3SBjzj4tS5ucQWH7JMEouj",
+            "nodeID": "NodeID-ErN1zp6C2abP2F8HL9TxLL8RwT6kTmnAN",
             "validatorDuration": 62208000,
             "depositDuration": 141912000,
             "timestampOffset": 3600,
@@ -210,7 +210,7 @@
         "avaxAddr": "X-kopernikus18pry238vq8uzzpar32wa4x4p2rkyc7wx2qnctc",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -238,7 +238,7 @@
         },
         "platformAllocations": [
           {
-            "amount": 734361200000000000,
+            "amount": 733856200000000000,
             "timestampOffset": 3600,
             "memo": "6+"
           }
@@ -335,7 +335,7 @@
         "avaxAddr": "X-kopernikus10jd9cn8gw4h75u9wlns6qs022776ljsthzxwan",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -358,7 +358,7 @@
         "avaxAddr": "X-kopernikus18l0l8dz03vmk7k7y5cgax8k2l5mphj4p5k040u",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -381,7 +381,7 @@
         "avaxAddr": "X-kopernikus1fjv60r0t87y2m3p49he6gnmgvaze9anh6cwyg2",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -420,7 +420,7 @@
         "avaxAddr": "X-kopernikus16uhlmjm9nj42gkmexjy5c3x58uadfl6s4zzyhf",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -477,7 +477,7 @@
         "avaxAddr": "X-kopernikus12a96grhwgmv489kn9zn5rdm2vj5y8yhu6smyxf",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -500,7 +500,7 @@
         "avaxAddr": "X-kopernikus1tdw5tlm2ccnavy8ndq90c0c55d5qznefj842ae",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -523,7 +523,7 @@
         "avaxAddr": "X-kopernikus1dty07uqqndf22dqkgfq4ysa9nucg33q2ut5sq6",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -546,7 +546,7 @@
         "avaxAddr": "X-kopernikus1ftrh6sly2fh4k8rz4wwp60jj4dfdtg2xv3unrj",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -569,7 +569,7 @@
         "avaxAddr": "X-kopernikus1e3zck3mw3z620ujulx96cm4zvs0qdfnlc96775",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -587,7 +587,7 @@
         "avaxAddr": "X-kopernikus1sltcgxr6s90uexlghpqf3qlwh0ptpknx9gadu7",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -610,7 +610,7 @@
         "avaxAddr": "X-kopernikus133a4vhn0qa6fzf8434zzy80pdzefq2f8vwj7h7",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -633,7 +633,7 @@
         "avaxAddr": "X-kopernikus12ymv8mufsrdal5ej3ce9cyjwwmu7kclgv5929w",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -656,7 +656,7 @@
         "avaxAddr": "X-kopernikus12pz34dgmhe6ahdruf66nvkfrz50mm9zss5d82t",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -679,7 +679,7 @@
         "avaxAddr": "X-kopernikus1ytsp00yv55dg72xjlsh3l444a7xczmn27386yu",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -702,7 +702,7 @@
         "avaxAddr": "X-kopernikus1xe5hkpx5w7ryky3ddzjjdwmuuvf8dkpf4vapsh",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -725,7 +725,7 @@
         "avaxAddr": "X-kopernikus1d0ydd4wyq670lzrp0y7xd3wej4z7ysp2surum8",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -748,7 +748,7 @@
         "avaxAddr": "X-kopernikus13lcv2qp3jl8kkz7hm4uwf5scquvsfnx72ksdz4",
         "xAmount": 0,
         "addressStates": {
-          "consortiumMember": false,
+          "consortiumMember": true,
           "kycVerified": true
         },
         "platformAllocations": [
@@ -1165,6 +1165,52 @@
             "memo": "48+"
           }
         ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1yzx5v9hjjxth43ajer93pdt786s22ag8t8zjhr",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": true,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 200000000000000,
+            "depositDuration": 110376000,
+            "timestampOffset": 3600,
+            "depositOfferMemo": "PreSale 3 Years 8%",
+            "memo": "49"
+          },
+          {
+            "amount": 2000000000000,
+            "timestampOffset": 3600,
+            "memo": "49+"
+          }
+        ]
+      },
+      {
+        "ethAddr": "0x0000000000000000000000000000000000000000",
+        "avaxAddr": "X-kopernikus1vctr8ha7zna8fxdkazt5k6cnlj7fmg7eef8daq",
+        "xAmount": 0,
+        "addressStates": {
+          "consortiumMember": true,
+          "kycVerified": true
+        },
+        "platformAllocations": [
+          {
+            "amount": 300000000000000,
+            "depositDuration": 31536000,
+            "timestampOffset": 3600,
+            "depositOfferMemo": "UnDepositTest 1 Year 9%",
+            "memo": "50"
+          },
+          {
+            "amount": 3000000000000,
+            "timestampOffset": 3600,
+            "memo": "50+"
+          }
+        ]
       }
     ],
     "initialMultisigAddresses": [
@@ -1207,6 +1253,14 @@
         ],
         "threshold": 1,
         "memo": "1155"
+      },
+      {
+        "alias": "X-kopernikus1yzx5v9hjjxth43ajer93pdt786s22ag8t8zjhr",
+        "addresses": [
+          "X-kopernikus1ejmjsgslx2e2zqfu24xlthdnn5zt8255whpth6"
+        ],
+        "threshold": 1,
+        "memo": "1957"
       },
       {
         "alias": "X-kopernikus194sm66h2qrmtae7gcesnmxdstzqv0mpt53yjft",
