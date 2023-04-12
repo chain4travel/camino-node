@@ -238,7 +238,7 @@
         },
         "platformAllocations": [
           {
-            "amount": 733856200000000000,
+            "amount": 732038200000000000,
             "timestampOffset": 3600,
             "memo": "6+"
           }
@@ -1045,7 +1045,7 @@
         },
         "platformAllocations": [
           {
-            "amount": 101000000000000,
+            "amount": 1010000000000000,
             "timestampOffset": 3600,
             "memo": "43+"
           }
@@ -1153,14 +1153,14 @@
         },
         "platformAllocations": [
           {
-            "amount": 100000000000000,
+            "amount": 1000000000000000,
             "depositDuration": 110376000,
             "timestampOffset": 3600,
             "depositOfferMemo": "PreSale 3 Years 8%",
             "memo": "48"
           },
           {
-            "amount": 1000000000000,
+            "amount": 10000000000000,
             "timestampOffset": 3600,
             "memo": "48+"
           }
