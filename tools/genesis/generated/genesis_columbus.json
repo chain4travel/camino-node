@@ -2546,8 +2546,6 @@
         "platformAllocations": [
           {
             "amount": 100000000000000,
-            "nodeID": "NodeID-EPnVak5NCap1wdxJRWxKRQNaBfHi9MoVd",
-            "validatorDuration": 31276800,
             "depositDuration": 110376000,
             "depositOfferMemo": "PreSale 3 Years 8%",
             "memo": "125"
@@ -6560,8 +6558,6 @@
         "platformAllocations": [
           {
             "amount": 200000000000000,
-            "nodeID": "NodeID-9pygZskxbgi5ZKicwu5ES2ZwteTK6MnMH",
-            "validatorDuration": 30412800,
             "depositDuration": 110376000,
             "depositOfferMemo": "PreSale 3 Years 8%",
             "memo": "318"
