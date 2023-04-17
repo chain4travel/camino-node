@@ -8,7 +8,7 @@
 //
 // Much love to the original authors for their work.
 // **********************************************************
-// Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2023, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package e2e_test
@@ -40,9 +40,9 @@ var (
 	// helpers to parse test flags
 	logLevel string
 
-	networkRunnerGRPCEp             string
-	networkRunnercaminoNodeExecPath string
-	networkRunnercaminoLogLevel     string
+	networkRunnerGRPCEp              string
+	networkRunnerAvalancheGoExecPath string
+	networkRunnerAvalancheGoLogLevel string
 
 	uris string
 
@@ -64,16 +64,16 @@ func init() {
 		"[optional] gRPC server endpoint for network-runner (only required for local network-runner tests)",
 	)
 	flag.StringVar(
-		&networkRunnercaminoNodeExecPath,
-		"network-runner-camino-node-path",
+		&networkRunnerAvalancheGoExecPath,
+		"network-runner-avalanchego-path",
 		"",
-		"[optional] camino-node executable path (only required for local network-runner tests)",
+		"[optional] avalanchego executable path (only required for local network-runner tests)",
 	)
 	flag.StringVar(
-		&networkRunnercaminoLogLevel,
-		"network-runner-camino-log-level",
+		&networkRunnerAvalancheGoLogLevel,
+		"network-runner-avalanchego-log-level",
 		"INFO",
-		"[optional] camino log-level (only required for local network-runner tests)",
+		"[optional] avalanchego log-level (only required for local network-runner tests)",
 	)
 
 	// e.g., custom network HTTP RPC endpoints
@@ -81,7 +81,7 @@ func init() {
 		&uris,
 		"uris",
 		"",
-		"HTTP RPC endpoint URIs for camino node (comma-separated, required to run against existing cluster)",
+		"HTTP RPC endpoint URIs for avalanche node (comma-separated, required to run against existing cluster)",
 	)
 
 	// file that contains a list of new-line separated secp256k1 private keys
@@ -97,8 +97,8 @@ var _ = ginkgo.BeforeSuite(func() {
 	err := e2e.Env.ConfigCluster(
 		logLevel,
 		networkRunnerGRPCEp,
-		networkRunnercaminoNodeExecPath,
-		networkRunnercaminoLogLevel,
+		networkRunnerAvalancheGoExecPath,
+		networkRunnerAvalancheGoLogLevel,
 		uris,
 		testKeysFile,
 	)

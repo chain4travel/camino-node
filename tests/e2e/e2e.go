@@ -8,7 +8,7 @@
 //
 // Much love to the original authors for their work.
 // **********************************************************
-// Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2023, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 // e2e implements the e2e tests.
@@ -16,6 +16,7 @@ package e2e
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"os"
 	"strings"
@@ -27,7 +28,7 @@ import (
 	runner_sdk "github.com/ava-labs/avalanche-network-runner-sdk"
 
 	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/crypto"
+	"github.com/ava-labs/avalanchego/utils/crypto/secp256k1"
 	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
 
 	"github.com/chain4travel/camino-node/tests"
@@ -51,18 +52,25 @@ const (
 )
 
 // Env is the global struct containing all we need to test
-var Env = &TestEnvinronment{
-	testEnvironmentConfig: &testEnvironmentConfig{
-		clusterType: Unknown,
-	},
-}
+var (
+	Env = &TestEnvironment{
+		testEnvironmentConfig: &testEnvironmentConfig{
+			clusterType: Unknown,
+		},
+	}
+
+	errGRPCAndURIsSpecified = errors.New("either network-runner-grpc-endpoint or uris should be specified, not both")
+	errNoKeyFile            = errors.New("test keys file not provided")
+	errUnknownClusterType   = errors.New("unhandled cluster type")
+	errNotNetworkRunnerCLI  = errors.New("not network-runner cli")
+)
 
 type testEnvironmentConfig struct {
 	clusterType               ClusterType
 	logLevel                  string
 	networkRunnerGRPCEndpoint string
-	caminoNodeExecPath        string
-	caminoLogLevel            string
+	avalancheGoExecPath       string
+	avalancheGoLogLevel       string
 	testKeysFile              string
 
 	// we snapshot initial state, right after starting cluster
@@ -70,7 +78,7 @@ type testEnvironmentConfig struct {
 	snapshotName string
 }
 
-type TestEnvinronment struct {
+type TestEnvironment struct {
 	*testEnvironmentConfig
 
 	runnerMu     sync.RWMutex
@@ -81,7 +89,7 @@ type TestEnvinronment struct {
 	uris   []string
 
 	testKeysMu sync.RWMutex
-	testKeys   []*crypto.PrivateKeySECP256K1R
+	testKeys   []*secp256k1.PrivateKey
 
 	snapMu  sync.RWMutex
 	snapped bool
@@ -90,17 +98,17 @@ type TestEnvinronment struct {
 // should be called only once
 // must be called before StartCluster
 // Note that either networkRunnerGRPCEp or uris must be specified
-func (te *TestEnvinronment) ConfigCluster(
+func (te *TestEnvironment) ConfigCluster(
 	logLevel string,
 	networkRunnerGRPCEp string,
-	caminoNodeExecPath string,
-	caminoLogLevel string,
+	avalancheGoExecPath string,
+	avalancheGoLogLevel string,
 	uris string,
 	testKeysFile string,
 ) error {
-	if caminoNodeExecPath != "" {
-		if _, err := os.Stat(caminoNodeExecPath); err != nil {
-			return fmt.Errorf("could not find camino-node binary: %w", err)
+	if avalancheGoExecPath != "" {
+		if _, err := os.Stat(avalancheGoExecPath); err != nil {
+			return fmt.Errorf("could not find avalanchego binary: %w", err)
 		}
 	}
 
@@ -111,8 +119,8 @@ func (te *TestEnvinronment) ConfigCluster(
 		te.clusterType = StandAlone
 		te.logLevel = logLevel
 		te.networkRunnerGRPCEndpoint = networkRunnerGRPCEp
-		te.caminoNodeExecPath = caminoNodeExecPath
-		te.caminoLogLevel = caminoLogLevel
+		te.avalancheGoExecPath = avalancheGoExecPath
+		te.avalancheGoLogLevel = avalancheGoLogLevel
 
 		err := te.setRunnerClient(te.logLevel, te.networkRunnerGRPCEndpoint)
 		if err != nil {
@@ -138,14 +146,14 @@ func (te *TestEnvinronment) ConfigCluster(
 		return nil
 
 	default:
-		return fmt.Errorf("either network-runner-grpc-endpoint or uris should be specified, not both")
+		return errGRPCAndURIsSpecified
 	}
 }
 
-func (te *TestEnvinronment) LoadKeys() error {
+func (te *TestEnvironment) LoadKeys() error {
 	// load test keys
 	if len(te.testKeysFile) == 0 {
-		return fmt.Errorf("test keys file not provided")
+		return errNoKeyFile
 	}
 	testKeys, err := tests.LoadHexTestKeys(te.testKeysFile)
 	if err != nil {
@@ -155,14 +163,14 @@ func (te *TestEnvinronment) LoadKeys() error {
 	return nil
 }
 
-func (te *TestEnvinronment) StartCluster() error {
+func (te *TestEnvironment) StartCluster() error {
 	switch te.clusterType {
 	case StandAlone:
-		tests.Outf("{{magenta}}starting network-runner with %q{{/}}\n", te.caminoNodeExecPath)
+		tests.Outf("{{magenta}}starting network-runner with %q{{/}}\n", te.avalancheGoExecPath)
 		ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
-		resp, err := te.GetRunnerClient().Start(ctx, te.caminoNodeExecPath,
+		resp, err := te.GetRunnerClient().Start(ctx, te.avalancheGoExecPath,
 			runner_sdk.WithNumNodes(5),
-			runner_sdk.WithGlobalNodeConfig(fmt.Sprintf(`{"log-level":"%s"}`, te.caminoLogLevel)),
+			runner_sdk.WithGlobalNodeConfig(fmt.Sprintf(`{"log-level":"%s"}`, te.avalancheGoLogLevel)),
 		)
 		cancel()
 		if err != nil {
@@ -186,11 +194,11 @@ func (te *TestEnvinronment) StartCluster() error {
 		return nil // nothing to do, really
 
 	default:
-		return fmt.Errorf("unhandled cluster type")
+		return errUnknownClusterType
 	}
 }
 
-func (te *TestEnvinronment) refreshURIs() error {
+func (te *TestEnvironment) refreshURIs() error {
 	ctx, cancel := context.WithTimeout(context.Background(), 2*time.Minute)
 	uriSlice, err := te.GetRunnerClient().URIs(ctx)
 	cancel()
@@ -202,7 +210,7 @@ func (te *TestEnvinronment) refreshURIs() error {
 	return nil
 }
 
-func (te *TestEnvinronment) setRunnerClient(logLevel string, gRPCEp string) error {
+func (te *TestEnvironment) setRunnerClient(logLevel string, gRPCEp string) error {
 	te.runnerMu.Lock()
 	defer te.runnerMu.Unlock()
 
@@ -222,47 +230,47 @@ func (te *TestEnvinronment) setRunnerClient(logLevel string, gRPCEp string) erro
 	return err
 }
 
-func (te *TestEnvinronment) GetRunnerClient() (cli runner_sdk.Client) {
+func (te *TestEnvironment) GetRunnerClient() (cli runner_sdk.Client) {
 	te.runnerMu.RLock()
 	cli = te.runnerCli
 	te.runnerMu.RUnlock()
 	return cli
 }
 
-func (te *TestEnvinronment) closeRunnerClient() (err error) {
+func (te *TestEnvironment) closeRunnerClient() (err error) {
 	te.runnerMu.Lock()
 	err = te.runnerCli.Close()
 	te.runnerMu.Unlock()
 	return err
 }
 
-func (te *TestEnvinronment) GetRunnerGRPCEndpoint() (ep string) {
+func (te *TestEnvironment) GetRunnerGRPCEndpoint() (ep string) {
 	te.runnerMu.RLock()
 	ep = te.runnerGRPCEp
 	te.runnerMu.RUnlock()
 	return ep
 }
 
-func (te *TestEnvinronment) setURIs(us []string) {
+func (te *TestEnvironment) setURIs(us []string) {
 	te.urisMu.Lock()
 	te.uris = us
 	te.urisMu.Unlock()
 }
 
-func (te *TestEnvinronment) GetURIs() []string {
+func (te *TestEnvironment) GetURIs() []string {
 	te.urisMu.RLock()
 	us := te.uris
 	te.urisMu.RUnlock()
 	return us
 }
 
-func (te *TestEnvinronment) setTestKeys(ks []*crypto.PrivateKeySECP256K1R) {
+func (te *TestEnvironment) setTestKeys(ks []*secp256k1.PrivateKey) {
 	te.testKeysMu.Lock()
 	te.testKeys = ks
 	te.testKeysMu.Unlock()
 }
 
-func (te *TestEnvinronment) GetTestKeys() ([]*crypto.PrivateKeySECP256K1R, []ids.ShortID, *secp256k1fx.Keychain) {
+func (te *TestEnvironment) GetTestKeys() ([]*secp256k1.PrivateKey, []ids.ShortID, *secp256k1fx.Keychain) {
 	te.testKeysMu.RLock()
 	testKeys := te.testKeys
 	te.testKeysMu.RUnlock()
@@ -274,7 +282,7 @@ func (te *TestEnvinronment) GetTestKeys() ([]*crypto.PrivateKeySECP256K1R, []ids
 	return testKeys, testKeyAddrs, keyChain
 }
 
-func (te *TestEnvinronment) ShutdownCluster() error {
+func (te *TestEnvironment) ShutdownCluster() error {
 	if te.GetRunnerGRPCEndpoint() == "" {
 		// we connected directly to existing cluster
 		// nothing to shutdown
@@ -283,7 +291,7 @@ func (te *TestEnvinronment) ShutdownCluster() error {
 
 	runnerCli := te.GetRunnerClient()
 	if runnerCli == nil {
-		return fmt.Errorf("not network-runner cli")
+		return errNotNetworkRunnerCLI
 	}
 
 	tests.Outf("{{red}}shutting down network-runner cluster{{/}}\n")
@@ -298,7 +306,7 @@ func (te *TestEnvinronment) ShutdownCluster() error {
 	return te.closeRunnerClient()
 }
 
-func (te *TestEnvinronment) SnapInitialState() error {
+func (te *TestEnvironment) SnapInitialState() error {
 	te.snapMu.RLock()
 	defer te.snapMu.RUnlock()
 
@@ -316,7 +324,7 @@ func (te *TestEnvinronment) SnapInitialState() error {
 	return nil
 }
 
-func (te *TestEnvinronment) RestoreInitialState(switchOffNetworkFirst bool) error {
+func (te *TestEnvironment) RestoreInitialState(switchOffNetworkFirst bool) error {
 	te.snapMu.Lock()
 	defer te.snapMu.Unlock()
 
