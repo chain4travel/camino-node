@@ -4,7 +4,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"log"
-	"strconv"
+	"strings"
 
 	"github.com/ava-labs/avalanchego/genesis"
 	"github.com/ava-labs/avalanchego/ids"
@@ -88,6 +88,31 @@ const (
 	// TransferToXChain
 )
 
+func generateMemo(lineNumber uint32, bucketName string, isDeposit bool, isIncentive bool) string {
+	// The memo should look like this:
+	// ID: '<line>', Bucket: '<bucket>', Types: ['<type>', ...]
+	// Examples:
+	// ID: '276', Bucket: '14 Presale', Types: ['deposit']
+	// ID: '276', Bucket: '14 Presale', Types: ['unlocked', 'incentive']
+
+	memo := fmt.Sprintf("ID:'%d', Bucket:'%s'", lineNumber, bucketName)
+
+	typeStrings := make([]string, 0, 2)
+	if !isDeposit {
+		typeStrings = append(typeStrings, "unlocked")
+	}
+
+	if isIncentive {
+		typeStrings = append(typeStrings, "incentive")
+	}
+
+	if len(typeStrings) > 0 {
+		memo += fmt.Sprintf(", Type:'%s'", strings.Join(typeStrings, " "))
+	}
+
+	return memo
+}
+
 func generateAllocations(
 	networkID uint32,
 	allocations []*workbook.AllocationRow,
@@ -100,6 +125,7 @@ func generateAllocations(
 	adminAddr := ids.ShortEmpty
 	for _, al := range allocations {
 		msigAlias, hasAlias := msigCtrlGrpToAlias[al.ControlGroup]
+
 		if hasAlias {
 			al.Address = msigAlias
 			fmt.Printf("replaced row %3d address with its control group alias %s\n", al.RowNo, al.ControlGroup)
@@ -165,7 +191,7 @@ func generateAllocations(
 				NodeID:            nodeIDToString(al.NodeID),
 				ValidatorDuration: uint64(al.ValidatorPeriodDays * 24 * 60 * 60),
 				TimestampOffset:   al.TokenDeliveryOffset,
-				Memo:              strconv.Itoa(al.RowNo),
+				Memo:              generateMemo(uint32(al.RowNo), al.Bucket, true, false),
 			}
 			a.PlatformAllocations = append(a.PlatformAllocations, pa)
 		}
@@ -175,7 +201,7 @@ func generateAllocations(
 			additionalUnlocked := genesis.UnparsedPlatformAllocation{
 				Amount:          unlockedFunds,
 				TimestampOffset: al.TokenDeliveryOffset,
-				Memo:            fmt.Sprintf("%d+", al.RowNo),
+				Memo:            generateMemo(uint32(al.RowNo), al.Bucket, false, onePercent > 0),
 			}
 			a.PlatformAllocations = append(a.PlatformAllocations, additionalUnlocked)
 		} else {
