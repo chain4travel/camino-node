@@ -907,6 +907,7 @@ func (n *Node) initAdminAPI() error {
 			NodeConfig:   n.Config,
 			VMManager:    n.Config.VMManager,
 			VMRegistry:   n.VMRegistry,
+			HTTPHost:     n.Config.HTTPHost,
 		},
 	)
 	if err != nil {
