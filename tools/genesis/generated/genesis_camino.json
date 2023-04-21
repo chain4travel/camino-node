@@ -811,7 +811,7 @@
             "amount": 45000000000000000,
             "depositDuration": 157680000,
             "depositOfferMemo": "Undeposit 5 Years 0%",
-            "memo": "ID:'43', Bucket:'07 Listing'"
+            "memo": "ID:'43', Bucket:'07 IEO'"
           }
         ]
       },
@@ -826,7 +826,7 @@
         "platformAllocations": [
           {
             "amount": 30000000000000000,
-            "memo": "ID:'44', Bucket:'07 Listing', Type: 'unlocked'"
+            "memo": "ID:'44', Bucket:'07 IEO', Type: 'unlocked'"
           }
         ]
       },
