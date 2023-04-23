@@ -90,12 +90,12 @@ const (
 
 func generateMemo(lineNumber uint32, bucketName string, isDeposit bool, isIncentive bool) string {
 	// The memo should look like this:
-	// ID: '<line>', Bucket: '<bucket>', Types: ['<type>', ...]
+	// ID: <line>, Bucket: <bucket>, Type: <type> <type> <...>
 	// Examples:
-	// ID: '276', Bucket: '14 Presale', Types: ['deposit']
-	// ID: '276', Bucket: '14 Presale', Types: ['unlocked', 'incentive']
+	// ID: 276, Bucket: 14 Presale
+	// ID: 276, Bucket: 14 Presale, Types: unlocked incentive
 
-	memo := fmt.Sprintf("ID:'%d', Bucket:'%s'", lineNumber, bucketName)
+	memo := fmt.Sprintf("ID: %d, Bucket: %s", lineNumber, bucketName)
 
 	typeStrings := make([]string, 0, 2)
 	if !isDeposit {
@@ -107,7 +107,7 @@ func generateMemo(lineNumber uint32, bucketName string, isDeposit bool, isIncent
 	}
 
 	if len(typeStrings) > 0 {
-		memo += fmt.Sprintf(", Type:'%s'", strings.Join(typeStrings, " "))
+		memo += fmt.Sprintf(", Type: %s", strings.Join(typeStrings, " "))
 	}
 
 	return memo
