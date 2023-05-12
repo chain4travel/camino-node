@@ -1,14 +1,4 @@
-// Copyright (C) 2022, Chain4Travel AG. All rights reserved.
-//
-// This file is a derived work, based on ava-labs code whose
-// original notices appear below.
-//
-// It is distributed under the same license conditions as the
-// original code from which it is derived.
-//
-// Much love to the original authors for their work.
-// **********************************************************
-// Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2023, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 // Implements X-chain transfer tests.
@@ -20,11 +10,10 @@ import (
 	"math/rand"
 	"time"
 
-	ginkgo "github.com/onsi/ginkgo/v2"
-	"github.com/onsi/gomega"
-
 	"github.com/ava-labs/avalanchego/ids"
 	"github.com/ava-labs/avalanchego/snow/choices"
+	"github.com/ava-labs/avalanchego/tests"
+	"github.com/ava-labs/avalanchego/tests/e2e"
 	"github.com/ava-labs/avalanchego/utils/set"
 	"github.com/ava-labs/avalanchego/vms/avm"
 	"github.com/ava-labs/avalanchego/vms/components/avax"
@@ -32,14 +21,14 @@ import (
 	"github.com/ava-labs/avalanchego/wallet/subnet/primary"
 	"github.com/ava-labs/avalanchego/wallet/subnet/primary/common"
 
-	"github.com/chain4travel/camino-node/tests"
-	"github.com/chain4travel/camino-node/tests/e2e"
+	ginkgo "github.com/onsi/ginkgo/v2"
+	"github.com/onsi/gomega"
 )
 
 const (
-	metricVtxProcessing = "camino_X_vtx_processing"
-	metricVtxAccepted   = "camino_X_vtx_accepted_count"
-	metricVtxRejected   = "camino_X_vtx_rejected_count"
+	metricVtxProcessing = "avalanche_X_avalanche_vtx_processing"
+	metricVtxAccepted   = "avalanche_X_avalanche_vtx_accepted_count"
+	metricVtxRejected   = "avalanche_X_avalanche_vtx_rejected_count"
 )
 
 const totalRounds = 50
@@ -71,7 +60,9 @@ var _ = e2e.DescribeXChain("[Virtuous Transfer Tx AVAX]", func() {
 				needPermute := round > 3
 				if needPermute {
 					rand.Seed(time.Now().UnixNano())
-					rand.Shuffle(len(testKeys), func(i, j int) { testKeys[i], testKeys[j] = testKeys[j], testKeys[i] })
+					rand.Shuffle(len(testKeys), func(i, j int) {
+						testKeys[i], testKeys[j] = testKeys[j], testKeys[i]
+					})
 				}
 				keyChain := secp256k1fx.NewKeychain(testKeys...)
 

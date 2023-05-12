@@ -1,11 +1,10 @@
 name: Test e2e
 
 on:
-  pull_request:
-    tags-ignore: ["*"]
-    branches: [chain4travel, dev]
   push:
-    branches: [chain4travel, dev]
+    branches:
+      - dev
+  pull_request:
 
 permissions:
   contents: read
@@ -19,13 +18,14 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
-          go-version: 1.18
-      - name: Build the camino-node binaries
+          go-version: '~1.19.6'
+          check-latest: true
+      - name: Build the avalanchego binary
         shell: bash
-        run: ./scripts/build.sh
+        run: ./scripts/build.sh -r
       - name: Run e2e tests
         shell: bash
-        run: scripts/tests.e2e.sh ./build/camino-node
+        run: scripts/tests.e2e.sh ./build/avalanchego
       - name: Run e2e tests for whitelist vtx
         shell: bash
-        run: ENABLE_WHITELIST_VTX_TESTS=true ./scripts/tests.e2e.sh ./build/camino-node
+        run: ENABLE_WHITELIST_VTX_TESTS=true ./scripts/tests.e2e.sh ./build/avalanchego

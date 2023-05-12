@@ -4,17 +4,45 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-# Camino-Node root folder
-CAMINO_NODE_PATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )"; cd .. && pwd )
+print_usage() {
+  printf "Usage: build [OPTIONS]
+
+  Build avalanchego
+
+  Options:
+
+    -r  Build with race detector
+"
+}
+
+race=''
+while getopts 'r' flag; do
+  case "${flag}" in
+    r) race='-r' ;;
+    *) print_usage
+      exit 1 ;;
+  esac
+done
+
+# Avalanchego root folder
+AVALANCHE_PATH=$( cd "$( dirname "${BASH_SOURCE[0]}" )"; cd .. && pwd )
+# Load the constants
+source "$AVALANCHE_PATH"/scripts/constants.sh
 
 # Download dependencies
-if [ ! -f $CAMINO_NODE_PATH/dependencies/caminoethvm/.git ]; then
-    echo "Initializing git submodules..."
-    git --git-dir $CAMINO_NODE_PATH/.git submodule update --init --recursive
-fi
-
 echo "Downloading dependencies..."
-(cd $CAMINO_NODE_PATH && go mod download)
+go mod download
 
-# Build caminogo
-"$CAMINO_NODE_PATH"/scripts/build_camino.sh
+build_args="$race"
+
+# Build avalanchego
+"$AVALANCHE_PATH"/scripts/build_avalanche.sh $build_args
+
+# Exit build successfully if the AvalancheGo binary is created successfully
+if [[ -f "$avalanchego_path" ]]; then
+        echo "Build Successful"
+        exit 0
+else
+        echo "Build failure" >&2
+        exit 1
+fi

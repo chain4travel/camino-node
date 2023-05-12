@@ -52,7 +52,6 @@ keys/staker.*
 !*.proto
 
 plugins/
-local/
 
 scripts/ansible/*inventory.yml
 scripts/.build_image_gopath/
@@ -60,4 +59,6 @@ scripts/.build_image_gopath/
 tests/e2e/e2e.test
 tests/upgrade/upgrade.test
 
-launch.sh
+vendor
+
+**/testdata

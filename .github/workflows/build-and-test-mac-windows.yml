@@ -1,11 +1,12 @@
 name: Build + Test Mac-Windows
 
 on:
-  pull_request:
-    tags-ignore: ["*"]
-    branches: [chain4travel, dev]
   push:
-    branches: [chain4travel, dev]
+    tags:
+      - "*" # Push events to every tag
+    branches:
+      - dev
+      - master
 
 jobs:
   run_build_tests:
@@ -18,7 +19,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-go@v3
         with:
-          go-version: "1.18" # The Go version to download (if necessary) and use.
+          go-version: '~1.19.6'
+          check-latest: true
       - name: build_test
         shell: bash
-        run: scripts/build_and_test.sh
+        run: .github/workflows/build_and_test.sh
