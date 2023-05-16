@@ -18,7 +18,8 @@ linters:
   disable-all: true
   enable:
     - asciicheck
-    - deadcode
+    - bodyclose
+    - depguard
     - errcheck
     - exportloopref
     - goconst
@@ -26,34 +27,31 @@ linters:
     - gofmt
     - gofumpt
     - goimports
-    - revive
+    - goprintffuncname
     - gosec
     - gosimple
     - govet
     - ineffassign
     - misspell
     - nakedret
+    - noctx
     - nolintlint
     - prealloc
+    - revive
+    - staticcheck
     - stylecheck
     - unconvert
+    - unparam
     - unused
-    - varcheck
-    - unconvert
     - whitespace
-    - staticcheck
-    # - structcheck
-    # - lll
-    # - gomnd
-    # - goprintffuncname
-    # - interfacer
-    # - typecheck
+    # - errorlint (TODO: re-enable in go1.20 migration)
     # - goerr113
-    # - noctx
+    # - gomnd
+    # - lll
 
 linters-settings:
   staticcheck:
-    go: "1.18"
+    go: "1.19"
     # https://staticcheck.io/docs/options#checks
     checks:
       - "all"
@@ -63,3 +61,9 @@ linters-settings:
   gosec:
     excludes:
       - G107 # https://securego.io/docs/rules/g107.html
+  depguard:
+    list-type: blacklist
+    packages-with-error-message:
+      - io/ioutil: 'io/ioutil is deprecated. Use package io or os instead.'
+      - github.com/stretchr/testify/assert: 'github.com/stretchr/testify/require should be used instead.'
+    include-go-root: true

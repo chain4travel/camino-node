@@ -1,4 +1,4 @@
-// Copyright (C) 2022, Chain4Travel AG. All rights reserved.
+// Copyright (C) 2022-2023, Chain4Travel AG. All rights reserved.
 //
 // This file is a derived work, based on ava-labs code whose
 // original notices appear below.
@@ -8,7 +8,7 @@
 //
 // Much love to the original authors for their work.
 // **********************************************************
-// Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2023, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package e2e_test
@@ -41,8 +41,8 @@ var (
 	logLevel string
 
 	networkRunnerGRPCEp             string
-	networkRunnercaminoNodeExecPath string
-	networkRunnercaminoLogLevel     string
+	networkRunnerCaminoNodeExecPath string
+	networkRunnerCaminoLogLevel     string
 
 	uris string
 
@@ -64,13 +64,13 @@ func init() {
 		"[optional] gRPC server endpoint for network-runner (only required for local network-runner tests)",
 	)
 	flag.StringVar(
-		&networkRunnercaminoNodeExecPath,
+		&networkRunnerCaminoNodeExecPath,
 		"network-runner-camino-node-path",
 		"",
 		"[optional] camino-node executable path (only required for local network-runner tests)",
 	)
 	flag.StringVar(
-		&networkRunnercaminoLogLevel,
+		&networkRunnerCaminoLogLevel,
 		"network-runner-camino-log-level",
 		"INFO",
 		"[optional] camino log-level (only required for local network-runner tests)",
@@ -97,8 +97,8 @@ var _ = ginkgo.BeforeSuite(func() {
 	err := e2e.Env.ConfigCluster(
 		logLevel,
 		networkRunnerGRPCEp,
-		networkRunnercaminoNodeExecPath,
-		networkRunnercaminoLogLevel,
+		networkRunnerCaminoNodeExecPath,
+		networkRunnerCaminoLogLevel,
 		uris,
 		testKeysFile,
 	)

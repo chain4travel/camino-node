@@ -4,37 +4,41 @@
 
 ---
 
-Node implementation for the [Camino](https://camino.foundation) network -
-a blockchains platform for the touristic market.
+Node implementation for the [Camino Network](https://camino.network) - a blockchain for the travel industry.
 
 ## Installation
 
-Camino is an quite lightweight protocol which requires only modest minimum computer requirements.
+Camino is an incredibly lightweight protocol, so the minimum computer requirements are quite modest.
+Note that as network usage increases, hardware requirements may change.
 
 The minimum recommended hardware specification for nodes connected to Mainnet is:
 
 - CPU: Equivalent of 8 AWS vCPU
 - RAM: 16 GiB
 - Storage: 512 GiB
-- OS: Ubuntu 18.04/20.04 or macOS >= 10.15 (Catalina)
+- OS: Ubuntu 20.04/22.04 or macOS >= 12
 - Network: Reliable IPv4 or IPv6 network connection, with an open public port.
 
 If you plan to build Camino-Node from source, you will also need the following software:
 
-- [Go](https://golang.org/doc/install) version >= 1.17.9
+- [Go](https://golang.org/doc/install) version >= 1.19.6
 - [gcc](https://gcc.gnu.org/)
 - g++
 
+### Official Documentation
+
+Please refer to the official documentation available at [Camino Docs](https://docs.camino.network/camino-node) for the latest information.
+
 ### Native Install
 
-Clone the Camino-Node repository:
+Clone the camino-node repository:
 
 ```sh
 git clone git@github.com:chain4travel/camino-node.git
 cd camino-node
 ```
 
-This will clone and checkout to `chain4travel` branch.
+This will clone and checkout the `chain4travel` branch.
 
 #### Building the Camino Node Executable
 
@@ -90,7 +94,13 @@ You can use `Ctrl+C` to kill the node.
 
 ### Connecting to Camino Mainnet
 
-Not yet launched
+To connect to the Mainnet, run:
+
+```sh
+./build/camino-node
+```
+For detailed instructions on running a validator node on the Camino Network, please refer to the [official validator guides](https://docs.camino.network/validator-guides).
+
 
 ### Creating a Local Testnet
 
@@ -138,6 +148,6 @@ To officially support a new platform, one must satisfy the following requirement
 
 ## Security Bugs
 
-**We and our community welcome responsible disclosures.**
+**We take security issues seriously and encourage responsible disclosures from our community.**
 
-If you've discovered a security vulnerability, please report it to us via [discord](https://discord.gg/K5THjAweFB). Valid reports will be eligible for a reward (terms and conditions apply).
+If you have discovered a security vulnerability, please refer to our [Security Policy](SECURITY.md) or contact us on [Discord](https://discord.gg/camino).

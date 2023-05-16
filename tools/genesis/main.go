@@ -1,3 +1,6 @@
+// Copyright (C) 2022-2023, Chain4Travel AG. All rights reserved.
+// See the file LICENSE for licensing terms.
+
 package main
 
 import (
@@ -5,7 +8,9 @@ import (
 	"fmt"
 	"io"
 	"log"
+	"math"
 	"os"
+	"time"
 
 	"github.com/ava-labs/avalanchego/genesis"
 	"github.com/ava-labs/avalanchego/ids"
@@ -139,5 +144,7 @@ func validateConfig(jsonFileContent []byte) error {
 		return fmt.Errorf("error while parsing generated genesis json, %w", err)
 	}
 
-	return genesis.ValidateConfig(&config)
+	return genesis.ValidateConfig(&config, &genesis.StakingConfig{
+		MaxStakeDuration: time.Duration(math.MaxInt64),
+	})
 }

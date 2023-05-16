@@ -1,4 +1,4 @@
-// Copyright (C) 2022, Chain4Travel AG. All rights reserved.
+// Copyright (C) 2022-2023, Chain4Travel AG. All rights reserved.
 //
 // This file is a derived work, based on ava-labs code whose
 // original notices appear below.
@@ -8,7 +8,7 @@
 //
 // Much love to the original authors for their work.
 // **********************************************************
-// Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2023, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 // Implements X-chain transfer tests.
@@ -37,9 +37,9 @@ import (
 )
 
 const (
-	metricVtxProcessing = "camino_X_vtx_processing"
-	metricVtxAccepted   = "camino_X_vtx_accepted_count"
-	metricVtxRejected   = "camino_X_vtx_rejected_count"
+	metricVtxProcessing = "camino_X_avalanche_vtx_processing"
+	metricVtxAccepted   = "camino_X_avalanche_vtx_accepted_count"
+	metricVtxRejected   = "camino_X_avalanche_vtx_rejected_count"
 )
 
 const totalRounds = 50
@@ -71,7 +71,9 @@ var _ = e2e.DescribeXChain("[Virtuous Transfer Tx AVAX]", func() {
 				needPermute := round > 3
 				if needPermute {
 					rand.Seed(time.Now().UnixNano())
-					rand.Shuffle(len(testKeys), func(i, j int) { testKeys[i], testKeys[j] = testKeys[j], testKeys[i] })
+					rand.Shuffle(len(testKeys), func(i, j int) {
+						testKeys[i], testKeys[j] = testKeys[j], testKeys[i]
+					})
 				}
 				keyChain := secp256k1fx.NewKeychain(testKeys...)
 

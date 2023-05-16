@@ -1,14 +1,4 @@
-// Copyright (C) 2022, Chain4Travel AG. All rights reserved.
-//
-// This file is a derived work, based on ava-labs code whose
-// original notices appear below.
-//
-// It is distributed under the same license conditions as the
-// original code from which it is derived.
-//
-// Much love to the original authors for their work.
-// **********************************************************
-// Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2023, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package tests
@@ -18,7 +8,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/ava-labs/avalanchego/utils/crypto"
+	"github.com/ava-labs/avalanchego/utils/crypto/secp256k1"
 )
 
 func TestLoadTestKeys(t *testing.T) {
@@ -30,6 +20,6 @@ func TestLoadTestKeys(t *testing.T) {
 	}
 }
 
-func encodeShortAddr(pk *crypto.PrivateKeySECP256K1R) string {
+func encodeShortAddr(pk *secp256k1.PrivateKey) string {
 	return pk.PublicKey().Address().String()
 }
