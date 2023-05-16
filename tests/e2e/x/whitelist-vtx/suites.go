@@ -1,4 +1,4 @@
-// Copyright (C) 2022, Chain4Travel AG. All rights reserved.
+// Copyright (C) 2022-2023, Chain4Travel AG. All rights reserved.
 //
 // This file is a derived work, based on ava-labs code whose
 // original notices appear below.
@@ -8,7 +8,7 @@
 //
 // Much love to the original authors for their work.
 // **********************************************************
-// Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2023, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 // Implements X-Chain whitelist vtx (stop vertex) tests.
@@ -17,9 +17,6 @@ package whitelistvtx
 import (
 	"context"
 	"time"
-
-	ginkgo "github.com/onsi/ginkgo/v2"
-	"github.com/onsi/gomega"
 
 	"github.com/ava-labs/avalanchego/ids"
 	"github.com/ava-labs/avalanchego/utils/constants"
@@ -32,16 +29,19 @@ import (
 
 	"github.com/chain4travel/camino-node/tests"
 	"github.com/chain4travel/camino-node/tests/e2e"
+
+	ginkgo "github.com/onsi/ginkgo/v2"
+	"github.com/onsi/gomega"
 )
 
 const (
-	metricVtxIssueSuccess = "camino_X_whitelist_vtx_issue_success"
-	metricVtxIssueFailure = "camino_X_whitelist_vtx_issue_failure"
-	metricTxProcessing    = "camino_X_whitelist_tx_processing"
-	metricTxAccepted      = "camino_X_whitelist_tx_accepted_count"
-	metricTxRejected      = "camino_X_whitelist_tx_rejected_count"
-	metricTxPollsAccepted = "camino_X_whitelist_tx_polls_accepted_count"
-	metricTxPollsRejected = "camino_X_whitelist_tx_polls_rejected_count"
+	metricVtxIssueSuccess = "camino_X_avalanche_whitelist_vtx_issue_success"
+	metricVtxIssueFailure = "camino_X_avalanche_whitelist_vtx_issue_failure"
+	metricTxProcessing    = "camino_X_avalanche_whitelist_tx_processing"
+	metricTxAccepted      = "camino_X_avalanche_whitelist_tx_accepted_count"
+	metricTxRejected      = "camino_X_avalanche_whitelist_tx_rejected_count"
+	metricTxPollsAccepted = "camino_X_avalanche_whitelist_tx_polls_accepted_count"
+	metricTxPollsRejected = "camino_X_avalanche_whitelist_tx_polls_rejected_count"
 )
 
 var _ = e2e.DescribeXChain("[WhitelistTx]", func() {
@@ -235,8 +235,8 @@ var _ = e2e.DescribeXChain("[WhitelistTx]", func() {
 					// +0 since no node should ever successfully issue another whitelist vtx
 					gomega.Expect(mm[metricVtxIssueSuccess]).Should(gomega.Equal(prev[metricVtxIssueSuccess]))
 
-					// +1 since the local node engine failed the conflicting whitelist vtx issue request
-					gomega.Expect(mm[metricVtxIssueFailure]).Should(gomega.Equal(prev[metricVtxIssueFailure] + 1))
+					// +0 since the local node engine should have dropped the conflicting whitelist vtx issue request
+					gomega.Expect(mm[metricVtxIssueFailure]).Should(gomega.Equal(prev[metricVtxIssueFailure]))
 
 					// +0 since the local node snowstorm successfully issued the whitelist tx "before", and no whitelist tx is being processed
 					gomega.Expect(mm[metricTxProcessing]).Should(gomega.Equal(prev[metricTxProcessing]))
@@ -253,7 +253,7 @@ var _ = e2e.DescribeXChain("[WhitelistTx]", func() {
 				}
 			})
 
-			ginkgo.By("issue regular, virtuous X-Chain tx, after whitelist vtx, should fail", func() {
+			ginkgo.By("issue regular, virtuous X-Chain tx, after whitelist vtx, should pass", func() {
 				balances, err := wallets[0].X().Builder().GetFTBalance()
 				gomega.Expect(err).Should(gomega.BeNil())
 
@@ -281,16 +281,7 @@ var _ = e2e.DescribeXChain("[WhitelistTx]", func() {
 					common.WithContext(ctx),
 				)
 				cancel()
-				gomega.Expect(err.Error()).Should(gomega.ContainSubstring(context.DeadlineExceeded.Error()))
-
-				ep := uris[0] + "/ext/metrics"
-				mm, err := tests.GetMetricsValue(ep, allMetrics...)
 				gomega.Expect(err).Should(gomega.BeNil())
-
-				// regular, virtuous transaction should not change whitelist vtx metrics
-				prev := curMetrics[uris[0]]
-				gomega.Expect(mm).Should(gomega.Equal(prev))
-				curMetrics[uris[0]] = mm
 			})
 		})
 })

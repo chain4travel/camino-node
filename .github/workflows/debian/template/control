@@ -4,5 +4,5 @@ Section: misc
 Priority: optional
 Architecture: arm64
 Depends:
-Maintainer: devop <devop@chain4travel.com>
+Maintainer: devops <devops@chain4travel.com>
 Description: The Camino platform binaries

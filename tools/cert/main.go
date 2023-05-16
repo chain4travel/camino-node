@@ -1,4 +1,4 @@
-// Copyright (C) 2022, Chain4Travel AG. All rights reserved.
+// Copyright (C) 2022-2023, Chain4Travel AG. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package main
@@ -13,8 +13,8 @@ import (
 	"github.com/ava-labs/avalanchego/network/peer"
 	"github.com/ava-labs/avalanchego/staking"
 	"github.com/ava-labs/avalanchego/utils/cb58"
-	"github.com/ava-labs/avalanchego/utils/crypto"
-	"github.com/decred/dcrd/dcrec/secp256k1/v3"
+	utilsSecp256k1 "github.com/ava-labs/avalanchego/utils/crypto/secp256k1"
+	"github.com/decred/dcrd/dcrec/secp256k1/v4"
 )
 
 var (
@@ -37,11 +37,11 @@ func main() {
 			fmt.Printf("parameter count not allowed if nodepk provided")
 			os.Exit(1)
 		}
-		if !strings.HasPrefix(privateKey, crypto.PrivateKeyPrefix) {
+		if !strings.HasPrefix(privateKey, utilsSecp256k1.PrivateKeyPrefix) {
 			fmt.Printf("prefixed private key expected")
 			os.Exit(1)
 		}
-		keyBytes, err := cb58.Decode(privateKey[len(crypto.PrivateKeyPrefix):])
+		keyBytes, err := cb58.Decode(privateKey[len(utilsSecp256k1.PrivateKeyPrefix):])
 		if err != nil {
 			fmt.Printf("cannot decode private key (%v)", err)
 			os.Exit(1)

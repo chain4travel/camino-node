@@ -1,4 +1,4 @@
-// Copyright (C) 2022, Chain4Travel AG. All rights reserved.
+// Copyright (C) 2022-2023, Chain4Travel AG. All rights reserved.
 //
 // This file is a derived work, based on ava-labs code whose
 // original notices appear below.
@@ -8,7 +8,7 @@
 //
 // Much love to the original authors for their work.
 // **********************************************************
-// Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2023, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package p
@@ -16,7 +16,6 @@ package p
 import (
 	"context"
 	"errors"
-	"fmt"
 	"time"
 
 	ginkgo "github.com/onsi/ginkgo/v2"
@@ -32,11 +31,10 @@ import (
 	"github.com/ava-labs/avalanchego/vms/components/avax"
 	"github.com/ava-labs/avalanchego/vms/platformvm"
 	"github.com/ava-labs/avalanchego/vms/platformvm/status"
-	"github.com/ava-labs/avalanchego/vms/platformvm/validator"
+	"github.com/ava-labs/avalanchego/vms/platformvm/txs"
 	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
 	"github.com/ava-labs/avalanchego/wallet/subnet/primary"
 	"github.com/ava-labs/avalanchego/wallet/subnet/primary/common"
-
 	"github.com/chain4travel/camino-node/tests"
 	"github.com/chain4travel/camino-node/tests/e2e"
 )
@@ -109,7 +107,7 @@ var _ = e2e.DescribePChain("[Workflow]", func() {
 			validatorStartTimeDiff := 30 * time.Second
 			vdrStartTime := time.Now().Add(validatorStartTimeDiff)
 
-			vdr := &validator.Validator{
+			vdr := &txs.Validator{
 				NodeID: ids.GenerateTestNodeID(),
 				Start:  uint64(vdrStartTime.Unix()),
 				End:    uint64(vdrStartTime.Add(72 * time.Hour).Unix()),
@@ -221,7 +219,7 @@ var _ = e2e.DescribePChain("[Workflow]", func() {
 					common.WithContext(ctx),
 				)
 				cancel()
-				gomega.Expect(err).Should(gomega.BeNil(), fmt.Errorf("error timeout: %v", errors.Is(err, context.DeadlineExceeded)))
+				gomega.Expect(err).Should(gomega.BeNil(), "is context.DeadlineExceeded: %v", errors.Is(err, context.DeadlineExceeded))
 
 				ctx, cancel = context.WithTimeout(context.Background(), e2e.DefaultConfirmTxTimeout)
 				txStatus, err := xChainClient.GetTxStatus(ctx, importTxID)

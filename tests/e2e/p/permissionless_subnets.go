@@ -1,4 +1,4 @@
-// Copyright (C) 2022, Chain4Travel AG. All rights reserved.
+// Copyright (C) 2022-2023, Chain4Travel AG. All rights reserved.
 //
 // This file is a derived work, based on ava-labs code whose
 // original notices appear below.
@@ -8,7 +8,7 @@
 //
 // Much love to the original authors for their work.
 // **********************************************************
-// Copyright (C) 2019-2022, Ava Labs, Inc. All rights reserved.
+// Copyright (C) 2019-2023, Ava Labs, Inc. All rights reserved.
 // See the file LICENSE for licensing terms.
 
 package p
@@ -34,11 +34,10 @@ import (
 	"github.com/ava-labs/avalanchego/vms/platformvm/reward"
 	"github.com/ava-labs/avalanchego/vms/platformvm/signer"
 	"github.com/ava-labs/avalanchego/vms/platformvm/status"
-	"github.com/ava-labs/avalanchego/vms/platformvm/validator"
+	"github.com/ava-labs/avalanchego/vms/platformvm/txs"
 	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
 	"github.com/ava-labs/avalanchego/wallet/subnet/primary"
 	"github.com/ava-labs/avalanchego/wallet/subnet/primary/common"
-
 	"github.com/chain4travel/camino-node/tests"
 	"github.com/chain4travel/camino-node/tests/e2e"
 )
@@ -206,8 +205,8 @@ var _ = e2e.DescribePChain("[Permissionless Subnets]", func() {
 			ginkgo.By("add permissionless validator", func() {
 				ctx, cancel := context.WithTimeout(context.Background(), e2e.DefaultConfirmTxTimeout)
 				addSubnetValidatorTxID, err := pWallet.IssueAddPermissionlessValidatorTx(
-					&validator.SubnetValidator{
-						Validator: validator.Validator{
+					&txs.SubnetValidator{
+						Validator: txs.Validator{
 							NodeID: genesis.LocalConfig.InitialStakers[0].NodeID,
 							Start:  uint64(validatorStartTime.Unix()),
 							End:    uint64(validatorStartTime.Add(5 * time.Second).Unix()),
@@ -235,8 +234,8 @@ var _ = e2e.DescribePChain("[Permissionless Subnets]", func() {
 			ginkgo.By("add permissionless delegator", func() {
 				ctx, cancel := context.WithTimeout(context.Background(), e2e.DefaultConfirmTxTimeout)
 				addSubnetDelegatorTxID, err := pWallet.IssueAddPermissionlessDelegatorTx(
-					&validator.SubnetValidator{
-						Validator: validator.Validator{
+					&txs.SubnetValidator{
+						Validator: txs.Validator{
 							NodeID: genesis.LocalConfig.InitialStakers[0].NodeID,
 							Start:  uint64(delegatorStartTime.Unix()),
 							End:    uint64(delegatorStartTime.Add(5 * time.Second).Unix()),
