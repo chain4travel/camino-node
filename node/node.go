@@ -996,6 +996,8 @@ func (n *Node) initInfoAPI() error {
 	service, err := info.NewService(
 		info.Parameters{
 			Version:                       version.CurrentApp,
+			GitVersion:                    version.GitVersion,
+			GitCommit:                     version.GitCommit,
 			NodeID:                        n.ID,
 			NodePOP:                       signer.NewProofOfPossession(n.Config.StakingSigningKey),
 			NetworkID:                     n.Config.NetworkID,
