@@ -2,9 +2,9 @@ name: Test e2e
 
 on:
   pull_request:
-    tags-ignore: ["*"]
     branches: [chain4travel, dev]
   push:
+    tags-ignore: ["*"]
     branches: [chain4travel, dev]
 
 permissions:

@@ -35,7 +35,7 @@ then
   # https://github.com/chain4travel/camino-network-runner
   GOARCH=$(go env GOARCH)
   GOOS=$(go env GOOS)
-  NETWORK_RUNNER_VERSION=0.4.10-rc1
+  NETWORK_RUNNER_VERSION=0.4.10
   DOWNLOAD_PATH=/tmp/camino-network-runner.tar.gz
   DOWNLOAD_URL=https://github.com/chain4travel/camino-network-runner/releases/download/v${NETWORK_RUNNER_VERSION}/camino-network-runner_${NETWORK_RUNNER_VERSION}_${GOOS}_amd64.tar.gz
 
