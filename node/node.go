@@ -941,6 +941,11 @@ func (n *Node) initAdminAPI() error {
 		n.Log.Info("skipping admin API initialization because it has been disabled")
 		return nil
 	}
+
+	if (n.Config.HTTPHost == "localhost" || n.Config.HTTPHost == "127.0.0.1") && !n.Config.APIConfig.AllowInsecureLocalhost {
+		return errors.New("localhost/127.0.0.1 are considered to be insecure hosts - please explicitly allow this by also setting --http-insecure-localhost")
+	}
+
 	n.Log.Info("initializing admin API")
 	service, err := admin.NewService(
 		admin.Config{
