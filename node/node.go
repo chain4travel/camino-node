@@ -94,6 +94,7 @@ import (
 	ipcsapi "github.com/ava-labs/avalanchego/api/ipcs"
 	avmconfig "github.com/ava-labs/avalanchego/vms/avm/config"
 	platformconfig "github.com/ava-labs/avalanchego/vms/platformvm/config"
+	nodeVersion "github.com/chain4travel/camino-node/version"
 )
 
 var (
@@ -820,6 +821,7 @@ func (n *Node) initVMs() error {
 				ApricotPhase3Time:               version.GetApricotPhase3Time(n.Config.NetworkID),
 				ApricotPhase5Time:               version.GetApricotPhase5Time(n.Config.NetworkID),
 				BanffTime:                       version.GetBanffTime(n.Config.NetworkID),
+				SunrisePhase1Time:               version.GetSunrisePhase1Time(n.Config.NetworkID),
 				MinPercentConnectedStakeHealthy: n.Config.MinPercentConnectedStakeHealthy,
 				UseCurrentHeight:                n.Config.UseCurrentHeight,
 			},
@@ -998,8 +1000,8 @@ func (n *Node) initInfoAPI() error {
 	service, err := info.NewService(
 		info.Parameters{
 			Version:                       version.CurrentApp,
-			GitVersion:                    version.GitVersion,
-			GitCommit:                     version.GitCommit,
+			GitVersion:                    nodeVersion.GitVersion,
+			GitCommit:                     nodeVersion.GitCommit,
 			NodeID:                        n.ID,
 			NodePOP:                       signer.NewProofOfPossession(n.Config.StakingSigningKey),
 			NetworkID:                     n.Config.NetworkID,
