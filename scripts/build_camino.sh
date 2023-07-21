@@ -50,7 +50,7 @@ LDFLAGS="$LDFLAGS -X github.com/ava-labs/coreth/plugin/evm.GitCommit=$caminoethv
 LDFLAGS="$LDFLAGS -X github.com/ava-labs/coreth/plugin/evm.Version=$caminoethvm_tag"
 LDFLAGS="$LDFLAGS $static_ld_flags"
 
-go build -ldflags "$LDFLAGS" -o "$camino_node_path" "$CAMINO_NODE_PATH/main/"*.go
+go build -ldflags "$LDFLAGS" -gcflags="all=-N -l" -o "$camino_node_path" "$CAMINO_NODE_PATH/main/"*.go
 
 # Make plugin folder
 mkdir -p $plugin_dir

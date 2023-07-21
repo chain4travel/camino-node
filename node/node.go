@@ -18,7 +18,7 @@ import (
 	"crypto"
 	"errors"
 	"fmt"
-	"github.com/ava-labs/avalanchego/vms/timestampvm"
+	"github.com/ava-labs/avalanchego/vms/touristicvm"
 	"io"
 	"net"
 	"os"
@@ -832,7 +832,7 @@ func (n *Node) initVMs() error {
 			},
 		}),
 		vmRegisterer.Register(context.TODO(), constants.EVMID, &coreth.Factory{}),
-		vmRegisterer.Register(context.TODO(), constants.TimestampVMID, &timestampvm.Factory{}),
+		vmRegisterer.Register(context.TODO(), constants.TouristicVMID, &touristicvm.Factory{}),
 		n.VMManager.RegisterFactory(context.TODO(), secp256k1fx.ID, &secp256k1fx.Factory{}),
 		n.VMManager.RegisterFactory(context.TODO(), nftfx.ID, &nftfx.Factory{}),
 		n.VMManager.RegisterFactory(context.TODO(), propertyfx.ID, &propertyfx.Factory{}),
