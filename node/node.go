@@ -822,6 +822,7 @@ func (n *Node) initVMs() error {
 				ApricotPhase5Time:               version.GetApricotPhase5Time(n.Config.NetworkID),
 				BanffTime:                       version.GetBanffTime(n.Config.NetworkID),
 				AthensPhaseTime:                 version.GetAthensPhaseTime(n.Config.NetworkID),
+				DACPhaseTime:                    version.GetDACPhaseTime(n.Config.NetworkID),
 				MinPercentConnectedStakeHealthy: n.Config.MinPercentConnectedStakeHealthy,
 				UseCurrentHeight:                n.Config.UseCurrentHeight,
 			},
