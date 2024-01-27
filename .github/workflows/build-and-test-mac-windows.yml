@@ -5,7 +5,7 @@ on:
     tags-ignore: ["*"]
     branches: [chain4travel, dev]
   push:
-    branches: [chain4travel, dev]
+    branches: [chain4travel, dev, test-macos]
 
 jobs:
   run_build_tests:
