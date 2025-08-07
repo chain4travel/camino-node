@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> - This repository has been merged into [CaminoGo](https://github.com/chain4travel/caminogo)
+> - All future development and releases for Camino Node will continue in the CaminoGo repository.
+> - Repo URL: https://github.com/chain4travel/caminogo
+
 <div align="center">
   <img src="resources/camino-logo.png?raw=true">
 </div>
